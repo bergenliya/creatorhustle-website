@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Feature your freebie or low-ticket offer at the top of my email to coaches and creators using AI.">
+  <meta name="theme-color" content="#17191f">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Apply the saved theme before first paint to avoid a light flash
+       for dark-mode users. Kept inline on purpose. -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("site-theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+        else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+          document.documentElement.setAttribute("data-theme", "dark");
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- The hero photo is the largest contentful paint; fetch it early -->
+  
+  <title>Sponsored Email Feature | Creator Hustle AI</title>
+
+  <!-- Fonts: Inter (all sans-serif). Swap the family in css/style.css → --font-base -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+       Sticky header. Gets .scrolled class via JS after 50px scroll.
+  ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo" aria-label="Creator Hustle AI, home">
+        <img class="logo-svg" src="assets/logo.png" alt="Creator Hustle AI" width="463" height="243">
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#offers" class="nav-link">Courses</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="index.html#stuck" class="nav-link">Where to start</a></li>
+          <li><a href="work-with-me.html" class="nav-link">Work with me</a></li>
+        </ul>
+        <a href="pdf-to-interactive-workbook.html" class="btn btn-primary btn-sm nav-cta">Get the free skill</a>
+        <a href="https://creatorhustle.shop" class="btn btn-dark btn-sm nav-shop" target="_blank" rel="noopener">Shop</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <!-- Sun icon (shown in dark mode) -->
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <section class="hero hero--page" id="hero">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <p class="hero-eyebrow animate-on-load" style="--delay: 0">Sponsorships</p>
+        <h1 class="hero-title animate-on-load" style="--delay: 1">Sponsored Email <span class="hero-title-accent">Feature</span></h1>
+        <p class="hero-subtitle animate-on-load" style="--delay: 2">Put your freebie or low-ticket offer <span class="hl-sub">at the top of my email</span> to coaches and creators who are building their businesses with AI.</p>
+        <div class="hero-actions animate-on-load" style="--delay: 3">
+          <a href="#included" class="btn btn-primary btn-lg">See what you get <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section collab" id="audience">
+      <div class="container">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">The audience</span>
+          <h2 class="section-title">Who you'll reach</h2>
+          <p class="section-subtitle">My readers are coaches, course creators and small business owners who want AI to take the busy work off their plate.</p>
+        </div>
+        <div class="steps-grid stats-2"><div class="step-card animate-on-scroll"><h3>10K+</h3><p>Email subscribers</p></div><div class="step-card animate-on-scroll"><h3>40%</h3><p>Average open rate</p></div></div>
+      </div>
+    </section>
+
+    <section class="section fit--cream" id="fit">
+      <div class="container narrow-wrap">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">Is this for you?</span>
+          <h2 class="section-title">This is a great fit if you…</h2>
+        </div>
+        <ul class="fit-list animate-on-scroll">
+          <li>have a freebie or low-ticket offer for coaches, course creators or small business owners</li>
+          <li>want to grow your email list with readers who actually open their emails</li>
+          <li>help creators use AI, sell digital products or grow their business</li>
+          <li>want warm traffic without running ads</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--cream" id="included">
+      <div class="container">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">Choose your option</span>
+          <h2 class="section-title">Three ways to reach my readers</h2>
+          <p class="section-subtitle">Start small with a footer spot, take the top of the email, or have a whole email to yourself.</p>
+        </div>
+        <div class="pkg-grid">
+          <div class="pkg-card animate-on-scroll">
+            <h3>Footer feature</h3>
+            <p class="svc-desc">A small spot in my email's footer, alongside a few other tools I recommend.</p>
+            <ul class="svc-list"><li>Your offer in the footer of one email</li><li>Shown alongside a few vetted tools</li><li>Great for freebies and evergreen offers</li></ul>
+            <p class="pkg-price">$59</p>
+            <a href="mailto:liya@creatorhustle.ai?subject=Sponsored%20email%3A%20footer%20feature" class="btn btn-dark pkg-btn">Book a footer spot <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <div class="pkg-card pkg-card--featured animate-on-scroll"><span class="pkg-badge">Most popular</span>
+            <h3>Top spotlight</h3>
+            <p class="svc-desc">Your offer at the top of my email, where readers see it first.</p>
+            <ul class="svc-list"><li>A guaranteed feature in one email</li><li>Placement at the top of the email</li><li>Promote a freebie or a low-ticket offer</li></ul>
+            <p class="pkg-price">$149</p>
+            <a href="mailto:liya@creatorhustle.ai?subject=Sponsored%20email%3A%20top%20spotlight" class="btn btn-primary pkg-btn">Book a spotlight <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <div class="pkg-card animate-on-scroll">
+            <h3>Solo email</h3>
+            <p class="svc-desc">A whole email about your offer only, written by me for my readers.</p>
+            <ul class="svc-list"><li>One dedicated email to my list</li><li>No other offers competing for attention</li><li>Written by me, in my voice</li></ul>
+            <p class="pkg-price">$297</p>
+            <a href="mailto:liya@creatorhustle.ai?subject=Sponsored%20email%3A%20solo%20email" class="btn btn-dark pkg-btn">Book a solo email <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">How it works</span>
+          <h2 class="section-title">Three simple steps</h2>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card animate-on-scroll"><span class="step-no">1</span><h3>Pick your week</h3><p>Email me to check which weeks are still open.</p></div>
+          <div class="step-card animate-on-scroll"><span class="step-no">2</span><h3>Send your details</h3><p>Share your offer, link and a short description.</p></div>
+          <div class="step-card animate-on-scroll"><span class="step-no">3</span><h3>Go live</h3><p>Your offer goes out to my readers during your booked week.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section offer-dark" id="offer">
+      <div class="container">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow on-dark">Imagine this</span>
+          <h2 class="section-title">Your offer, in front of <span class="hero-title-accent">10K+ creators.</span></h2>
+          <p class="section-subtitle">Your ideal clients are already reading my emails. Here's what your spotlight gives you.</p>
+        </div>
+        <div class="od-grid">
+          <div class="od-outcomes animate-on-scroll"><div class="od-outcome"><span class="od-icon">👀</span><div><h3>Seen first</h3><p>Your offer sits at the top of the email, before anything else.</p></div></div><div class="od-outcome"><span class="od-icon">📬</span><div><h3>An audience that opens</h3><p>An average open rate of 40%, from readers who want to grow with AI.</p></div></div><div class="od-outcome"><span class="od-icon">🎯</span><div><h3>The right people</h3><p>Coaches, course creators and small business owners, exactly who you serve.</p></div></div><div class="od-outcome"><span class="od-icon">⚡</span><div><h3>Quick and easy</h3><p>Send me your offer, link and a short description. I handle the rest.</p></div></div></div>
+          <div class="od-stack animate-on-scroll">
+            <h3>Most popular: Top spotlight</h3>
+            <ul><li>A guaranteed feature in one email during your booked week</li><li>Placement at the top of the email</li><li>Your freebie or low-ticket offer, with your link</li><li>Reach 10K+ subscribers with a 40% average open rate</li></ul>
+            <p class="od-price">$149</p>
+            <a href="mailto:liya@creatorhustle.ai?subject=Sponsored%20email%20feature" class="btn btn-primary btn-lg od-btn">Book my spotlight <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <p class="od-note">Questions first? Email me at liya@creatorhustle.ai</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq-q">
+      <div class="container narrow-wrap">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">FAQ</span>
+          <h2 class="section-title">Questions, answered</h2>
+        </div>
+        <div class="qa-list animate-on-scroll">
+          <details><summary>What can I promote?</summary><p>A freebie or a low-ticket offer that's a good fit for coaches and creators using AI.</p></details>
+          <details><summary>Where does my feature go?</summary><p>At the top of the email, so it's the first thing readers see.</p></details>
+          <details><summary>Which option should I choose?</summary><p>The footer feature is a low-cost way to test my audience. The top spotlight is the best balance of visibility and price. A solo email gives your offer my readers' full attention.</p></details>
+          <details><summary>How many spots are there?</summary><p>Only a few each month, booked first come, first scheduled. Solo emails are limited to one or two a month.</p></details>
+          <details><summary>When do I choose my send date?</summary><p>Any time within 6 months of booking, so you can secure your spot now and pick the best week later.</p></details>
+          <details><summary>Are results guaranteed?</summary><p>No. I can't promise specific clicks or sales, but I only feature offers I think my readers will find useful.</p></details>
+          <details><summary>What do I need to send you?</summary><p>Your offer's name, your link and a short description. An image is welcome too.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section router grain" id="enquire">
+      <div class="container router-inner animate-on-scroll">
+        <h2 class="section-title">Want to book <span class="hero-title-accent">a spot?</span></h2>
+        <p class="section-subtitle router-subtitle">Send me a quick email and I'll let you know which weeks are open.</p>
+        <a href="mailto:liya@creatorhustle.ai?subject=Sponsored%20email%20feature" class="btn btn-primary btn-lg">Email me about sponsoring <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER — dark closer with giant wordmark
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <img class="logo-svg" src="assets/logo.png" alt="Creator Hustle AI" width="463" height="243" loading="lazy">
+        <p class="footer-tagline">
+          Simple AI tools and courses for coaches and creators who want to
+          work less and still grow.
+        </p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/creator.hustle/" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37a4 4 0 1 1-7.91 1.17 4 4 0 0 1 7.91-1.17z"/><path d="M17.5 6.5h.01"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-col" aria-label="Footer navigation">
+        <h3 class="footer-heading">Navigate</h3>
+        <ul class="footer-links">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#offers">Courses</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#stuck">Where to start</a></li>
+          <li><a href="index.html#contact">Waitlists</a></li>
+          <li><a href="work-with-me.html">Work with me</a></li>
+          <li><a href="collaborate.html">Collaborate</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-use.html">Terms of Use</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Contact</h3>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://go.coursehustle.com/l/" target="_blank" rel="noopener">Course login</a></li>
+          <li><a href="mailto:liya@creatorhustle.ai">liya@creatorhustle.ai</a></li>
+          <li><a href="https://www.instagram.com/creator.hustle/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://creatorhustle.shop" target="_blank" rel="noopener">Shop</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Creator Hustle AI. All rights reserved.</p>
+      <a href="#main" class="footer-top-btn" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </a>
+    </div>
+
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Fillout embed loader (contact form) -->
+  <script src="https://server.fillout.com/embed/v1/" async></script>
+</body>
+</html>
