@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A Claude Skill that walks you step by step through building a collab hub: one request form, AI-drafted replies that check fit, phone alerts and results tracking.">
+  <meta name="theme-color" content="#17191f">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Apply the saved theme before first paint to avoid a light flash
+       for dark-mode users. Kept inline on purpose. -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("site-theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+        else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+          document.documentElement.setAttribute("data-theme", "dark");
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- The hero photo is the largest contentful paint; fetch it early -->
+  
+  <title>AI Collab Request Hub | Creator Hustle AI</title>
+
+  <!-- Fonts: Inter (all sans-serif). Swap the family in css/style.css → --font-base -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+       Sticky header. Gets .scrolled class via JS after 50px scroll.
+  ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo" aria-label="Creator Hustle AI, home">
+        <img class="logo-svg" src="assets/logo.png" alt="Creator Hustle AI" width="463" height="243">
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#offers" class="nav-link">Courses</a></li>
+          <li><a href="skills-shop.html" class="nav-link active" aria-current="page">AI Skills</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="work-with-me.html" class="nav-link">Work with me</a></li>
+          <li><a href="support.html" class="nav-link">Support</a></li>
+        </ul>
+        <a href="pdf-to-interactive-workbook.html" class="btn btn-primary btn-sm nav-cta">Get the free skill</a>
+        <a href="https://creatorhustle.shop" class="btn btn-dark btn-sm nav-shop" target="_blank" rel="noopener">Shop</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <!-- Sun icon (shown in dark mode) -->
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <section class="hero hero--page" id="hero">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <p class="hero-eyebrow animate-on-load" style="--delay: 0">Part of the Skills Shop</p>
+        <h1 class="hero-title animate-on-load" style="--delay: 1">Every collab request, <span class="hero-title-accent">sorted with AI</span></h1>
+        <p class="hero-subtitle animate-on-load" style="--delay: 2">A Claude Skill that walks you step by step through building a collab hub where every request lands in one place, <span class="hl-sub">with a reply already drafted for you.</span></p>
+        <div class="hero-actions animate-on-load" style="--delay: 3">
+          <a href="#buy" class="btn btn-primary btn-lg">Get the skill &middot; $49 <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section problem-section" id="problem">
+      <div class="container narrow-wrap">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">Sound familiar?</span>
+          <h2 class="section-title">Collab requests getting lost?</h2>
+        </div>
+        <ul class="problem-list animate-on-scroll">
+          <li>Podcast and summit invites are scattered across your DMs and inbox</li>
+          <li>You mean to reply, then a week goes by</li>
+          <li>You've said yes to collabs that took hours and brought in nothing</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section collab" id="introducing">
+      <div class="container">
+        <div class="intro-grid">
+          <div class="animate-on-scroll">
+            <span class="section-eyebrow">Introducing</span>
+            <h2 class="section-title align-left">AI Collab Request Hub</h2>
+            <p class="intro-text">This Claude Skill is the exact system behind my own collab page. People fill in one simple form, and every request lands in your Airtable list with an AI-written reply that has already checked whether it's a good fit for your audience.</p>
+            <p class="intro-text">Your phone pings, you read the draft, and you reply from your own inbox in one click. After each collab, you log the sign-ups and sales it brought in, so you know exactly who to work with again.</p>
+          </div>
+          <div class="intro-media animate-on-scroll"><img src="assets/skills/ai-collab-request-hub.jpg" alt="AI Collab Request Hub Claude Skill mockup with a collab request list, a new request alert and an AI draft" loading="lazy" decoding="async" width="900" height="1125" class="prod-mock"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">How it works</span>
+          <h2 class="section-title">Four simple steps</h2>
+        </div>
+        <div class="hiw-grid"><div class="hiw-box animate-on-scroll"><span class="hiw-no">1</span><div><h3>Tell Claude about your collabs</h3><p>Claude asks who your audience is, which collabs you're open to and what's a poor fit, then writes your AI reply prompt and form wording for you.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">2</span><div><h3>Build your collab hub</h3><p>Step by step, you set up your request form, your Airtable list with AI-drafted replies, and a Slack ping on your phone.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">3</span><div><h3>Test it before it goes live</h3><p>Three ready-made test requests check the AI says yes, no and “let's talk” in the right places, with a fix for anything that's off.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">4</span><div><h3>Reply and track results</h3><p>Click Reply to answer from your own inbox, then log the sign-ups and sales each collab brings in.</p></div></div></div>
+      </div>
+    </section>
+
+    <section class="section collab" id="faq-q">
+      <div class="container narrow-wrap">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">FAQ</span>
+          <h2 class="section-title">Questions, answered</h2>
+        </div>
+        <div class="faq-cards animate-on-scroll">
+          <details class="faq-card"><summary>Do I need to be techy?</summary><p>Not at all. Claude walks you through every click in plain English, and you can send it a screenshot whenever you're not sure what to press.</p></details>
+          <details class="faq-card"><summary>What do I need?</summary><p>A paid Claude plan (Pro, Max, Team or Enterprise), because custom skills aren't available on the free plan. You'll also need free accounts on Airtable, Fillout and Slack, which the skill helps you set up.</p></details>
+          <details class="faq-card"><summary>Does the AI say yes to collabs for me?</summary><p>No. It only drafts replies. Good fits get a warm next step, poor fits get a kind no, and anything that needs your decision is flagged at the top of the draft. You read every reply and send it yourself.</p></details>
+          <details class="faq-card"><summary>Are there monthly fees?</summary><p>The setup runs on the free plans of Airtable, Fillout and Slack. AI drafts use Airtable's monthly AI allowance. Free plans are set by those companies and can change.</p></details>
+          <details class="faq-card"><summary>How long does it take?</summary><p>About 90 minutes, and you can stop after any part and pick it up later.</p></details>
+          <details class="faq-card"><summary>Want to collab with me?</summary><p>Lovely! Use my <a href="collaborate.html">collab page</a>. It runs on this exact system.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section price-pink" id="buy">
+      <div class="container">
+        <div class="price-card animate-on-scroll">
+          <span class="section-eyebrow">Claude Skill</span>
+          <h2 class="section-title">AI Collab Request Hub</h2>
+          <p class="price-big">$49</p>
+          <ul class="svc-list"><li>The AI Collab Request Hub Claude Skill</li><li>Your Start Here guide (PDF) with install steps</li><li>A ready-to-use AI reply prompt with a built-in fit check</li><li>Three test requests and a fixes table for the AI drafts</li><li>Your collab request form with ready-made wording</li><li>Phone alerts, a one-click Reply button and an Open requests list</li><li>Results tracking for sign-ups, sales and revenue</li><li>Email support if you get stuck</li></ul>
+          <a href="[CHECKOUT LINK]" class="btn btn-black btn-lg">Get instant access <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <p class="price-note">Instant download. Needs a paid Claude plan.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bio-strip" id="bio">
+      <div class="container bio-strip-inner animate-on-scroll">
+        <img src="assets/liya-bio-pink.jpg" alt="Liya Bergen smiling in a pink jumper" loading="lazy" decoding="async" width="560" height="560" style="object-position:50% 50%">
+        <p><strong>Hi, I'm Liya, founder of Creator Hustle AI.</strong> I've been building online courses and digital products since 2014. I built this collab hub for my own business, tested it with pretend requests, and fixed every snag along the way. This skill hands you the finished version, step by step.</p>
+      </div>
+    </section>
+
+    <section class="section closing-section" id="closing">
+      <div class="container narrow-wrap animate-on-scroll" style="text-align:center">
+        <h2 class="section-title">Say yes to the right collabs</h2>
+        <p class="section-subtitle">No more lost invites or awkward late replies. Every request gets a thoughtful answer, and your time goes into the collabs that actually grow your list.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER — dark closer with giant wordmark
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <img class="logo-svg" src="assets/logo.png" alt="Creator Hustle AI" width="463" height="243" loading="lazy">
+        <p class="footer-tagline">
+          Simple AI tools and courses for coaches and creators who want to
+          work less and still grow.
+        </p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/creatorhustle.ai/" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37a4 4 0 1 1-7.91 1.17 4 4 0 0 1 7.91-1.17z"/><path d="M17.5 6.5h.01"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-col" aria-label="Footer navigation">
+        <h3 class="footer-heading">Navigate</h3>
+        <ul class="footer-links">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#offers">Courses</a></li>
+          <li><a href="skills-shop.html">AI Skills</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Waitlists</a></li>
+          <li><a href="work-with-me.html">Work with me</a></li>
+          <li><a href="collaborate.html">Collaborate</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-use.html">Terms of Use</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Contact</h3>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="support.html" class="footer-link-highlight">Customer Support</a></li>
+          <li><a href="https://go.coursehustle.com/l/" target="_blank" rel="noopener">Course login</a></li>
+          <li><a href="mailto:liya@creatorhustle.ai">liya@creatorhustle.ai</a></li>
+          <li><a href="https://www.instagram.com/creatorhustle.ai/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://creatorhustle.shop" target="_blank" rel="noopener">Shop</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Creator Hustle AI. All rights reserved.</p>
+      <a href="#main" class="footer-top-btn" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </a>
+    </div>
+
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Fillout embed loader (contact form) -->
+  <script src="https://server.fillout.com/embed/v1/" async></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A Claude Skill that walks you step by step through building your business website page by page, then publishing it free on your own domain.">
+  <meta name="theme-color" content="#17191f">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Apply the saved theme before first paint to avoid a light flash
+       for dark-mode users. Kept inline on purpose. -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("site-theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+        else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+          document.documentElement.setAttribute("data-theme", "dark");
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- The hero photo is the largest contentful paint; fetch it early -->
+  
+  <title>Build Your Own Website with AI | Creator Hustle AI</title>
+
+  <!-- Fonts: Inter (all sans-serif). Swap the family in css/style.css → --font-base -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+       Sticky header. Gets .scrolled class via JS after 50px scroll.
+  ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo" aria-label="Creator Hustle AI, home">
+        <img class="logo-svg" src="assets/logo.png" alt="Creator Hustle AI" width="463" height="243">
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#offers" class="nav-link">Courses</a></li>
+          <li><a href="skills-shop.html" class="nav-link active" aria-current="page">AI Skills</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="work-with-me.html" class="nav-link">Work with me</a></li>
+          <li><a href="support.html" class="nav-link">Support</a></li>
+        </ul>
+        <a href="pdf-to-interactive-workbook.html" class="btn btn-primary btn-sm nav-cta">Get the free skill</a>
+        <a href="https://creatorhustle.shop" class="btn btn-dark btn-sm nav-shop" target="_blank" rel="noopener">Shop</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <!-- Sun icon (shown in dark mode) -->
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <section class="hero hero--page" id="hero">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <p class="hero-eyebrow animate-on-load" style="--delay: 0">Part of the Skills Shop</p>
+        <h1 class="hero-title animate-on-load" style="--delay: 1">Your business website, <span class="hero-title-accent">built with AI</span></h1>
+        <p class="hero-subtitle animate-on-load" style="--delay: 2">A Claude Skill that walks you step by step through building your website page by page, then <span class="hl-sub">publishing it free on your own domain.</span></p>
+        <div class="hero-actions animate-on-load" style="--delay: 3">
+          <a href="#buy" class="btn btn-primary btn-lg">Get the skill &middot; $49 <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section problem-section" id="problem">
+      <div class="container narrow-wrap">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">Sound familiar?</span>
+          <h2 class="section-title">Still putting off your website?</h2>
+        </div>
+        <ul class="problem-list animate-on-scroll">
+          <li>Your website is outdated, or you don't have one at all</li>
+          <li>Website builders feel fiddly, and the monthly fees keep adding up</li>
+          <li>Hiring a designer costs more than you want to spend right now</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section collab" id="introducing">
+      <div class="container">
+        <div class="intro-grid">
+          <div class="animate-on-scroll">
+            <span class="section-eyebrow">Introducing</span>
+            <h2 class="section-title align-left">Build Your Own Website with AI</h2>
+            <p class="intro-text">This Claude Skill is the exact process I used to build and launch creatorhustle.ai. Claude plans your pages with you, writes the code and the copy in your voice, and builds your site one page at a time.</p>
+            <p class="intro-text">Then it walks you through putting it live on your own domain, with the secure padlock, free hosting and an email address to match. No coding and no designer needed.</p>
+          </div>
+          <div class="intro-media animate-on-scroll"><img src="assets/skills/build-your-own-website-with-ai.jpg" alt="Build Your Own Website with AI Claude Skill mockup" loading="lazy" decoding="async" width="900" height="1125" class="prod-mock"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">How it works</span>
+          <h2 class="section-title">Four simple steps</h2>
+        </div>
+        <div class="hiw-grid"><div class="hiw-box animate-on-scroll"><span class="hiw-no">1</span><div><h3>Plan your website</h3><p>Claude asks about your business, offers and brand, then maps out your pages with you before anything gets built.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">2</span><div><h3>Build it page by page</h3><p>Claude writes the code and the copy, starting with your home page. You preview it on your computer and ask for changes.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">3</span><div><h3>Publish it free</h3><p>Claude walks you through GitHub and Cloudflare, click by click, until your site has its own live link.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">4</span><div><h3>Go live on your domain</h3><p>Connect your own domain with the secure padlock, and add an email address on your domain if you'd like.</p></div></div></div>
+      </div>
+    </section>
+
+    <section class="section collab" id="faq-q">
+      <div class="container narrow-wrap">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">FAQ</span>
+          <h2 class="section-title">Questions, answered</h2>
+        </div>
+        <div class="faq-cards animate-on-scroll">
+          <details class="faq-card"><summary>Do I need to know how to code?</summary><p>Not at all. Claude writes all the code and the words for you. You make the decisions, and Claude walks you through every click in plain English.</p></details>
+          <details class="faq-card"><summary>What do I need?</summary><p>A paid Claude plan (Pro, Max, Team or Enterprise), because custom skills aren't available on the free plan. You'll also need your logo, a few photos and a domain name. GitHub and Cloudflare are free.</p></details>
+          <details class="faq-card"><summary>Are there monthly fees?</summary><p>Hosting on Cloudflare's free plan costs nothing. You only pay for your domain name, usually once a year, to wherever you bought it. Free plans are set by those companies and can change.</p></details>
+          <details class="faq-card"><summary>How long does it take?</summary><p>It depends on how many pages you want. Many people can plan and build a simple site over a few short sessions, and every phase is a natural place to stop and pick up later.</p></details>
+          <details class="faq-card"><summary>Can I change things later?</summary><p>Yes. Ask Claude for the change, upload the new files to GitHub, and your live site updates in about a minute.</p></details>
+          <details class="faq-card"><summary>Would you rather I built it with you?</summary><p>My <a href="build-your-website-with-ai.html">Build Your Website with AI</a> service is the done-with-you version, where we build it together in two sessions.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section price-pink" id="buy">
+      <div class="container">
+        <div class="price-card animate-on-scroll">
+          <span class="section-eyebrow">Claude Skill</span>
+          <h2 class="section-title">Build Your Own Website with AI</h2>
+          <p class="price-big">$49</p>
+          <ul class="svc-list"><li>The Build Your Own Website with AI Claude Skill</li><li>Your Start Here guide (PDF) with install steps</li><li>Website planning questions and a ready-made page plan</li><li>Page-by-page build with consistent offer page layouts</li><li>Step-by-step GitHub and Cloudflare publishing</li><li>Domain, padlock and email address setup</li><li>A launch checklist and built-in troubleshooting</li><li>Email support if you get stuck</li></ul>
+          <a href="[CHECKOUT LINK]" class="btn btn-black btn-lg">Get instant access <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <p class="price-note">Instant download. Needs a paid Claude plan.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bio-strip" id="bio">
+      <div class="container bio-strip-inner animate-on-scroll">
+        <img src="assets/liya-bio-pink.jpg" alt="Liya Bergen smiling in a pink jumper" loading="lazy" decoding="async" width="560" height="560" style="object-position:50% 50%">
+        <p><strong>Hi, I'm Liya, founder of Creator Hustle AI.</strong> I've been building online courses and digital products since 2014. I built my own website, creatorhustle.ai, with AI using this exact process, from the first page all the way to my own domain. This skill shows you how to build yours.</p>
+      </div>
+    </section>
+
+    <section class="section closing-section" id="closing">
+      <div class="container narrow-wrap animate-on-scroll" style="text-align:center">
+        <h2 class="section-title">A website you're proud to share</h2>
+        <p class="section-subtitle">No more "my website is coming soon". Build it in your own time, keep full control of it, and change it whenever your business grows.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER — dark closer with giant wordmark
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <img class="logo-svg" src="assets/logo.png" alt="Creator Hustle AI" width="463" height="243" loading="lazy">
+        <p class="footer-tagline">
+          Simple AI tools and courses for coaches and creators who want to
+          work less and still grow.
+        </p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/creatorhustle.ai/" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37a4 4 0 1 1-7.91 1.17 4 4 0 0 1 7.91-1.17z"/><path d="M17.5 6.5h.01"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-col" aria-label="Footer navigation">
+        <h3 class="footer-heading">Navigate</h3>
+        <ul class="footer-links">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#offers">Courses</a></li>
+          <li><a href="skills-shop.html">AI Skills</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Waitlists</a></li>
+          <li><a href="work-with-me.html">Work with me</a></li>
+          <li><a href="collaborate.html">Collaborate</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-use.html">Terms of Use</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Contact</h3>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="support.html" class="footer-link-highlight">Customer Support</a></li>
+          <li><a href="https://go.coursehustle.com/l/" target="_blank" rel="noopener">Course login</a></li>
+          <li><a href="mailto:liya@creatorhustle.ai">liya@creatorhustle.ai</a></li>
+          <li><a href="https://www.instagram.com/creatorhustle.ai/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://creatorhustle.shop" target="_blank" rel="noopener">Shop</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Creator Hustle AI. All rights reserved.</p>
+      <a href="#main" class="footer-top-btn" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </a>
+    </div>
+
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Fillout embed loader (contact form) -->
+  <script src="https://server.fillout.com/embed/v1/" async></script>
+</body>
+</html>
