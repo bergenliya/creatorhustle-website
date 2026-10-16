@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Done-for-you services, done-with-you sessions, sponsorships and perks from Liya Bergen of Creator Hustle AI.">
+  <meta name="theme-color" content="#17191f">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Apply the saved theme before first paint to avoid a light flash
+       for dark-mode users. Kept inline on purpose. -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("site-theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+        else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+          document.documentElement.setAttribute("data-theme", "dark");
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- The hero photo is the largest contentful paint; fetch it early -->
+  
+  <title>Work with Liya | Creator Hustle AI</title>
+
+  <!-- Fonts: Inter (all sans-serif). Swap the family in css/style.css → --font-base -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+       Sticky header. Gets .scrolled class via JS after 50px scroll.
+  ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo" aria-label="Creator Hustle AI, home">
+        <img class="logo-svg" src="assets/logo.png" alt="Creator Hustle AI" width="463" height="243">
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#offers" class="nav-link">Courses</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="index.html#stuck" class="nav-link">Where to start</a></li>
+          <li><a href="work-with-me.html" class="nav-link">Work with me</a></li>
+        </ul>
+        <a href="pdf-to-interactive-workbook.html" class="btn btn-primary btn-sm nav-cta">Get the free skill</a>
+        <a href="https://creatorhustle.shop" class="btn btn-dark btn-sm nav-shop" target="_blank" rel="noopener">Shop</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <!-- Sun icon (shown in dark mode) -->
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <section class="hero hero--page" id="hero">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <p class="hero-eyebrow animate-on-load" style="--delay: 0">Work with me</p>
+        <h1 class="hero-title animate-on-load" style="--delay: 1">Let's get it <span class="hero-title-accent">done</span></h1>
+        <p class="hero-subtitle animate-on-load" style="--delay: 2">I help coaches and creators get their AI tools built, set up and working, whether you'd like me to do it for you or we do it together.</p>
+        <div class="hero-actions animate-on-load" style="--delay: 3" >
+          <a href="#dfy" class="btn btn-primary btn-lg">Done for you</a>
+          <a href="#dwy" class="btn btn-glass btn-lg">Done with you</a>
+          <a href="#spon" class="btn btn-glass btn-lg">Sponsorships &amp; perks</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wwm-section collab" id="dfy">
+      <div class="container">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">Done for you</span>
+          <h2 class="section-title">Done for you</h2>
+          <p class="section-subtitle">I build it, you launch it.</p>
+        </div>
+        <div class="svc-grid">
+          <div class="svc-card animate-on-scroll">
+            <span class="svc-tag">Done for you</span>
+            <h3>Build an Interactive App for Your Business</h3>
+            <p class="svc-desc">I design and build a branded web app for you, from a simple quiz, calculator or planner to more complex apps, ready to share or sell.</p>
+            <p class="svc-meta">Ready in 7 days</p>
+            <p class="svc-price">$197</p>
+            <a href="build-interactive-mini-app.html" class="btn btn-dark svc-btn">Learn more <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <div class="svc-card animate-on-scroll">
+            <span class="svc-tag">Done for you</span>
+            <h3>Your Own Mini AI Shop</h3>
+            <p class="svc-desc">I build an AI mini shop around your expertise, ready to sell as your own skills and apps shop.</p>
+            <p class="svc-meta">Up to 12 skills, ready in 7 days</p>
+            <p class="svc-price">$297</p>
+            <a href="create-skills-shop.html" class="btn btn-dark svc-btn">Learn more <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wwm-section" id="dwy">
+      <div class="container">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">Done with you</span>
+          <h2 class="section-title">Done with you</h2>
+          <p class="section-subtitle">We build it together, so you learn as you go.</p>
+        </div>
+        <div class="svc-grid">
+          <div class="svc-card animate-on-scroll">
+            <span class="svc-tag">Done with you</span>
+            <h3>AI Clarity Call</h3>
+            <p class="svc-desc">One private call to work out where AI fits in your business and which automations to set up first.</p>
+            <p class="svc-meta">One-hour private call</p>
+            <p class="svc-price">$149</p>
+            <a href="ai-clarity-call.html" class="btn btn-dark svc-btn">Learn more <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <div class="svc-card animate-on-scroll">
+            <span class="svc-tag">Done with you</span>
+            <h3>AI Brain Setup</h3>
+            <p class="svc-desc">Together we set up an AI brain that knows your business, your offers and your voice.</p>
+            <p class="svc-meta">2 hours together + 1 week of support</p>
+            <p class="svc-price">$197</p>
+            <a href="ai-brain-setup.html" class="btn btn-dark svc-btn">Learn more <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <div class="svc-card animate-on-scroll">
+            <span class="svc-tag">Done with you</span>
+            <h3>AI Clone Setup</h3>
+            <p class="svc-desc">We set up your AI clone together, so you can show up in videos and content without filming every time. We'll build your YouTube funnel with your AI clone and create your first AI clone mini course or podcast.</p>
+            <p class="svc-meta">4 hours together + 4 weeks of support</p>
+            <p class="svc-price">$997</p>
+            <a href="ai-clone-setup.html" class="btn btn-dark svc-btn">Learn more <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <div class="svc-card animate-on-scroll svc-card--pink">
+            <span class="svc-tag">Done with you</span>
+            <h3>Build Your Website with AI</h3>
+            <p class="svc-desc">We build your website together with AI, step by step, until it is ready to publish.</p>
+            <p class="svc-meta">2 + 2 hours together + 2 weeks of support</p>
+            <p class="svc-price">$397</p>
+            <a href="build-your-website-with-ai.html" class="btn btn-dark svc-btn">Learn more <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wwm-section collab" id="spon">
+      <div class="container">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">Sponsorships & perks</span>
+          <h2 class="section-title">Sponsorships & perks</h2>
+          <p class="section-subtitle">Feature your offer in my emails, or get everything I make with the All Access Pass.</p>
+        </div>
+        <div class="svc-grid">
+          <div class="svc-card animate-on-scroll">
+            <span class="svc-tag">Sponsorships & perks</span>
+            <h3>Sponsored Email Feature</h3>
+            <p class="svc-desc">Put your freebie or low-ticket offer in front of coaches and creators: in my footer, at the top of my email, or in a solo email.</p>
+            <p class="svc-meta">Footer, top spotlight or solo email</p>
+            <p class="svc-price">From $59</p>
+            <a href="sponsorship-emails.html" class="btn btn-dark svc-btn">Learn more <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <div class="svc-card animate-on-scroll">
+            <span class="svc-tag">Sponsorships & perks</span>
+            <h3>All Access Pass</h3>
+            <p class="svc-desc">Every course and Shopify product, plus everything new for 12 months, for one yearly price.</p>
+            <p class="svc-meta">Founding price, per year</p>
+            <p class="svc-price">$297/year</p>
+            <a href="all-access-pass.html" class="btn btn-dark svc-btn">Learn more <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section router grain" id="enquire">
+      <div class="container router-inner animate-on-scroll">
+        <h2 class="section-title">Not sure which one you need?</h2>
+        <p class="section-subtitle router-subtitle">Send me a quick email about your business and what you'd like help with, and I'll point you to the right option.</p>
+        <a href="mailto:liya@creatorhustle.ai?subject=Work%20with%20me" class="btn btn-primary btn-lg">liya@creatorhustle.ai <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER — dark closer with giant wordmark
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <img class="logo-svg" src="assets/logo.png" alt="Creator Hustle AI" width="463" height="243" loading="lazy">
+        <p class="footer-tagline">
+          Simple AI tools and courses for coaches and creators who want to
+          work less and still grow.
+        </p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/creator.hustle/" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37a4 4 0 1 1-7.91 1.17 4 4 0 0 1 7.91-1.17z"/><path d="M17.5 6.5h.01"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-col" aria-label="Footer navigation">
+        <h3 class="footer-heading">Navigate</h3>
+        <ul class="footer-links">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#offers">Courses</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#stuck">Where to start</a></li>
+          <li><a href="index.html#contact">Waitlists</a></li>
+          <li><a href="work-with-me.html">Work with me</a></li>
+          <li><a href="collaborate.html">Collaborate</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-use.html">Terms of Use</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Contact</h3>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://go.coursehustle.com/l/" target="_blank" rel="noopener">Course login</a></li>
+          <li><a href="mailto:liya@creatorhustle.ai">liya@creatorhustle.ai</a></li>
+          <li><a href="https://www.instagram.com/creator.hustle/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://creatorhustle.shop" target="_blank" rel="noopener">Shop</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Creator Hustle AI. All rights reserved.</p>
+      <a href="#main" class="footer-top-btn" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </a>
+    </div>
+
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Fillout embed loader (contact form) -->
+  <script src="https://server.fillout.com/embed/v1/" async></script>
+</body>
+</html>
