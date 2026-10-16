@@ -2572,3 +2572,8 @@ img.logo-svg {
 .intro-content .intro-text strong { color: var(--color-text); }
 .story-btn { margin-top: var(--space-3); }
 .intro .hero-title-accent { background-image: linear-gradient(90deg, #FF66C4 0%, #E94AAC 100%); }
+
+/* Support page */
+.support-embed { background: var(--color-bg); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); padding: var(--space-4); }
+.support-fallback { text-align: center; margin-top: var(--space-4); color: var(--color-text-muted); font-size: .95rem; }
+.support-fallback a { color: inherit; text-decoration: underline; }
