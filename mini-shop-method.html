@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Shop Method: Build a Small Shop of AI Skills | Creator Hustle AI</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Build a small, focused shop of AI skills your audience actually wants, without months of product creation or a complicated funnel. Mini Shop Method, $39.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<!-- TRACKING SLOT: paste Meta pixel / Google Analytics / Pinterest tag here -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap');
+:root{
+  --pink:#FF66C4; --pink-light:#FFA3DB; --pink-deep:#E94AAC; --pink-tint:#FFE0F3;
+  --turq:#00C2CB; --turq-btn:#00868C; --turq-btn-light:#0A9EA5; --turq-btn-dark:#00767C; --turq-tint:#D9F6F7;
+  --charcoal:#17191F; --charcoal-light:#2B2F38;
+  --text:#1E2733; --muted:#5A6B7F; --border:#E2E8F0; --surface:#F5F7FA; --white:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-weight:400;color:var(--text);background:var(--white);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.narrow{max-width:720px;margin:0 auto}
+section{padding:72px 0}
+h1,h2,h3{font-weight:600;letter-spacing:-0.02em;line-height:1.2;color:var(--charcoal)}
+h1{font-size:clamp(30px,5vw,48px);font-weight:700}
+h2{font-size:clamp(26px,4vw,38px)}
+h3{font-size:20px}
+strong{font-weight:600;color:var(--charcoal)}
+.center{text-align:center}
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:7px 16px;border-radius:999px;background:var(--pink-tint);color:var(--charcoal);border:1px solid var(--pink);margin-bottom:18px}
+.btn{display:inline-block;font-family:inherit;font-weight:700;font-size:17px;text-decoration:none;padding:17px 34px;border-radius:999px;transition:transform .15s ease, box-shadow .15s ease, filter .15s ease}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.btn-pink{background:linear-gradient(180deg,var(--pink) 0%,var(--pink-deep) 100%);color:var(--white);text-shadow:0 1px 2px rgba(150,20,95,.45);box-shadow:0 10px 24px -10px rgba(233,74,172,.8)}
+.btn-turq{background:linear-gradient(180deg,var(--turq-btn-light) 0%,var(--turq-btn) 55%,var(--turq-btn-dark) 100%);color:var(--white);text-shadow:0 1px 1px rgba(0,60,64,.35);box-shadow:0 10px 24px -10px rgba(0,118,124,.7)}
+.micro{font-size:14px;color:var(--muted);margin-top:12px}
+.nothanks{display:inline-block;margin-top:18px;font-size:15px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.nothanks:hover{color:var(--charcoal)}
+.ph{background:#FFF3C4;padding:0 4px;border-radius:3px}
+
+/* CONFIRMATION BAR */
+.confirm{background:var(--turq-tint);border-bottom:1px solid #b5ebee;padding:16px 0;text-align:center;font-weight:600;color:var(--charcoal);font-size:16px}
+.confirm span{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--turq-btn);color:var(--white);align-items:center;justify-content:center;font-size:13px;margin-right:8px;vertical-align:-4px}
+
+/* HERO */
+.hero{background:var(--surface);padding:64px 0 84px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero h1 em{font-style:normal;color:var(--pink-deep)}
+.hero .lead{font-size:19px;margin:20px 0 26px;color:var(--muted)}
+.ticks{list-style:none;margin:0 0 30px}
+.ticks li{padding-left:30px;position:relative;margin-bottom:8px}
+.ticks li:before{content:"✓";position:absolute;left:0;top:0;color:var(--turq-btn);font-weight:800}
+
+/* MOCKUP (illustration) */
+.mock{position:relative;max-width:460px;margin:0 auto}
+.laptop{background:var(--charcoal);border-radius:16px 16px 4px 4px;padding:12px}
+.screen{background:var(--white);border-radius:8px;padding:18px;min-height:250px}
+.urlbar{font-size:11px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:5px 10px;margin-bottom:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.app-tag{font-size:11px;font-weight:700;color:var(--turq-btn);letter-spacing:.1em;text-transform:uppercase}
+.app-title{font-size:18px;font-weight:600;margin:4px 0 12px;line-height:1.3;color:var(--charcoal)}
+.opt{font-size:13px;background:var(--white);border:2px solid var(--border);border-radius:10px;padding:8px 12px;margin-bottom:8px}
+.opt.on{border-color:var(--pink);background:var(--pink-tint)}
+.progress{height:6px;background:var(--border);border-radius:6px;margin-top:12px;overflow:hidden}
+.progress span{display:block;height:100%;width:50%;background:var(--turq)}
+.base{height:14px;background:#cfd4dc;border-radius:0 0 18px 18px;margin:0 -22px}
+.phone{position:absolute;right:-14px;bottom:-30px;width:130px;background:var(--charcoal);border-radius:20px;padding:7px}
+.phone .ps{background:var(--pink-tint);border-radius:14px;padding:12px 10px;text-align:center}
+.phone .ps .big{font-size:22px;font-weight:800;color:var(--pink-deep)}
+.phone .ps small{display:block;font-size:10px;line-height:1.35}
+.sale{position:absolute;left:-16px;top:24px;background:var(--white);border-radius:12px;padding:8px 12px;font-size:12px;font-weight:600;box-shadow:0 6px 18px rgba(23,25,31,.14)}
+.sale b{color:var(--turq-btn)}
+
+
+/* BEFORE / AFTER SLIDER */
+.ba{position:relative;width:100%;max-width:520px;margin:0 auto;aspect-ratio:4/3;border-radius:24px;overflow:hidden;background:var(--white);box-shadow:0 24px 48px -24px rgba(23,25,31,.35);border:1px solid var(--border);touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:ew-resize}
+.ba-stage{position:absolute;left:0;top:0;width:520px;height:390px;transform-origin:0 0}
+.ba-layer{position:absolute;inset:0}
+.ba-before{background:linear-gradient(160deg,#F5F7FA,#E9EDF2)}
+.ba-after{background:radial-gradient(ellipse at 70% 30%,var(--pink-tint),#FFF5FB 60%,var(--turq-tint));clip-path:polygon(calc(var(--pos) + 6%) 0,100% 0,100% 100%,calc(var(--pos) - 6%) 100%)}
+.ba-label{position:absolute;top:22px;font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;padding:9px 20px;border-radius:999px;z-index:3;pointer-events:none}
+.ba-label.b{left:22px;background:var(--charcoal);color:var(--white)}
+.ba-label.a{right:22px;background:var(--pink);color:var(--charcoal)}
+/* paper sheets */
+.sheet{position:absolute;width:170px;height:230px;background:var(--white);border-radius:4px;box-shadow:0 8px 18px rgba(23,25,31,.16);padding:16px 14px;font-size:8px;color:#8a95a3}
+.sheet h5{font-size:11px;color:var(--charcoal);font-weight:700;margin-bottom:4px;line-height:1.2}
+.sheet .sm{font-size:7px;margin-bottom:8px}
+.sheet .ln{height:5px;background:#E2E8F0;border-radius:3px;margin:6px 0}
+.sheet .ln.s{width:60%}
+.sheet .bx{display:flex;gap:5px;align-items:center;margin:6px 0}
+.sheet .bx i{width:8px;height:8px;border:1px solid #b9c2cd;border-radius:2px;flex:none}
+.sheet .bx span{height:4px;background:#E2E8F0;border-radius:3px;flex:1}
+.sheet .tbl{border:1px solid #E2E8F0;border-radius:3px;margin-top:8px}
+.sheet .tbl div{height:16px;border-bottom:1px solid #E2E8F0}
+.sheet .tbl div:last-child{border-bottom:0}
+.sh1{left:34px;top:92px;transform:rotate(-8deg)}
+.sh2{left:128px;top:74px;transform:rotate(-2deg)}
+.sh3{left:222px;top:86px;transform:rotate(5deg)}
+.pdf-tag{position:absolute;top:8px;right:8px;background:#E94A4A;color:#fff;font-size:7px;font-weight:800;padding:2px 5px;border-radius:3px}
+/* laptop + phone */
+.ba .lap{position:absolute;left:170px;top:84px;width:300px}
+.ba .lap .lid{background:var(--charcoal);border-radius:12px 12px 3px 3px;padding:8px}
+.ba .lap .scr{background:var(--white);border-radius:6px;padding:12px;height:178px}
+.ba .lap .bar{font-size:7px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:3px 7px;margin-bottom:10px;white-space:nowrap;overflow:hidden}
+.ba .lap .tg{font-size:7px;font-weight:800;color:var(--turq-btn);letter-spacing:.1em;text-transform:uppercase}
+.ba .lap .tt{font-size:12px;font-weight:700;color:var(--charcoal);margin:3px 0 8px;line-height:1.25}
+.ba .lap .op{font-size:8.5px;border:1.5px solid var(--border);border-radius:7px;padding:5px 8px;margin-bottom:5px;color:var(--text)}
+.ba .lap .op.on{border-color:var(--pink);background:var(--pink-tint)}
+.ba .lap .pg{height:4px;background:var(--border);border-radius:4px;margin-top:8px;overflow:hidden}
+.ba .lap .pg span{display:block;height:100%;width:60%;background:var(--turq)}
+.ba .lap .base{height:9px;background:#cfd4dc;border-radius:0 0 12px 12px;margin:0 -16px}
+.ba .ph{position:absolute;left:400px;top:150px;width:96px;background:var(--charcoal);border-radius:16px;padding:5px;box-shadow:0 12px 24px -8px rgba(23,25,31,.45)}
+.ba .ph .ps{background:linear-gradient(180deg,var(--pink-tint),var(--white));border-radius:12px;padding:12px 8px;text-align:center;height:170px;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.ba .ph small{font-size:7px;color:var(--muted)}
+.ba .ph b{font-size:15px;font-weight:800;color:var(--pink-deep);line-height:1.1}
+.ba .ph .cta{font-size:7px;font-weight:700;background:var(--turq-btn);color:#fff;border-radius:99px;padding:4px 6px;margin-top:4px}
+.ba .ping{position:absolute;left:150px;top:70px;background:var(--white);border-radius:10px;padding:6px 10px;font-size:9px;font-weight:600;box-shadow:0 6px 16px rgba(23,25,31,.15);color:var(--charcoal)}
+.ba .ping b{color:var(--turq-btn)}
+/* divider + handle */
+.ba-line{position:absolute;top:-10%;bottom:-10%;left:var(--pos);width:4px;margin-left:-2px;background:var(--pink);transform:rotate(9.1deg);z-index:2;pointer-events:none;box-shadow:0 0 0 1px rgba(255,255,255,.6)}
+.ba-handle{position:absolute;top:50%;left:var(--pos);width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:var(--charcoal);border:4px solid var(--pink);display:flex;align-items:center;justify-content:center;z-index:4;pointer-events:none;box-shadow:0 8px 20px rgba(23,25,31,.35)}
+.ba-handle svg{width:24px;height:24px;color:var(--white)}
+.ba input[type=range]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:5;margin:0}
+.ba input[type=range]:focus-visible + .ba-focus{opacity:1}
+.ba-focus{position:absolute;inset:0;border-radius:24px;box-shadow:inset 0 0 0 3px var(--turq);opacity:0;pointer-events:none;z-index:6}
+.ba-hint{text-align:center;font-size:13px;color:var(--muted);margin-top:12px}
+
+/* PROBLEM + FORMATS */
+.problem p.intro{font-size:19px;margin:18px auto 30px;max-width:640px;color:var(--muted)}
+.formats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:680px;margin:0 auto 30px}
+.fmt{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;text-align:center;font-size:15px;color:var(--muted)}
+.fmt b{display:block;font-size:18px;color:var(--charcoal)}
+.fmt.win{background:linear-gradient(180deg,var(--pink) 0%,var(--pink-deep) 100%);border-color:var(--pink);color:var(--white)}
+.fmt.win b{color:var(--white)}
+.pivot{font-size:22px;font-weight:600;color:var(--turq-btn);line-height:1.4}
+
+/* EMPATHY */
+.empathy{background:var(--charcoal);color:var(--white);padding:56px 0}
+.empathy p{font-style:italic;font-size:clamp(20px,3vw,26px);text-align:center;max-width:760px;margin:0 auto;line-height:1.5}
+
+/* INTRODUCING */
+.intro-sec{background:var(--white)}
+.intro-sec .name{font-size:clamp(40px,7vw,64px);font-weight:800;color:var(--charcoal);letter-spacing:-0.02em;line-height:1.1;margin:6px 0 10px}
+.intro-sec .name em{font-style:normal;color:var(--pink-deep)}
+.intro-sec .sub{font-size:20px;margin-bottom:36px;color:var(--muted)}
+.intro-slider{max-width:620px;margin:0 auto 40px}
+.intro-slider .ba{max-width:620px}
+.box3d{max-width:340px;margin:0 auto 40px;background:linear-gradient(135deg,var(--pink),var(--pink-light));border-radius:22px;padding:34px 26px;color:var(--charcoal);text-align:center;box-shadow:14px 14px 0 var(--turq)}
+.box3d .logo{width:54px;height:54px;border-radius:50%;background:var(--white);color:var(--turq-btn);font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;border-bottom:4px solid var(--pink-deep)}
+.box3d .t{font-size:30px;font-weight:800;line-height:1.1}
+.box3d .s{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-top:10px}
+.intro-sec .desc{max-width:680px;margin:0 auto 28px;font-size:18px;color:var(--muted)}
+.price-line{font-size:22px;margin-bottom:24px}
+.price-line s{color:var(--muted);margin-right:8px}
+.price-line b{font-size:36px;color:var(--charcoal)}
+
+/* LESSONS */
+.inside{background:var(--surface)}
+.inside .lead{margin:12px 0 40px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;text-align:left}
+.step{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:28px}
+.lesson-no{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.icon{width:46px;height:46px;border-radius:50%;background:var(--turq);display:flex;align-items:center;justify-content:center;font-size:22px}
+.step h3{margin-bottom:10px}
+.step ul{list-style:none}
+.step li{padding-left:24px;position:relative;margin-bottom:6px;font-size:16px;color:var(--muted)}
+.step .lesson-desc{font-size:16px;color:var(--muted);line-height:1.6}
+.step li:before{content:"★";position:absolute;left:0;color:var(--pink)}
+.bonus-title{margin:56px 0 24px;font-size:26px}
+.bonuses{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:left}
+.bonus{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:22px;border-top:6px solid var(--pink)}
+.bonus:nth-child(2){border-top-color:var(--turq)}
+.bonus .tag{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--pink-deep);text-transform:uppercase}
+.bonus h3{font-size:18px;margin:6px 0 8px}
+.bonus p{font-size:15px;color:var(--muted)}
+
+/* ORIGIN */
+.origin-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+.origin h2{margin-bottom:22px}
+.origin p{margin-bottom:16px;color:var(--muted)}
+.origin-grid{align-items:center}
+.origin img{width:100%;height:0;min-height:max(100%,500px);object-fit:cover;object-position:50% 0%;border-radius:24px;box-shadow:12px 12px 0 var(--pink-tint)}
+
+/* PRICE */
+.price{background:var(--pink)}
+.card{background:var(--white);border-radius:24px;padding:48px 40px;max-width:620px;margin:0 auto;text-align:center}
+.urgency{display:inline-block;background:var(--charcoal);color:var(--white);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:18px}
+.price .pname{font-size:clamp(30px,5vw,42px);font-weight:800;color:var(--charcoal);margin-bottom:8px}
+.price .was{font-size:22px;color:var(--muted);text-decoration:line-through}
+.price .now{font-size:64px;font-weight:800;color:var(--charcoal);line-height:1.1;margin:4px 0 6px}
+.price .note{margin-bottom:26px;color:var(--muted)}
+
+/* TESTIMONIALS */
+.proof{background:var(--white)}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px;text-align:left}
+.tcard{background:var(--white);border-radius:18px;padding:24px;border:2px dashed var(--turq)}
+.tcard .stars{color:var(--pink);letter-spacing:2px;margin-bottom:10px}
+.tcard p{font-size:15px;font-style:italic;margin-bottom:12px;color:var(--muted)}
+.tcard .who{font-weight:600;font-size:14px}
+
+/* FAQ */
+.faq{background:var(--surface)}
+.faq h2{margin-bottom:30px}
+details{background:var(--white);border-radius:16px;margin-bottom:12px;border:1px solid var(--border)}
+summary{cursor:pointer;list-style:none;padding:20px 54px 20px 22px;font-weight:600;color:var(--charcoal);position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:22px;top:50%;transform:translateY(-50%);font-size:24px;color:var(--turq-btn);font-weight:500}
+details[open] summary:after{content:"–"}
+details .a{padding:0 22px 20px;color:var(--muted)}
+
+/* FINAL */
+.final{background:var(--white)}
+.final h2{margin-bottom:14px}
+.final .recap{max-width:640px;margin:0 auto 32px;font-size:18px;color:var(--muted)}
+.getlist{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:30px;max-width:620px;margin:0 auto 32px;text-align:left}
+.getlist li{list-style:none;padding:10px 0 10px 36px;position:relative;border-bottom:1px solid var(--border);font-weight:500;color:var(--charcoal)}
+.getlist li:last-child{border-bottom:0}
+.getlist li:before{content:"✓";position:absolute;left:0;top:10px;width:24px;height:24px;border-radius:50%;background:var(--turq-btn);color:var(--white);font-size:13px;display:flex;align-items:center;justify-content:center;font-weight:700}
+.signoff{font-family:'Caveat',cursive;font-size:32px;color:var(--pink-deep);margin-top:28px}
+
+/* RESPONSIVE */
+@media(max-width:860px){
+  .hero-grid,.origin-grid{grid-template-columns:1fr}
+  .hero{text-align:center}
+  .ticks{display:inline-block;text-align:left}
+  .origin img{max-width:320px;margin:0 auto;order:-1;height:auto;min-height:0;aspect-ratio:4/5}
+  .origin{text-align:center}
+  .bonuses,.tgrid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  body{font-size:16px}
+  section{padding:56px 0}
+  .grid2,.formats{grid-template-columns:1fr}
+  .card{padding:34px 22px}
+  .phone{width:104px;right:-4px;bottom:-26px}
+  .phone .ps .big{font-size:18px}
+  .sale{left:-4px;top:12px;font-size:11px}
+  .btn{padding:16px 26px;font-size:16px}
+  .price .now{font-size:52px}
+}
+
+/* FULL SALES PAGE EXTRAS */
+.pains{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:820px;margin:0 auto}
+.pain{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;text-align:left;color:var(--text)}
+.pain:before{content:"✕";display:inline-block;color:var(--pink-deep);font-weight:800;margin-right:8px}
+.body{background:var(--surface)}
+.body h2{margin-bottom:24px}
+.body p{margin-bottom:18px;color:var(--muted)}
+.body .pivot{text-align:center;margin:30px 0;color:var(--turq-btn)}
+.body .formats{margin:28px 0}
+.imagine{background:var(--charcoal)}
+.imagine .card{max-width:800px;text-align:left}
+.script{font-family:'Caveat',cursive;font-size:clamp(42px,6vw,58px);color:var(--turq-btn);line-height:1;margin-bottom:28px;text-align:center}
+.imagine-item{display:flex;gap:16px;margin-bottom:24px}
+.imagine-item p{color:var(--muted)}
+.num{flex:0 0 40px;height:40px;border-radius:50%;background:var(--pink-tint);color:var(--pink-deep);font-weight:800;display:flex;align-items:center;justify-content:center}
+.imagine-item h3{margin-bottom:4px}
+.examples{margin-top:48px;text-align:center}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:16px}
+.chip{background:var(--white);border:1px solid var(--border);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:500}
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:32px}
+.fit-box{border-radius:20px;padding:28px}
+.fit-box.yes{background:var(--turq-tint)}
+.fit-box.no{background:var(--pink-tint)}
+.fit-box h3{margin-bottom:14px}
+.fit-box ul{list-style:none}
+.fit-box li{padding-left:26px;position:relative;margin-bottom:8px;font-size:16px}
+.fit-box.yes li:before{content:"✓";position:absolute;left:0;color:var(--turq-btn);font-weight:800}
+.fit-box.no li:before{content:"✕";position:absolute;left:0;color:var(--pink-deep);font-weight:800}
+@media(max-width:860px){.fit-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.pains{grid-template-columns:1fr}}
+
+/* MINI SHOP METHOD */
+.shopmock{position:relative;max-width:520px;margin:0 auto;padding:10px 18px 46px 0}
+.sm-win{background:var(--white);border-radius:18px;box-shadow:0 28px 60px -24px rgba(23,25,31,.35);border:1px solid var(--border);overflow:hidden}
+.sm-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:#F1F3F6;border-bottom:1px solid var(--border)}
+.sm-bar i{width:9px;height:9px;border-radius:50%;background:#FF5F57}.sm-bar i:nth-child(2){background:#FEBC2E}.sm-bar i:nth-child(3){background:#28C840}
+.sm-bar span{margin-left:10px;font-size:11px;color:var(--muted);background:var(--white);border-radius:6px;padding:2px 10px}
+.sm-head{display:flex;justify-content:space-between;align-items:center;padding:16px 18px 6px}
+.sm-head b{font-size:18px;color:var(--charcoal)}
+.sm-drop{font-size:11px;font-weight:700;background:var(--pink-tint);color:var(--pink-deep);border-radius:99px;padding:5px 10px}
+.sm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:12px 18px 20px}
+.sm-card{border:1px solid var(--border);border-radius:14px;padding:8px;display:flex;flex-direction:column;gap:2px}
+.sm-img{height:76px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:6px}
+.c1 .sm-img{background:var(--pink-tint)}.c2 .sm-img{background:var(--turq-tint)}.c3 .sm-img{background:#FFF1D6}
+.sm-card b{font-size:12px;line-height:1.25;color:var(--charcoal)}
+.sm-card small{font-size:10px;color:var(--muted)}
+.sm-card em{font-style:normal;font-weight:800;font-size:13px;color:var(--turq-btn);margin-top:2px}
+.sm-ping{position:absolute;left:-14px;bottom:4px;background:var(--charcoal);color:var(--white);font-size:13px;border-radius:99px;padding:10px 16px;box-shadow:0 14px 28px -10px rgba(23,25,31,.5)}
+.sm-ping b{color:var(--pink)}
+.sm-note{position:absolute;right:0;top:-14px;width:104px;background:linear-gradient(180deg,var(--pink) 0%,var(--pink-deep) 100%);color:var(--white);border-radius:16px;padding:12px 8px;text-align:center;box-shadow:0 14px 28px -10px rgba(233,74,172,.7);transform:rotate(4deg)}
+.sm-note small{display:block;font-size:10px;opacity:.9}.sm-note b{display:block;font-size:20px;color:var(--white);line-height:1.1}
+.fit a{color:var(--pink-deep);font-weight:600}
+.msm-steps{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.msm-steps span{background:var(--white);border-radius:99px;font-size:12px;font-weight:700;padding:5px 10px;color:var(--charcoal)}
+@media (max-width:640px){
+  .sm-grid{gap:8px;padding:10px 12px 16px}.sm-img{height:58px;font-size:22px}
+  .sm-card b{font-size:11px}.sm-ping{left:0;font-size:12px}.sm-note{width:88px}.sm-note b{font-size:17px}
+  .shopmock{padding-right:10px}
+}
+
+/* HERO STACK: headline, mockup, text, button */
+.hero-stack{max-width:820px;margin:0 auto;text-align:center}
+.hero-stack h1{max-width:780px;margin-left:auto;margin-right:auto}
+.hero-stack .hero-media{max-width:600px;margin:32px auto 6px}
+.hero-stack .lead{max-width:680px;margin:22px auto 22px}
+.hero-stack .ticks{display:table;text-align:left;margin:0 auto 28px}
+</style>
+</head>
+<body>
+<!-- TRACKING SLOT: paste analytics / pixel code here -->
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="wrap hero-stack">
+      <span class="eyebrow">New · Build it, stock it, fill it</span>
+      <h1>You don't need a digital product empire. You need a <em>Mini Shop</em>.</h1>
+      <div class="hero-media">
+      <div class="shopmock" aria-hidden="true">
+        <div class="sm-win">
+          <div class="sm-bar"><i></i><i></i><i></i><span>yourshop.com</span></div>
+          <div class="sm-head"><b>Your Mini Shop</b><span class="sm-drop">🍂 Autumn drop</span></div>
+          <div class="sm-grid">
+            <div class="sm-card c1"><div class="sm-img"><span>✍️</span></div><b>Caption Writer</b><small>AI skill</small><em>$19</em></div>
+            <div class="sm-card c2"><div class="sm-img"><span>📆</span></div><b>Content Planner</b><small>AI skill</small><em>$27</em></div>
+            <div class="sm-card c3"><div class="sm-img"><span>💌</span></div><b>Email Helper</b><small>AI skill</small><em>$27</em></div>
+          </div>
+        </div>
+        <div class="sm-ping">🛍️ New order · <b>Content Planner</b></div>
+        <div class="sm-note"><small>Your shop</small><b>3 offers</b><small>not 30</small></div>
+      </div>
+    
+      </div>
+      <p class="lead">Build a small, focused shop of AI skills your audience actually wants, <strong>without spending months creating products</strong> or building a complicated funnel.</p>
+      <ul class="ticks">
+        <li>A few small offers, not a giant catalogue.</li>
+        <li>Ready-to-customise inventory, so you're not starting from scratch.</li>
+        <li>Simple ways to get seen, no complicated funnel.</li>
+      </ul>
+      <a class="btn btn-pink" href="[CHECKOUT LINK]">Yes! Build My Mini Shop →</a>
+      <p class="micro">$39 · Instant access</p>
+    
+  </div>
+</section>
+
+<!-- 2. PROBLEM -->
+<section class="problem center">
+  <div class="wrap">
+    <h2>It's not your ideas. It's the size of the plan.</h2>
+    <p class="intro">You've got expertise and more product ideas than time. But somewhere along the way, "open a shop" turned into "build an empire first".</p>
+    <div class="pains">
+      <div class="pain">You think you need 30 products before you're allowed to open.</div>
+      <div class="pain">Every new product takes months, and then barely sells.</div>
+      <div class="pain">Your best ideas are still stuck in your head, or your Google Drive.</div>
+      <div class="pain">Funnels, tripwires, upsells… you closed the tab. Fast.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. BODY COPY -->
+<section class="body">
+  <div class="wrap narrow">
+    <h2 class="center">Why your shop still isn't open (it's not you, promise)</h2>
+    <p>I know… you've scrolled past those shops with 200 products and thought, "Right. I'll start in January." Me too :)</p>
+    <p>So you plan the big catalogue. Then the funnel. Then the email sequence for the funnel. And the shop stays on your to-do list the way my laundry basket stays on mine: <strong>"later."</strong></p>
+    <p>Here's the thing. A big catalogue is a lot to create, a lot to update and a lot to promote. What people actually want is <strong>one small thing that solves the problem they have right now.</strong> And AI skills are exactly that: small, useful, and quick to make with AI.</p>
+    <div class="formats">
+      <div class="fmt"><b>A huge catalogue</b>gets overwhelming</div>
+      <div class="fmt"><b>A complex funnel</b>gets abandoned</div>
+      <div class="fmt win"><b>A Mini Shop</b>gets opened</div>
+    </div>
+    <p class="pivot">You don't need more products.<br>You need the right few.</p>
+    <p>And you already have what you need to stock it. Your expertise, your frameworks, the questions your audience asks you every week: that's your inventory. AI does the heavy lifting. You make it yours.</p>
+  </div>
+</section>
+
+<!-- 4. IMAGINE IF -->
+<section class="imagine">
+  <div class="wrap">
+    <div class="card">
+      <div class="script">Imagine if…</div>
+      <div class="imagine-item"><div class="num">1</div><div><h3>Your shop was actually open</h3><p>Not "one day". Open, with a few small offers your audience has been asking for.</p></div></div>
+      <div class="imagine-item"><div class="num">2</div><div><h3>You stocked it without starting from scratch</h3><p>Ready-to-customise inventory you make your own, instead of staring at a blank page.</p></div></div>
+      <div class="imagine-item"><div class="num">3</div><div><h3>You refreshed it each season instead of rebuilding it</h3><p>Swap in a seasonal drop, keep the shop. No giant catalogue to babysit.</p></div></div>
+      <div class="center" style="margin-top:12px"><a class="btn btn-pink" href="[CHECKOUT LINK]">I Want This →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. EMPATHY BRIDGE -->
+<section class="empathy">
+  <div class="wrap"><p>If "build a shop" sounds like a full-time job you don't have time for… you're exactly who I made this for.</p></div>
+</section>
+
+<!-- 6. INTRODUCING -->
+<section class="intro-sec center">
+  <div class="wrap">
+    <span class="eyebrow">Introducing…</span>
+    <div class="name">Mini Shop <em>Method</em></div>
+    <p class="sub">Build it, stock it, fill it.</p>
+    <div class="box3d" aria-hidden="true">
+      <div class="logo">CH</div>
+      <div class="t">Mini Shop Method</div>
+      <div class="msm-steps"><span>🛍️ Build</span><span>📦 Stock</span><span>📣 Fill</span></div>
+    </div>
+    <p class="desc"><strong>Mini Shop Method</strong> is a simple system for building a small, focused shop of AI skills. You'll <strong>build your Mini Shop</strong>, <strong>stock it</strong> with ready-to-customise inventory, and <strong>bring people in</strong> with simple visibility ideas, so your shop is open and working without months of product creation.</p>
+    <p class="price-line"><b>$39</b></p>
+    <a class="btn btn-turq" href="[CHECKOUT LINK]">Grab the Mini Shop Method →</a>
+  </div>
+</section>
+
+<!-- 7. ORIGIN STORY -->
+<section class="origin">
+  <div class="wrap origin-grid">
+    <div>
+      <h2>Hey, I'm Liya 👋</h2>
+      <p>I've been creating and selling digital products since 2014. Today, I help course creators, coaches and small business owners use AI to create practical products and resources for their audiences.</p>
+      <p>As a mum building my business during nap times, I don't have time to look after a giant catalogue. So my own Skills Shop started small: <strong>a few AI skills, each one a system I use in my own business.</strong></p>
+      <p>I created the <strong>Mini Shop Method</strong> to show you the same small, focused approach, from picking your niche to stocking your shelves and getting your shop seen.</p>
+    </div>
+    <img src="assets/liya-bio.jpg" alt="Liya Bergen smiling in a pink jumper" width="900" height="1125" loading="lazy">
+  </div>
+</section>
+
+<!-- 8. WHAT'S INSIDE -->
+<section class="inside center">
+  <div class="wrap">
+    <h2>What's inside the Mini Shop Method ✨</h2>
+    <p class="lead">Three stages to open your shop, and one simple way to keep it fresh.</p>
+    <p class="lead" style="margin-top:-8px">[HOW IT'S DELIVERED: e.g. video lessons, a workbook and templates]</p>
+    <div class="grid2">
+      <div class="step">
+        <div class="lesson-no"><span class="icon" aria-hidden="true">🛍️</span>Part 1</div>
+        <h3>Build Your Mini Shop</h3>
+        <p class="lesson-desc">Pick your niche and shop concept, then plan your categories, pricing, storefront and structure.</p>
+      </div>
+      <div class="step">
+        <div class="lesson-no"><span class="icon" aria-hidden="true">📦</span>Part 2</div>
+        <h3>Stock Your Shelves</h3>
+        <p class="lesson-desc">Fill your shop from the Mini Shop Inventory: ready-to-customise AI skills and small products you make your own. [NUMBER OF ITEMS IN THE INVENTORY]</p>
+      </div>
+      <div class="step">
+        <div class="lesson-no"><span class="icon" aria-hidden="true">📣</span>Part 3</div>
+        <h3>Bring People In</h3>
+        <p class="lesson-desc">The Mini Shop Visibility Toolkit: AI content, Reels, Pinterest, blogging and SEO, YouTube, email, AI ads, lead magnets and collaborations.</p>
+      </div>
+      <div class="step">
+        <div class="lesson-no"><span class="icon" aria-hidden="true">🍂</span>Part 4</div>
+        <h3>Keep It Fresh</h3>
+        <p class="lesson-desc">Rotate seasonal or quarterly drops, so your shop feels new without you maintaining one huge catalogue.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="fit">
+  <div class="wrap">
+    <h2 class="center">Is this for you?</h2>
+    <div class="fit-grid">
+      <div class="fit-box yes"><h3>Yes, if you…</h3><ul>
+        <li>Are a coach, creator, freelancer or consultant with expertise and ideas</li>
+        <li>Feel overwhelmed by the idea of needing dozens of products</li>
+        <li>Want a small shop that makes money, not a digital product empire</li>
+        <li>Want a simple plan instead of a complicated funnel</li>
+        <li>Are happy to let AI do the heavy lifting</li>
+      </ul></div>
+      <div class="fit-box no"><h3>Not for you if you…</h3><ul>
+        <li>Want someone to build the whole shop for you (ask me about my <a href="create-skills-shop.html">done-for-you Mini Shop Setup</a> instead)</li>
+        <li>Expect sales without ever sharing your shop</li>
+        <li>Are looking for a "passive income overnight" promise</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. PRICE + URGENCY -->
+<section class="price">
+  <div class="wrap">
+    <div class="card">
+      <span class="urgency">Now open</span>
+      <div class="pname">Mini Shop Method</div>
+      <div class="now">$39</div>
+      <p class="note">One-time payment. Instant access.</p>
+      <a class="btn btn-turq" href="[CHECKOUT LINK]">Yes! I Need This →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 10. SOCIAL PROOF (PLACEHOLDERS: replace with real quotes only) -->
+<!-- Testimonials hidden until real ones are in
+<section class="proof center">
+  <div class="wrap">
+    <h2>What people are saying</h2>
+    <div class="tgrid">
+      <div class="tcard"><div class="stars">★★★★★</div><p>[REAL TESTIMONIAL #1: paste a real quote here]</p><div class="who">[NAME, ROLE]</div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p>[REAL TESTIMONIAL #2: paste a real quote here]</p><div class="who">[NAME, ROLE]</div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p>[REAL TESTIMONIAL #3: paste a real quote here]</p><div class="who">[NAME, ROLE]</div></div>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- 11. FAQ -->
+<section class="faq">
+  <div class="wrap narrow">
+    <h2 class="center">Questions? I've got you.</h2>
+    <details><summary>How many products do I need to start?</summary><div class="a"><p>Fewer than you think. The whole point of a Mini Shop is to start with a few small offers your audience actually wants, then add or rotate as you go.</p></div></details>
+    <details><summary>Do I need to be techy?</summary><div class="a"><p>Not at all. Everything is explained step by step in plain English, and AI does the heavy lifting when you create and customise your products.</p></div></details>
+    <details><summary>Where does my shop live?</summary><div class="a"><p>Part 1 helps you choose your storefront and set up the structure, so you pick a platform that suits you and your audience.</p></div></details>
+    <details><summary>Will I make money straight away?</summary><div class="a"><p>I can't promise that, and I'd be wary of anyone who does. What the Mini Shop Method gives you is a simple system to build, stock and promote your shop. Your results depend on your audience and on actually sharing your shop.</p></div></details>
+    <details><summary>Can I get a refund?</summary><div class="a"><p>Because it's a digital product with instant access, there are no refunds. But if something isn't working for you, email me at <a href="mailto:liya@creatorhustle.ai">liya@creatorhustle.ai</a> and we'll sort it out together.</p></div></details>
+  </div>
+</section>
+
+<!-- 12. FINAL CTA -->
+<section class="final center">
+  <div class="wrap">
+    <h2>Your Mini Shop could be open sooner than you think.</h2>
+    <p class="recap">Stop planning the empire. Open the <strong>Mini Shop</strong>.</p>
+    <ul class="getlist">
+      <li>Part 1: Build Your Mini Shop</li>
+      <li>Part 2: Stock Your Shelves with the Mini Shop Inventory</li>
+      <li>Part 3: Bring People In with the Mini Shop Visibility Toolkit</li>
+      <li>Part 4: Keep It Fresh with seasonal drops</li>
+    </ul>
+    <p class="price-line"><b>$39</b></p>
+    <!-- FORM SLOT: paste your checkout embed (ThriveCart / Shopify buy button / payment link) here, or keep the button below -->
+    <a class="btn btn-turq" href="[CHECKOUT LINK]">Build My Mini Shop →</a>
+    <p class="micro">Instant access · One-time payment · No tech skills needed</p>
+    <p class="signoff">Can't wait to see your shop open ✨ Liya</p>
+  </div>
+</section>
+  <footer style="background:#17191F;color:rgba(255,255,255,.7);text-align:center;padding:28px 20px;font:14px/1.6 Inter,system-ui,sans-serif">
+    <p style="margin:0">&copy; 2026 Creator Hustle AI &middot; <a href="privacy-policy.html" style="color:#fff">Privacy Policy</a> &middot; <a href="terms-of-use.html" style="color:#fff">Terms of Use</a> &middot; <a href="disclaimer.html" style="color:#fff">Disclaimer</a> &middot; <a href="contact.html" style="color:#fff">Contact</a> &middot; <a href="support.html" style="display:inline-block;margin-left:4px;padding:4px 12px;border-radius:999px;background:linear-gradient(180deg,#FF66C4,#E94AAC);color:#fff;font-weight:600;text-decoration:none">Customer Support</a></p>
+  </footer>
+</body>
+</html>

@@ -129,7 +129,8 @@ strong{font-weight:600;color:var(--charcoal)}
 .formats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:680px;margin:0 auto 30px}
 .fmt{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;text-align:center;font-size:15px;color:var(--muted)}
 .fmt b{display:block;font-size:18px;color:var(--charcoal)}
-.fmt.win{background:var(--pink);border-color:var(--pink);color:var(--charcoal)}
+.fmt.win{background:linear-gradient(180deg,var(--pink) 0%,var(--pink-deep) 100%);border-color:var(--pink);color:var(--white)}
+.fmt.win b{color:var(--white)}
 .pivot{font-size:22px;font-weight:600;color:var(--turq-btn);line-height:1.4}
 
 /* EMPATHY */
@@ -141,6 +142,8 @@ strong{font-weight:600;color:var(--charcoal)}
 .intro-sec .name{font-size:clamp(40px,7vw,64px);font-weight:800;color:var(--charcoal);letter-spacing:-0.02em;line-height:1.1;margin:6px 0 10px}
 .intro-sec .name em{font-style:normal;color:var(--pink-deep)}
 .intro-sec .sub{font-size:20px;margin-bottom:36px;color:var(--muted)}
+.intro-slider{max-width:620px;margin:0 auto 40px}
+.intro-slider .ba{max-width:620px}
 .box3d{max-width:340px;margin:0 auto 40px;background:linear-gradient(135deg,var(--pink),var(--pink-light));border-radius:22px;padding:34px 26px;color:var(--charcoal);text-align:center;box-shadow:14px 14px 0 var(--turq)}
 .box3d .logo{width:54px;height:54px;border-radius:50%;background:var(--white);color:var(--turq-btn);font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;border-bottom:4px solid var(--pink-deep)}
 .box3d .t{font-size:30px;font-weight:800;line-height:1.1}
@@ -174,7 +177,8 @@ strong{font-weight:600;color:var(--charcoal)}
 .origin-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
 .origin h2{margin-bottom:22px}
 .origin p{margin-bottom:16px;color:var(--muted)}
-.origin img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:24px;box-shadow:12px 12px 0 var(--pink-tint)}
+.origin-grid{align-items:center}
+.origin img{width:100%;height:0;min-height:max(100%,500px);object-fit:cover;object-position:50% 0%;border-radius:24px;box-shadow:12px 12px 0 var(--pink-tint)}
 
 /* PRICE */
 .price{background:var(--pink)}
@@ -218,7 +222,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
   .hero-grid,.origin-grid{grid-template-columns:1fr}
   .hero{text-align:center}
   .ticks{display:inline-block;text-align:left}
-  .origin img{max-width:320px;margin:0 auto;order:-1}
+  .origin img{max-width:320px;margin:0 auto;order:-1;height:auto;min-height:0;aspect-ratio:4/5}
   .origin{text-align:center}
   .bonuses,.tgrid{grid-template-columns:1fr}
 }
@@ -264,26 +268,23 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 .fit-box.no li:before{content:"✕";position:absolute;left:0;color:var(--pink-deep);font-weight:800}
 @media(max-width:860px){.fit-grid{grid-template-columns:1fr}}
 @media(max-width:640px){.pains{grid-template-columns:1fr}}
+
+/* HERO STACK: headline, mockup, text, button */
+.hero-stack{max-width:820px;margin:0 auto;text-align:center}
+.hero-stack h1{max-width:780px;margin-left:auto;margin-right:auto}
+.hero-stack .hero-media{max-width:600px;margin:32px auto 6px}
+.hero-stack .lead{max-width:680px;margin:22px auto 22px}
+.hero-stack .ticks{display:table;text-align:left;margin:0 auto 28px}
 </style>
 </head>
 <body>
 
 <!-- 1. HERO -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
+  <div class="wrap hero-stack">
       <span class="eyebrow">New · No code · 4 short lessons</span>
       <h1>What if your next product was an <em>interactive mini app</em> people actually use, with no tech skills needed?</h1>
-      <p class="lead">Quizzes, calculators, planners, generators… built by chatting with an AI builder, branded to you, and ready to grow your list or sell for <strong>$9–$47</strong>.</p>
-      <ul class="ticks">
-        <li>No coding. Not even a little bit.</li>
-        <li>No developer, no $500 custom build.</li>
-        <li>4 short lessons, not a 12-week course.</li>
-      </ul>
-      <a class="btn btn-pink" href="[CHECKOUT LINK]">Yes! Build My Mini App →</a>
-      <p class="micro">$29 launch price · Instant access · Lifetime updates</p>
-    </div>
-    <div>
+      <div class="hero-media">
       <div class="ba" id="ba" style="--pos:50%">
         <div class="ba-stage" id="ba-stage">
           <!-- BEFORE: static PDF worksheets -->
@@ -318,7 +319,17 @@ details .a{padding:0 22px 20px;color:var(--muted)}
         <div class="ba-focus"></div>
       </div>
       <p class="ba-hint">Drag the slider: from PDFs nobody opens to a mini app people use</p>
-    </div>
+    
+      </div>
+      <p class="lead">Quizzes, calculators, planners, generators… built by chatting with an AI builder, branded to you, and ready to grow your list or sell for <strong>$9–$47</strong>.</p>
+      <ul class="ticks">
+        <li>No coding. Not even a little bit.</li>
+        <li>No developer, no $500 custom build.</li>
+        <li>4 short lessons, not a 12-week course.</li>
+      </ul>
+      <a class="btn btn-pink" href="[CHECKOUT LINK]">Yes! Build My Mini App →</a>
+      <p class="micro">$29 launch price · Instant access · Lifetime updates</p>
+    
   </div>
 </section>
 
@@ -377,11 +388,40 @@ details .a{padding:0 22px 20px;color:var(--muted)}
     <span class="eyebrow">Introducing…</span>
     <div class="name">Interactive <em>Mini App</em></div>
     <p class="sub">Turn what you already know into an interactive mini app, with no code.</p>
-    <div class="box3d" aria-hidden="true">
-      <div class="logo">CH</div>
-      <div class="t">Interactive Mini App</div>
-      <div class="s">4 lessons + bonuses</div>
-    </div>
+    <div class="intro-slider"><div class="ba" style="--pos:50%">
+        <div class="ba-stage">
+          <!-- BEFORE: static PDF worksheets -->
+          <div class="ba-layer ba-before" aria-hidden="true">
+            <div class="sheet sh1"><span class="pdf-tag">PDF</span><h5>Freebie Checklist</h5><div class="sm">Tick what you have</div>
+              <div class="bx"><i></i><span></span></div><div class="bx"><i></i><span></span></div><div class="bx"><i></i><span></span></div><div class="bx"><i></i><span></span></div><div class="bx"><i></i><span></span></div><div class="ln"></div><div class="ln s"></div></div>
+            <div class="sheet sh2"><span class="pdf-tag">PDF</span><h5>Pricing Worksheet</h5><div class="sm">Fill in by hand</div>
+              <div class="tbl"><div></div><div></div><div></div><div></div><div></div></div><div class="ln"></div><div class="ln"></div><div class="ln s"></div></div>
+            <div class="sheet sh3"><span class="pdf-tag">PDF</span><h5>Which Product Should You Sell First?</h5><div class="sm">Workbook, 12 pages</div>
+              <div class="ln"></div><div class="ln"></div><div class="ln s"></div><div class="ln"></div><div class="ln"></div><div class="ln s"></div><div class="ln"></div><div class="ln"></div><div class="ln s"></div></div>
+          </div>
+          <!-- AFTER: interactive mini app -->
+          <div class="ba-layer ba-after" aria-hidden="true">
+            <div class="lap"><div class="lid"><div class="scr">
+              <div class="bar">yourshop.com/which-product-first</div>
+              <div class="tg">2-minute quiz</div>
+              <div class="tt">Which digital product should you sell first?</div>
+              <div class="op">I have a freebie, but nobody uses it</div>
+              <div class="op on">I have ideas, but no time to build</div>
+              <div class="op">I'm starting from zero</div>
+              <div class="pg"><span></span></div>
+            </div></div><div class="base"></div></div>
+            <div class="ph"><div class="ps"><small>Your result</small><b>Mini Shop</b><small>Start with 3 small offers</small><span class="cta">See my plan</span></div></div>
+            <div class="ping">💸 New lead · <b>Sarah got her result</b></div>
+          </div>
+        </div>
+        <span class="ba-label b">Before</span>
+        <span class="ba-label a">After</span>
+        <div class="ba-line" aria-hidden="true"></div>
+        <div class="ba-handle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6-6 6 6 6M15 6l6 6-6 6"/></svg></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare a PDF worksheet with an interactive mini app">
+        <div class="ba-focus"></div>
+      </div>
+      <p class="ba-hint">Drag the slider: from PDFs nobody opens to a mini app people use</p></div>
     <p class="desc"><strong>Interactive Mini App</strong> is a short, beginner-friendly course that takes you from "I have a freebie" to "I have a working app with a link." You'll find what to build, pick the right builder, watch me build one step by step on screen, and learn how to use it to <strong>grow your email list</strong> or <strong>sell it as a product</strong>.</p>
     <p class="price-line"><s>$59</s> <b>$29</b></p>
     <a class="btn btn-turq" href="[CHECKOUT LINK]">Grab Interactive Mini App →</a>
@@ -393,13 +433,11 @@ details .a{padding:0 22px 20px;color:var(--muted)}
   <div class="wrap origin-grid">
     <div>
       <h2>Hey, I'm Liya 👋</h2>
-      <p>I've been making online courses and digital products since 2014. Templates, mini courses, Canva bundles, PLR… you name it, I made it.</p>
-      <p>And honestly? <strong>The static stuff stopped selling.</strong> I retired my Canva templates. I retired my mini course club. People now open an AI chat instead of a PDF, and I couldn't blame them.</p>
-      <p>I'm not a developer. English isn't even my first language. I'm a company of one, working a few hours a day. So "build an app" sounded like something for people with a team and a budget.</p>
-      <p>Then I built one small tool just by chatting with AI. It took me an afternoon. People actually <strong>used</strong> it. They came back. They asked what else I had.</p>
-      <p>So I turned my whole process into 4 short lessons, so you don't have to figure it out the long way. <strong>If I can do it, so can you.</strong></p>
+      <p>I've been creating and selling digital products since 2014. Today, I help course creators, coaches and small business owners use AI to create practical products and resources for their audiences.</p>
+      <p>As a mum building my business during nap times, I value clear instructions, reusable tools and ideas I can put into practice.</p>
+      <p>I created <strong>Interactive Mini Apps</strong> to help you explore what's possible, choose your builder and create your first app, with my examples, prompts and step-by-step demonstrations to guide you.</p>
     </div>
-    <img src="assets/hero-liya.jpg" alt="Liya Bergen in a pink blazer holding a tablet" width="900" height="1125" loading="lazy">
+    <img src="assets/liya-bio.jpg" alt="Liya Bergen smiling in a pink jumper" width="900" height="1125" loading="lazy">
   </div>
 </section>
 
@@ -510,8 +548,8 @@ details .a{padding:0 22px 20px;color:var(--muted)}
     <h2 class="center">Questions? I've got you.</h2>
     <details><summary>Do I need to know how to code?</summary><div class="a"><p>Nope. You describe what you want in plain English and the builder writes the code. You never have to look at it (unless you're curious).</p></div></details>
     <details><summary>Which tools will I use?</summary><div class="a"><p>Lesson 2 walks you through your options, like Canva AI, Claude Artifacts and Lovable, and helps you pick the one that fits you. Some have free plans, but a paid plan can make building quicker.</p></div></details>
-    <details><summary>Can I sell the app I make?</summary><div class="a"><p>Yes! It's yours. Use it as a free lead magnet, put it on your sales page, add it as a bonus, or sell it as its own little product. Many mini apps sell well between $9 and $47.</p></div></details>
-    <details><summary>Where does my app live?</summary><div class="a"><p>You get a link you can share anywhere: your shop, your bio, your emails or Pinterest. Your users don't need an account or a login. Lesson 4 shows you exactly how.</p></div></details>
+    <details><summary>Can I sell the app I make?</summary><div class="a"><p>Yes! It's yours. Use it as a free lead magnet, put it on your sales page, add it as a bonus, or sell it as its own little product.</p></div></details>
+    <details><summary>Where does my app live?</summary><div class="a"><p>You get a link you can share anywhere: your shop, your bio, your emails or Pinterest. Lesson 4 shows you exactly how.</p></div></details>
     <details><summary>What if I have no idea what to build?</summary><div class="a"><p>That's what Lesson 1 is for. Plus the Mini App Idea Finder (Bonus #1) helps you find an idea that fits your audience.</p></div></details>
     <details><summary>Can I get a refund?</summary><div class="a"><p>Because it's a digital product with instant access, there are no refunds. But if something isn't working for you, email me at <a href="mailto:liya@creatorhustle.ai">liya@creatorhustle.ai</a> and we'll sort it out together.</p></div></details>
   </div>
@@ -541,19 +579,22 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 
 <script>
 (function(){
-  var ba=document.getElementById('ba'); if(!ba) return;
-  var stage=document.getElementById('ba-stage'), range=ba.querySelector('input[type=range]');
-  function fit(){ stage.style.transform='scale('+(ba.clientWidth/520)+')'; }
-  function set(v){ v=Math.max(0,Math.min(100,v)); ba.style.setProperty('--pos',v+'%'); range.value=v; }
-  range.addEventListener('input',function(){ set(+range.value); });
-  window.addEventListener('resize',fit); fit();
-  // gentle hint animation once, unless the visitor prefers less motion
-  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    var t=0, touched=false;
-    ba.addEventListener('pointerdown',function(){touched=true;});
-    range.addEventListener('input',function(){touched=true;});
-    var id=setInterval(function(){ if(touched||t>60){clearInterval(id); if(!touched) set(50); return;} t++; set(50+Math.sin(t/6)*18); },40);
-  }
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.ba').forEach(function(ba){
+    var stage=ba.querySelector('.ba-stage'), range=ba.querySelector('input[type=range]');
+    function fit(){ stage.style.transform='scale('+(ba.clientWidth/520)+')'; }
+    function set(v){ v=Math.max(0,Math.min(100,v)); ba.style.setProperty('--pos',v+'%'); range.value=v; }
+    range.addEventListener('input',function(){ set(+range.value); });
+    window.addEventListener('resize',fit); fit();
+    if(!reduce){
+      var t=0, touched=false, started=false;
+      ba.addEventListener('pointerdown',function(){touched=true;});
+      range.addEventListener('input',function(){touched=true;});
+      var io=new IntersectionObserver(function(es){ if(es[0].isIntersecting && !started){ started=true; io.disconnect();
+        var id=setInterval(function(){ if(touched||t>60){clearInterval(id); if(!touched) set(50); return;} t++; set(50+Math.sin(t/6)*18); },40); } },{threshold:.5});
+      io.observe(ba);
+    }
+  });
 })();
 </script>
 

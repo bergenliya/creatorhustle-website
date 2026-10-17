@@ -238,6 +238,13 @@ details .a{padding:0 22px 20px;color:var(--muted)}
   .btn{padding:16px 26px;font-size:16px}
   .price .now{font-size:52px}
 }
+
+/* HERO STACK: headline, mockup, text, button */
+.hero-stack{max-width:820px;margin:0 auto;text-align:center}
+.hero-stack h1{max-width:780px;margin-left:auto;margin-right:auto}
+.hero-stack .hero-media{max-width:600px;margin:32px auto 6px}
+.hero-stack .lead{max-width:680px;margin:22px auto 22px}
+.hero-stack .ticks{display:table;text-align:left;margin:0 auto 28px}
 </style>
 </head>
 <body>
@@ -247,21 +254,10 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 
 <!-- 1. HERO (one-time offer) -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
+  <div class="wrap hero-stack">
       <span class="eyebrow">One-time offer · only on this page</span>
       <h1>Your Next Digital Product Could Be a <em>Mini App</em></h1>
-      <p class="lead">Quizzes, calculators, planners, generators… The <strong>Interactive Mini App course</strong> shows you how to build yours in 4 short lessons, with no code and no tech skills, ready to grow your list or sell for <strong>$9–$47</strong>.</p>
-      <ul class="ticks">
-        <li>No coding. Not even a little bit.</li>
-        <li>No developer, no $500 custom build.</li>
-        <li>4 short lessons, not a 12-week course.</li>
-      </ul>
-      <!-- FORM SLOT: one-click upsell / checkout button from ThriveCart goes here, or keep the button below -->
-      <a class="btn btn-pink" href="[CHECKOUT LINK]">Yes! Add Interactive Mini App →</a>
-      <p class="micro"><s>$59</s> <strong>$19 today only</strong> · Instant access · Lifetime updates</p>
-    </div>
-    <div>
+      <div class="hero-media">
       <div class="ba" style="--pos:50%">
         <div class="ba-stage">
           <!-- BEFORE: static PDF worksheets -->
@@ -296,8 +292,19 @@ details .a{padding:0 22px 20px;color:var(--muted)}
         <div class="ba-focus"></div>
       </div>
       <p class="ba-hint">Drag the slider: from PDFs nobody opens to a mini app people use</p>
-    </div>
-    </div>
+    
+      </div>
+      <p class="lead">Quizzes, calculators, planners, generators… The <strong>Interactive Mini App course</strong> shows you how to build yours in 4 short lessons, with no code and no tech skills, ready to grow your list or sell for <strong>$9–$47</strong>.</p>
+      <ul class="ticks">
+        <li>No coding. Not even a little bit.</li>
+        <li>No developer, no $500 custom build.</li>
+        <li>4 short lessons, not a 12-week course.</li>
+      </ul>
+      <!-- FORM SLOT: one-click upsell / checkout button from ThriveCart goes here, or keep the button below -->
+      <a class="btn btn-pink" href="[CHECKOUT LINK]">Yes! Add Interactive Mini App →</a>
+      <p class="micro"><s>$59</s> <strong>$19 today only</strong> · Instant access · Lifetime updates</p>
+    
+  </div>
 </section>
 
 <!-- 2. PROBLEM -->
