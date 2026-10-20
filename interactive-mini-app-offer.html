@@ -239,6 +239,41 @@ details .a{padding:0 22px 20px;color:var(--muted)}
   .price .now{font-size:52px}
 }
 
+/* FUNNEL STEPS */
+.steps{background:var(--white);border-bottom:1px solid var(--border);padding:14px 20px;font-size:13px;font-weight:600;color:var(--muted)}
+.steps ol{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px}
+.steps li{display:flex;align-items:center;gap:8px}
+.steps li span{width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;background:var(--surface);border:1px solid var(--border);color:var(--muted)}
+.steps li.done span{background:var(--turq-btn);border-color:var(--turq-btn);color:var(--white)}
+.steps li.now{color:var(--charcoal)}
+.steps li.now span{background:var(--pink);border-color:var(--pink);color:var(--white)}
+
+/* CHECKOUT (card form + order bump) */
+.checkout{text-align:left}
+.checkout .head{text-align:center}
+.bump{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;align-items:start;margin:4px 0 22px;padding:18px;border:2.5px dashed var(--pink);border-radius:16px;background:#FFF7FC;cursor:pointer;transition:background .15s ease,border-color .15s ease}
+.bump:hover{background:var(--pink-tint)}
+.checkout.bump-on .bump{border-style:solid;background:var(--pink-tint)}
+.bump input{width:24px;height:24px;margin-top:2px;accent-color:var(--pink-deep);cursor:pointer;grid-row:span 2}
+.bump-head{font-weight:800;color:var(--charcoal);font-size:17px;line-height:1.35}
+.bump-head .arrow{color:var(--pink-deep)}
+.bump-head s{color:var(--muted);font-weight:600;margin-right:4px}
+.bump-body{font-size:14px;color:var(--muted);line-height:1.55}
+.pay-label{display:block;font-size:13px;font-weight:700;color:var(--charcoal);margin-bottom:8px}
+.pay-box{border:1.5px solid var(--border);border-radius:14px;padding:14px;background:var(--surface);margin-bottom:6px}
+.pay-row{display:grid;grid-template-columns:1fr 110px 90px;gap:10px}
+.pay-box input{width:100%;font:inherit;font-size:15px;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;background:var(--white);color:var(--text)}
+.pay-box input:disabled{color:#8A95A3}
+.pay-hint{font-size:12px;color:#7A5B00;background:#FFF3C4;border-radius:8px;padding:6px 10px;margin-top:10px}
+.summary{margin:20px 0 18px;border-top:1px solid var(--border);padding-top:14px;font-size:15px}
+.summary div{display:flex;justify-content:space-between;gap:12px;padding:4px 0;font-variant-numeric:tabular-nums}
+.summary .tot{font-weight:800;font-size:18px;color:var(--charcoal);border-top:1px solid var(--border);margin-top:8px;padding-top:10px}
+.checkout .btn{width:100%;text-align:center}
+.consent{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.5;text-align:center}
+.secure{font-size:13px;font-weight:600;color:var(--charcoal);margin-top:8px;text-align:center}
+.checkout .nothanks{display:block;text-align:center}
+@media(max-width:520px){.pay-row{grid-template-columns:1fr 1fr}.pay-row input:first-child{grid-column:1/-1}}
+
 /* HERO STACK: headline, mockup, text, button */
 .hero-stack{max-width:820px;margin:0 auto;text-align:center}
 .hero-stack h1{max-width:780px;margin-left:auto;margin-right:auto}
@@ -249,8 +284,16 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 </head>
 <body>
 
+<!-- FUNNEL STEPS -->
+<nav class="steps" aria-label="Your progress"><ol>
+  <li class="done"><span>✓</span>Free skill</li>
+  <li class="now" aria-current="step"><span>2</span>Special offer</li>
+  <li><span>3</span>Order upgrade</li>
+  <li><span>4</span>Your access</li>
+</ol></nav>
+
 <!-- 0. CONFIRMATION BAR -->
-<div class="confirm"><span>✓</span>You're in! Your Freebie is on its way to your inbox.</div>
+<div class="confirm"><span>✓</span><b style="font-weight:inherit" data-first-name="You're in, {name}! Your free skill is on its way to your inbox.">You're in! Your free skill is on its way to your inbox.</b></div>
 
 <!-- 1. HERO (one-time offer) -->
 <section class="hero">
@@ -300,8 +343,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
         <li>No developer, no $500 custom build.</li>
         <li>4 short lessons, not a 12-week course.</li>
       </ul>
-      <!-- FORM SLOT: one-click upsell / checkout button from ThriveCart goes here, or keep the button below -->
-      <a class="btn btn-pink" href="[CHECKOUT LINK]">Yes! Add Interactive Mini App →</a>
+      <a class="btn btn-pink" href="#checkout">Yes! Add Interactive Mini App →</a>
       <p class="micro"><s>$59</s> <strong>$19 today only</strong> · Instant access · Lifetime updates</p>
     
   </div>
@@ -368,7 +410,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
       <p class="ba-hint">Drag the slider: from PDFs nobody opens to a mini app people use</p></div>
     <p class="desc"><strong>Interactive Mini App</strong> is a short, beginner-friendly course that takes you from "I have an idea" to "I have a working app with a link." You'll pick the right builder, watch me build one step by step on screen, and learn how to use it to <strong>grow your email list</strong> or <strong>sell it as a product</strong>.</p>
     <p class="price-line"><s>$59</s> <b>$19</b></p>
-    <a class="btn btn-turq" href="[CHECKOUT LINK]">Grab Interactive Mini App →</a>
+    <a class="btn btn-turq" href="#checkout">Grab Interactive Mini App →</a>
   </div>
 </section>
 
@@ -422,16 +464,45 @@ details .a{padding:0 22px 20px;color:var(--muted)}
   </div>
 </section>
 
-<!-- 7. PRICE + URGENCY -->
-<section class="price">
+<!-- 7. CHECKOUT: card form + order bump -->
+<section class="price" id="checkout">
   <div class="wrap">
-    <div class="card">
-      <span class="urgency">This price is only on this page</span>
-      <div class="pname">Interactive Mini App</div>
-      <div class="was">$59</div>
-      <div class="now">$19</div>
-      <p class="note">One-time payment. Lifetime access. All future updates included.</p>
-      <a class="btn btn-turq" href="[CHECKOUT LINK]">Yes! I Need This →</a>
+    <div class="card checkout" id="checkout-card">
+      <div class="head">
+        <span class="urgency">This price is only on this page</span>
+        <div class="pname">Interactive Mini App</div>
+        <div class="was">$59</div>
+        <div class="now">$19</div>
+        <p class="note">One-time payment. Lifetime access. All future updates included.</p>
+      </div>
+      <form data-checkout data-next="canva-ai-prompt-library-offer.html" id="checkout-form" novalidate>
+        <label class="bump" for="bump">
+          <input type="checkbox" id="bump" name="bump">
+          <span class="bump-head"><span class="arrow">➜</span> Yes! Add 7 Claude Skills for just $7</span>
+          <span class="bump-body">Seven ready-made Claude Skills for your emails, product descriptions, captions, weekly content plan, newsletter, blog posts and launch copy. Use them in your own business, or rebrand and resell them with the PLR rights. This price is only here, at checkout.</span>
+        </label>
+
+        <span class="pay-label">Card details</span>
+        <div class="pay-box" id="payment-element">
+          <div class="pay-row">
+            <input id="pay-card" type="text" placeholder="1234 1234 1234 1234" aria-label="Card number" disabled>
+            <input id="pay-exp" type="text" placeholder="MM / YY" aria-label="Expiry date" disabled>
+            <input id="pay-cvc" type="text" placeholder="CVC" aria-label="Security code" disabled>
+          </div>
+          <p class="pay-hint">Preview: Stripe's secure card form appears here once payments are connected.</p>
+        </div>
+
+        <div class="summary" aria-live="polite">
+          <div><span>Interactive Mini App</span><span>$19</span></div>
+          <div data-bump-row hidden><span>7 Claude Skills (PLR Ready)</span><span>$7</span></div>
+          <div class="tot"><span>Total today</span><span data-total>$19</span></div>
+        </div>
+
+        <button class="btn btn-pink" type="submit">Complete My Order · <span data-total>$19</span></button>
+        <p class="consent">Stripe saves your card securely so you can add anything on the next page with one click. Nothing else is charged unless you choose it.</p>
+        <p class="secure">🔒 Secure checkout powered by Stripe</p>
+      </form>
+      <a class="nothanks" href="#" data-next="canva-ai-prompt-library-offer.html">No thanks, I'll skip this offer</a>
     </div>
   </div>
 </section>
@@ -463,8 +534,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
       <li>Bonus #3: Promote Your Mini App Guide</li>
     </ul>
     <p class="price-line"><s>$59</s> <b>$19</b></p>
-    <!-- FORM SLOT: paste your checkout embed here, or keep the button below -->
-    <a class="btn btn-turq" href="[CHECKOUT LINK]">Build My Mini App →</a>
+    <a class="btn btn-turq" href="#checkout">Build My Mini App →</a>
     <p class="micro">Instant access · One-time payment · No tech skills needed</p>
     <p class="signoff">Can't wait to see what you build ✨ Liya</p>
   </div>
@@ -495,5 +565,6 @@ details .a{padding:0 22px 20px;color:var(--muted)}
   <footer style="background:#17191F;color:rgba(255,255,255,.7);text-align:center;padding:28px 20px;font:14px/1.6 Inter,system-ui,sans-serif">
     <p style="margin:0">&copy; 2026 Creator Hustle AI &middot; <a href="privacy-policy.html" style="color:#fff">Privacy Policy</a> &middot; <a href="terms-of-use.html" style="color:#fff">Terms of Use</a> &middot; <a href="disclaimer.html" style="color:#fff">Disclaimer</a> &middot; <a href="contact.html" style="color:#fff">Contact</a> &middot; <a href="support.html" style="display:inline-block;margin-left:4px;padding:4px 12px;border-radius:999px;background:linear-gradient(180deg,#FF66C4,#E94AAC);color:#fff;font-weight:600;text-decoration:none">Customer Support</a></p>
   </footer>
+<script src="js/funnel.js"></script>
 </body>
 </html>
