@@ -93,7 +93,19 @@
       name = n; store("ch_first_name", n); store("ch_bought", "[]");
       if (em && em.value) store("ch_email", em.value.trim());
       addBought(["freebie"]);
-      go(optin.getAttribute("data-next"));
+      var btn = optin.querySelector("button[type=submit]"); if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+      var next = function () { go(optin.getAttribute("data-next")); };
+      var kitId = optin.getAttribute("data-kit-form");
+      if (!kitId || !em || !em.value) return next();
+      // Subscribe them to the Kit form (Kit sends the freebie email), then move on.
+      // Never keep someone waiting: continue after 4 seconds even if Kit is slow.
+      var fd = new FormData();
+      fd.append("email_address", em.value.trim());
+      fd.append("fields[first_name]", n);
+      var done = false, finish = function () { if (!done) { done = true; next(); } };
+      setTimeout(finish, 4000);
+      fetch("https://app.kit.com/forms/" + kitId + "/subscriptions", { method: "POST", body: fd, headers: { Accept: "application/json" } })
+        .then(finish, finish);
     });
   }
 
