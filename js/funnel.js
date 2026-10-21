@@ -7,8 +7,8 @@
    funnel_items table decide the products and prices, never this file). */
 (function () {
   var FUNNEL = {
-    api: null, // LIVE: "https://learn.creatorhustle.ai/api/funnel"
-    publishableKey: null, // LIVE: Stripe publishable key (pk_test_… while testing, pk_live_… when live)
+    api: "https://learn.creatorhustle.ai/api/funnel",
+    publishableKey: "pk_test_51LeZ9wKEZQS4gtal0pt1BYNe2sNf1Kv7K4tel4zDb7LCm5y39sl2RGQUVotMbpCyErDEcYDVjUnMEObYJYgGP0mD00eYvZgQHR", // TEST key: swap for pk_live_… before going live
     // Display only (preview mode and the summary box). Real prices come from the server.
     products: {
       tripwire: { name: "Interactive Mini Apps", price: 19 },

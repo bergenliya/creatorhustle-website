@@ -1,0 +1,10 @@
+{
+  // Same settings Cloudflare auto-detects for the live site, plus "previews" so
+  // non-main branches get a private preview link for testing.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "creatorhustle-website",
+  "compatibility_date": "2026-10-12",
+  "observability": { "enabled": true },
+  "assets": { "directory": "." },
+  "previews": {}
+}
