@@ -5,7 +5,6 @@ Allow: /
 Disallow: /welcome
 Disallow: /canva-ai-prompt-library-offer
 Disallow: /mini-courses-with-ai-offer
-Disallow: /funnel-test/
 
 # AI search and assistant crawlers (listed explicitly so nothing upstream treats them as blocked)
 User-agent: GPTBot
@@ -24,6 +23,5 @@ Allow: /
 Disallow: /welcome
 Disallow: /canva-ai-prompt-library-offer
 Disallow: /mini-courses-with-ai-offer
-Disallow: /funnel-test/
 
 Sitemap: https://creatorhustle.ai/sitemap.xml
