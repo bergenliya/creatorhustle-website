@@ -130,7 +130,7 @@
           appearance: { theme: "stripe", variables: { colorPrimary: "#00868C", fontFamily: "Inter, system-ui, sans-serif", borderRadius: "10px" } },
           fonts: [{ cssSrc: "https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" }]
         });
-        elements.create("payment", { fields: { billingDetails: { name: "never", email: "never" } } }).mount("#stripe-card");
+        elements.create("payment", { fields: { billingDetails: { name: "never", email: "never" } }, wallets: { link: "never" } }).mount("#stripe-card");
       }).catch(function () { showError(co, "The card form didn't load. Please refresh the page."); });
     }
 
