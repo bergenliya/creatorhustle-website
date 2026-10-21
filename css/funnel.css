@@ -115,7 +115,7 @@ strong{font-weight:600;color:var(--charcoal)}
 .card{background:var(--white);border-radius:24px;padding:46px 40px;max-width:620px;margin:0 auto;text-align:center}
 .urgency{display:inline-block;background:var(--charcoal);color:var(--white);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:18px}
 .pname{font-size:clamp(28px,5vw,40px);font-weight:800;color:var(--charcoal);margin-bottom:6px;line-height:1.15}
-.pname-plus{display:block;color:var(--turq-btn);font-size:.72em;margin-top:2px}
+.pname-plus{display:block;color:var(--turq-btn);font-size:.72em;margin-top:2px;margin-bottom:14px}
 .was{font-size:20px;color:var(--muted);text-decoration:line-through}
 .card .now{font-size:64px;font-weight:800;color:var(--charcoal);line-height:1.1;margin:4px 0 6px;font-variant-numeric:tabular-nums}
 .card .note{margin-bottom:24px;color:var(--muted)}
