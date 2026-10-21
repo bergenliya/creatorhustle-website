@@ -86,13 +86,39 @@
   // Opt-in form (Kit handles the email; we remember name + email for the checkout)
   var optin = document.querySelector("form[data-optin]");
   if (optin) {
+    // Common email typos: suggest the fix once, then let them continue either way
+    var TYPOS = { "gmial.com": "gmail.com", "gmal.com": "gmail.com", "gmai.com": "gmail.com", "gnail.com": "gmail.com", "gmail.co": "gmail.com", "gmail.con": "gmail.com", "gamil.com": "gmail.com",
+      "hotmial.com": "hotmail.com", "hotmal.com": "hotmail.com", "hotmail.con": "hotmail.com", "hotmail.co": "hotmail.com",
+      "yaho.com": "yahoo.com", "yahooo.com": "yahoo.com", "yahoo.con": "yahoo.com", "outlok.com": "outlook.com", "outlook.con": "outlook.com",
+      "iclod.com": "icloud.com", "icloud.con": "icloud.com", "icoud.com": "icloud.com" };
+    var hint = optin.querySelector(".email-hint"), warned = "";
+    function typoFix(v) {
+      var at = v.lastIndexOf("@"); if (at < 1) return null;
+      var d = v.slice(at + 1).toLowerCase(), fix = TYPOS[d];
+      if (!fix && /\.con$/.test(d)) fix = d.replace(/\.con$/, ".com");
+      return fix ? v.slice(0, at + 1) + fix : null;
+    }
     optin.addEventListener("submit", function (e) {
       e.preventDefault();
       var n = (optin.querySelector("[name=first_name]").value || "").trim();
       var em = optin.querySelector("[name=email]");
+      var trap = optin.querySelector("[name=website]");
+      var suggestion = em && typoFix(em.value.trim());
+      if (suggestion && warned !== em.value.trim() && hint) {
+        warned = em.value.trim();
+        hint.innerHTML = 'Did you mean <a href="#" style="color:inherit;font-weight:700">' + suggestion.replace(/[<>&"]/g, "") + "</a>? Tap it to fix, or press the button again if your email is right.";
+        hint.hidden = false;
+        hint.querySelector("a").onclick = function (ev) { ev.preventDefault(); em.value = suggestion; hint.hidden = true; warned = ""; em.focus(); };
+        return;
+      }
+      if (hint) hint.hidden = true;
       name = n; store("ch_first_name", n); store("ch_bought", "[]");
+      try { sessionStorage.removeItem("ch_order"); sessionStorage.removeItem("ch_card"); } catch (x) {}
       if (em && em.value) store("ch_email", em.value.trim());
       addBought(["freebie"]);
+      if (trap && trap.value) { // a bot filled the hidden field: carry on as normal, but don't subscribe it
+        return go(optin.getAttribute("data-next"));
+      }
       var btn = optin.querySelector("button[type=submit]"); if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
       var next = function () { go(optin.getAttribute("data-next")); };
       var kitId = optin.getAttribute("data-kit-form");
@@ -235,6 +261,12 @@
     var names = { freebie: "PDF to Interactive Workbook Claude Skill (free)" };
     Object.keys(FUNNEL.products).forEach(function (k) { names[k] = FUNNEL.products[k].name; });
     renderList(b.filter(function (k) { return names[k]; }).map(function (k) { return names[k]; }));
+  }
+  // Welcome page for freebie-only visitors (no purchase): show the "check your inbox" note instead of the password box
+  if (document.querySelector("[data-freebie]")) {
+    var paid = bought().some(function (k) { return k !== "freebie"; }) || !!store("ch_order");
+    document.querySelectorAll("[data-freebie]").forEach(function (el) { el.hidden = paid; });
+    document.querySelectorAll("[data-buyer]").forEach(function (el) { el.hidden = !paid; });
   }
   var setupLink = document.getElementById("setup-link");
   if (setupLink && LIVE && store("ch_order")) {

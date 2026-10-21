@@ -40,6 +40,7 @@
   .svc p{color:var(--muted);font-size:16px;flex:1}
   .svc .go{margin-top:16px;font-weight:700;color:var(--turq-btn)}
   .svc .pr{font-weight:800;color:var(--charcoal)}
+  .freebie-only{max-width:560px;margin:0 auto;text-align:left}
   @media(max-width:760px){.access,.svc{grid-template-columns:1fr}}
 </style>
   <!-- SEO: canonical, social and structured data -->
@@ -66,9 +67,18 @@
   <div class="wrap">
     <img class="logo" src="assets/logo.png" alt="Creator Hustle AI" width="463" height="243">
     <h1 data-first-name="You're in, {name}! 🎉">You're in! 🎉</h1>
-    <p class="lead">Everything is waiting for you in your Creator Hustle AI course library. One login, all your courses and downloads in one place.</p>
+    <p class="lead" data-buyer>Everything is waiting for you in your Creator Hustle AI course library. One login, all your courses and downloads in one place.</p>
 
-    <div class="access">
+    <div class="freebie-only" data-freebie hidden>
+      <div class="panel inbox">
+        <div class="env" aria-hidden="true">📬</div>
+        <h2>Your free skill is on its way</h2>
+        <p class="muted">Check your inbox for an email from Creator Hustle AI with your <strong>PDF to Interactive Workbook Claude Skill</strong>. It usually arrives within a couple of minutes.</p>
+        <p class="micro">Can't see it? Check your Promotions or Spam folder, or email me at <span class="addr">liya@creatorhustle.ai</span>.</p>
+      </div>
+    </div>
+
+    <div class="access" data-buyer>
       <div class="panel inbox">
         <div class="env" aria-hidden="true">🔑</div>
         <h2>Create your password</h2>
@@ -79,7 +89,7 @@
           <li>Next time, log in at your library with your email and password.</li>
         </ol>
         <a class="btn btn-turq btn-block" id="setup-link" href="https://learn.creatorhustle.ai/login">Create My Password →</a>
-        <p class="micro">Closed this page by accident? I've also emailed you a link to set your password, from liya@coursehustle.com.</p>
+        <p class="micro">Closed this page by accident? Go to the <a href="https://learn.creatorhustle.ai/forgot-password">course library</a>, click "Forgot your password?" and enter the email you used to buy. You'll get a link to set your password.</p>
       </div>
 
       <div class="panel">
