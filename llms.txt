@@ -11,7 +11,8 @@ Contact: liya@creatorhustle.ai · Instagram: https://www.instagram.com/creatorhu
 
 ## Courses and products
 
-- [Interactive Mini App](https://creatorhustle.ai/interactive-mini-app): course that shows how to turn a PDF freebie into an interactive mini app, in 4 short lessons with no code ($29).
+- [Interactive Mini Apps](https://creatorhustle.ai/interactive-mini-app): course that shows how to turn a PDF freebie into an interactive mini app, in 4 short lessons with no code ($49).
+- [Mini Courses with AI Clone](https://creatorhustle.ai/mini-courses-with-ai-clone): a 5-step system to plan, build, present and publish a mini course with an AI clone presenter, so you never need to be on camera ($39).
 - [Skills Shop](https://creatorhustle.ai/skills-shop): ready-made Claude Skills that walk you step by step through building real systems in your business.
 - [AI Support Ticket Hub](https://creatorhustle.ai/ai-support-ticket-hub): Claude Skill for building an AI support ticket hub with drafted replies, phone alerts and one-click answers.
 - [AI Collab Request Hub](https://creatorhustle.ai/ai-collab-request-hub): Claude Skill for building a collab request hub with AI-drafted replies that check fit.
