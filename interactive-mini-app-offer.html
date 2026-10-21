@@ -35,7 +35,7 @@ strong{font-weight:600;color:var(--charcoal)}
 .btn-pink{background:linear-gradient(180deg,var(--pink) 0%,var(--pink-deep) 100%);color:var(--white);text-shadow:0 1px 2px rgba(150,20,95,.45);box-shadow:0 10px 24px -10px rgba(233,74,172,.8)}
 .btn-turq{background:linear-gradient(180deg,var(--turq-btn-light) 0%,var(--turq-btn) 55%,var(--turq-btn-dark) 100%);color:var(--white);text-shadow:0 1px 1px rgba(0,60,64,.35);box-shadow:0 10px 24px -10px rgba(0,118,124,.7)}
 .micro{font-size:14px;color:var(--muted);margin-top:12px}
-.nothanks{display:inline-block;margin-top:18px;font-size:15px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.nothanks{display:inline-block;margin-top:18px;font-size:15px;font-weight:700;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 .nothanks:hover{color:var(--charcoal)}
 .ph{background:#FFF3C4;padding:0 4px;border-radius:3px}
 
@@ -169,7 +169,6 @@ strong{font-weight:600;color:var(--charcoal)}
 .bonus-title{margin:56px 0 24px;font-size:26px}
 .bonuses{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:left}
 .bonus{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:22px;border-top:6px solid var(--pink)}
-.bonus:nth-child(2){border-top-color:var(--turq)}
 .bonus .tag{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--pink-deep);text-transform:uppercase}
 .bonus h3{font-size:18px;margin:6px 0 8px}
 .bonus p{font-size:15px;color:var(--muted)}
@@ -216,6 +215,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 .getlist li{list-style:none;padding:10px 0 10px 36px;position:relative;border-bottom:1px solid var(--border);font-weight:500;color:var(--charcoal)}
 .getlist li:last-child{border-bottom:0}
 .getlist li:before{content:"✓";position:absolute;left:0;top:10px;width:24px;height:24px;border-radius:50%;background:var(--turq-btn);color:var(--white);font-size:13px;display:flex;align-items:center;justify-content:center;font-weight:700}
+.getlist li.b:before{content:"★";background:var(--pink-deep)}
 .signoff{font-family:'Caveat',cursive;font-size:32px;color:var(--pink-deep);margin-top:28px}
 
 /* RESPONSIVE */
@@ -350,7 +350,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
       <p class="ba-hint">Drag the slider: from PDFs nobody opens to a mini app people use</p>
     
       </div>
-      <p class="lead">Quizzes, calculators, planners, generators… The <strong>Interactive Mini Apps course</strong> shows you how to build your own mini web app (a link people open in their browser, not an iOS or Android app) in 4 short lessons, with no code and no tech skills, ready to grow your list or sell for <strong>$9–$47</strong>.</p>
+      <p class="lead">Quizzes, calculators, planners, generators… The <strong>Interactive Mini Apps course</strong> shows you how to build your own mini web app <em>(a link people open in their browser, not an iOS or Android app)</em> in 4 short lessons, with no code and no tech skills, ready to grow your list or sell for <strong>$9–$47</strong>.</p>
       <ul class="ticks">
         <li>No coding. Not even a little bit.</li>
         <li>No developer, no $500 custom build.</li>
@@ -386,7 +386,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
   <div class="wrap">
     <span class="eyebrow">Introducing…</span>
     <div class="name">Interactive <em>Mini Apps</em></div>
-    <p class="sub">Turn your idea into a working mini web app, with no code.<br><span style="font-size:16px">(A mini web app opens from a link in any browser. It's not an iOS or Android app.)</span></p>
+    <p class="sub">Turn your idea into a working mini web app, with no code.<br><em style="font-size:16px">(A mini web app opens from a link in any browser. It's not an iOS or Android app.)</em></p>
     <div class="intro-slider"><div class="ba" style="--pos:50%">
         <div class="ba-stage">
           <!-- BEFORE: static PDF worksheets -->
@@ -518,8 +518,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
         </div>
 
         <button class="btn btn-pink" type="submit">Complete My Order · <span data-total>$19</span></button>
-        <p class="consent">Stripe saves your card securely so you can add anything on the next page with one click. Nothing else is charged unless you choose it.</p>
-        <p class="secure">🔒 Secure checkout powered by Stripe</p>
+        <p class="secure">🔒 Secure Stripe checkout. Your card is saved only so you can add extras in one click.</p>
       </form>
       <a class="nothanks" href="#" data-next="canva-ai-prompt-library-offer.html">No thanks, I'll skip this offer</a>
     </div>
@@ -548,9 +547,9 @@ details .a{padding:0 22px 20px;color:var(--muted)}
       <li>Lesson 2: Which Builder Should You Use?</li>
       <li>Lesson 3: Step by Step Screen Recording Walkthrough</li>
       <li>Lesson 4: Share and Use Your Mini App</li>
-      <li>Bonus #1: Mini App Idea Finder App</li>
-      <li>Bonus #2: Idea Finder App Template Kit</li>
-      <li>Bonus #3: Promote Your Mini App Guide</li>
+      <li class="b">Bonus #1: Mini App Idea Finder App</li>
+      <li class="b">Bonus #2: Idea Finder App Template Kit</li>
+      <li class="b">Bonus #3: Promote Your Mini App Guide</li>
     </ul>
     <p class="price-line"><s>$49</s> <b>$19</b></p>
     <a class="btn btn-turq" href="#checkout">Build My Mini App →</a>
@@ -581,8 +580,8 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 })();
 </script>
 
-  <footer style="background:#17191F;color:rgba(255,255,255,.7);text-align:center;padding:28px 20px;font:14px/1.6 Inter,system-ui,sans-serif">
-    <p style="margin:0">&copy; 2026 Creator Hustle AI &middot; <a href="privacy-policy.html" style="color:#fff">Privacy Policy</a> &middot; <a href="terms-of-use.html" style="color:#fff">Terms of Use</a> &middot; <a href="disclaimer.html" style="color:#fff">Disclaimer</a> &middot; <a href="contact.html" style="color:#fff">Contact</a> &middot; <a href="support.html" style="display:inline-block;margin-left:4px;padding:4px 12px;border-radius:999px;background:linear-gradient(180deg,#FF66C4,#E94AAC);color:#fff;font-weight:600;text-decoration:none">Customer Support</a></p>
+  <footer style="background:#fff;border-top:1px solid #EEF1F5;text-align:center;padding:18px 20px;font:12px/1.6 Inter,system-ui,sans-serif;color:#9AA4B2">
+    <p style="margin:0">&copy; 2026 Creator Hustle AI &middot; <a href="privacy-policy.html" style="color:#9AA4B2">Privacy</a> &middot; <a href="terms-of-use.html" style="color:#9AA4B2">Terms</a> &middot; <a href="disclaimer.html" style="color:#9AA4B2">Disclaimer</a> &middot; <a href="contact.html" style="color:#9AA4B2">Contact</a> &middot; <a href="support.html" style="color:#9AA4B2">Support</a></p>
   </footer>
 <script src="js/funnel.js"></script>
 </body>

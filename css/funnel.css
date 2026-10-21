@@ -31,7 +31,7 @@ strong{font-weight:600;color:var(--charcoal)}
 .btn-block{display:block;width:100%;text-align:center}
 .btn[disabled]{opacity:.7;cursor:wait;transform:none}
 .micro{font-size:14px;color:var(--muted);margin-top:12px}
-.nothanks{display:inline-block;margin-top:18px;font-size:15px;color:var(--muted);text-decoration:underline;text-underline-offset:3px;background:none;border:0;font-family:inherit;cursor:pointer}
+.nothanks{display:inline-block;margin-top:18px;font-size:15px;font-weight:700;color:var(--muted);text-decoration:underline;text-underline-offset:3px;background:none;border:0;font-family:inherit;cursor:pointer}
 .nothanks:hover{color:var(--charcoal)}
 .ticks{list-style:none;margin:0 0 30px}
 .ticks li{padding-left:30px;position:relative;margin-bottom:8px}
@@ -94,7 +94,6 @@ strong{font-weight:600;color:var(--charcoal)}
 .step h3{margin-bottom:8px}
 .step p{font-size:16px;color:var(--muted)}
 .bonus{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:22px;border-top:6px solid var(--pink)}
-.bonus:nth-child(2){border-top-color:var(--turq)}
 .bonus .tag{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--pink-deep);text-transform:uppercase}
 .bonus h3{font-size:18px;margin:6px 0 8px}
 .bonus p{font-size:15px;color:var(--muted)}
@@ -128,6 +127,7 @@ strong{font-weight:600;color:var(--charcoal)}
 .getlist li:last-child{border-bottom:0}
 .getlist li:before{content:"✓";position:absolute;left:0;top:10px;width:24px;height:24px;border-radius:50%;background:var(--turq-btn);color:var(--white);font-size:13px;display:flex;align-items:center;justify-content:center;font-weight:700}
 .getlist li em{font-style:normal;color:var(--muted);font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.getlist li.b:before{content:"★";background:var(--pink-deep)}
 .getlist .total{padding-left:0;font-weight:800}
 .getlist .total:before{display:none}
 
@@ -174,5 +174,17 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 /* Real product mockup + square bio photo */
 .hero-mockup{display:block;max-width:640px;margin:30px auto 6px}
 .hero-mockup img{width:100%;height:auto}
-.origin img.bio-square{aspect-ratio:1/1;max-width:420px;margin-left:auto}
+.origin img.bio-square{aspect-ratio:1/1;height:auto;max-width:340px;margin-left:auto;object-position:50% 20%}
 @media(max-width:860px){.origin img.bio-square{max-width:320px;margin:0 auto}}
+
+/* "This is for you if" */
+.foryou{background:var(--white)}
+.foryou-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center}
+.foryou-grid img{width:100%;height:auto;max-width:380px;margin:0 auto;border-radius:24px;box-shadow:12px 12px 0 var(--turq-tint)}
+.foryou-box{background:var(--pink-tint);border-radius:24px;padding:40px 38px}
+.foryou-box h2{text-align:center;margin-bottom:18px}
+.foryou-box ul{list-style:none}
+.foryou-box li{position:relative;padding:16px 0 16px 34px;border-top:1px solid rgba(233,74,172,.28);color:var(--text)}
+.foryou-box li:last-child{border-bottom:1px solid rgba(233,74,172,.28)}
+.foryou-box li:before{content:"✓";position:absolute;left:0;top:16px;color:var(--turq-btn);font-weight:800}
+@media(max-width:860px){.foryou-grid{grid-template-columns:1fr}.foryou-grid img{max-width:320px}.foryou-box{padding:30px 22px}}
