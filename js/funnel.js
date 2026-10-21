@@ -8,7 +8,7 @@
 (function () {
   var FUNNEL = {
     api: "https://learn.creatorhustle.ai/api/funnel",
-    publishableKey: "pk_test_51LeZ9wKEZQS4gtal0pt1BYNe2sNf1Kv7K4tel4zDb7LCm5y39sl2RGQUVotMbpCyErDEcYDVjUnMEObYJYgGP0mD00eYvZgQHR", // TEST key: swap for pk_live_… before going live
+    publishableKey: "pk_live_51LeZ9wKEZQS4gtal11eiqFflX20LztTxgIMzfaRbezoLX8DtafqmM3ZpJBzDZPsutTRJjWacyaFBcrBGg1GDIbC8006vRQHnjv", // LIVE key
     // Display only (preview mode and the summary box). Real prices come from the server.
     products: {
       tripwire: { name: "Interactive Mini Apps", price: 19 },
