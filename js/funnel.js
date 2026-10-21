@@ -6,13 +6,20 @@
   var FUNNEL = {
     api: null, // e.g. "https://creatorhustlehub.lovable.app/api/funnel"
     products: {
-      tripwire: { name: "Interactive Mini App", price: 19 },
+      tripwire: { name: "Interactive Mini Apps", price: 19 },
       bump: { name: "7 Claude Skills for Small Business Owners", price: 7 },
       upsell: { name: "Canva AI Prompt Library + Workshop", price: 27 },
-      downsell: { name: "Mini Courses with AI", price: 19 }
+      downsell: { name: "Mini Courses with AI Clone", price: 19 }
     }
   };
   window.FUNNEL = FUNNEL;
+
+  // Every funnel page opens at the top (unless the link points to a section on purpose)
+  try { history.scrollRestoration = "manual"; } catch (e) {}
+  function toTop() { if (!location.hash) window.scrollTo(0, 0); }
+  toTop();
+  window.addEventListener("load", toTop);
+  window.addEventListener("pageshow", toTop);
 
   function store(k, v) {
     try { if (v === undefined) return sessionStorage.getItem(k); sessionStorage.setItem(k, v); } catch (e) { return null; }
@@ -47,7 +54,9 @@
     optin.addEventListener("submit", function (e) {
       e.preventDefault();
       var n = (optin.querySelector("[name=first_name]").value || "").trim();
+      var em = optin.querySelector("[name=email]");
       name = n; store("ch_first_name", n); store("ch_bought", "[]");
+      if (em && em.value) store("ch_email", em.value.trim());
       addBought(["freebie"]);
       // LIVE: POST { first_name, email } to FUNNEL.api + "/optin" (creates the account, adds to Kit, sends login email)
       go(optin.getAttribute("data-next"));
@@ -66,10 +75,16 @@
       if (bumpRow) bumpRow.hidden = !(bump && bump.checked);
       co.classList.toggle("bump-on", !!(bump && bump.checked));
     }
+    // Prefill the email from the opt-in so buyers only type their name
+    var emailIn = co.querySelector("[name=email]");
+    if (emailIn && !emailIn.value && store("ch_email")) emailIn.value = store("ch_email");
     if (bump) bump.addEventListener("change", total);
     total();
     co.addEventListener("submit", function (e) {
       e.preventDefault();
+      var missing = Array.prototype.filter.call(co.querySelectorAll("input[required]"), function (i) { return !i.checkValidity(); });
+      if (missing.length) { missing[0].reportValidity(); missing[0].focus(); return; }
+      if (emailIn) store("ch_email", emailIn.value.trim());
       var btn = co.querySelector("button[type=submit]");
       btn.disabled = true; btn.textContent = "Processing…";
       // LIVE: confirm the Stripe Payment Element here (card saved for one-click offers), then continue

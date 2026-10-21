@@ -29,7 +29,18 @@
   .bought li:before{content:"✓";position:absolute;left:0;top:10px;width:22px;height:22px;border-radius:50%;background:var(--pink);color:var(--white);font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:800}
   .help{font-size:15px;color:var(--muted);margin-top:18px}
   .help .addr{font-weight:700;color:var(--charcoal);user-select:all}
-  @media(max-width:760px){.access{grid-template-columns:1fr}}
+  .more{background:var(--white);padding-block:64px 72px}
+  .more h2{margin-bottom:8px}
+  .more .sub{color:var(--muted);max-width:560px;margin:0 auto 30px}
+  .svc{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:900px;margin:0 auto;text-align:left}
+  .svc a.box{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:28px;text-decoration:none;color:var(--text);transition:transform .15s ease,box-shadow .15s ease}
+  .svc a.box:hover{transform:translateY(-3px);box-shadow:0 16px 30px -18px rgba(23,25,31,.35)}
+  .svc .kind{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--turq-btn)}
+  .svc h3{margin:6px 0 8px}
+  .svc p{color:var(--muted);font-size:16px;flex:1}
+  .svc .go{margin-top:16px;font-weight:700;color:var(--pink-deep)}
+  .svc .pr{font-weight:800;color:var(--charcoal)}
+  @media(max-width:760px){.access,.svc{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -65,13 +76,34 @@
         <h2>What's in your library</h2>
         <ul class="bought" data-bought-list>
           <li>PDF to Interactive Workbook Claude Skill (free)</li>
-          <li>Interactive Mini App</li>
+          <li>Interactive Mini Apps</li>
         </ul>
         <p class="help">Need a hand? Email me at <span class="addr">liya@creatorhustle.ai</span> or visit <a href="support.html">Customer Support</a>.</p>
       </div>
     </div>
 
     <p class="signoff">Can't wait to see what you build ✨ Liya</p>
+  </div>
+</section>
+
+<section class="more center">
+  <div class="wrap">
+    <h2>Want my help with the next step?</h2>
+    <p class="sub">When you're ready to go further, these are the two ways I work with you directly.</p>
+    <div class="svc">
+      <a class="box" href="ai-clarity-call.html">
+        <span class="kind">Done with you</span>
+        <h3>AI Clarity Call <span class="pr">· $149</span></h3>
+        <p>One private call to work out where AI fits in your business and which automations to set up first.</p>
+        <span class="go">See the AI Clarity Call →</span>
+      </a>
+      <a class="box" href="ai-clone-setup.html">
+        <span class="kind">Done with you</span>
+        <h3>AI Clone Setup <span class="pr">· $997</span></h3>
+        <p>We set up your AI clone together, build your YouTube funnel and create your first AI clone mini course or podcast.</p>
+        <span class="go">See AI Clone Setup →</span>
+      </a>
+    </div>
   </div>
 </section>
 

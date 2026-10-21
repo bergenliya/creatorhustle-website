@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Interactive Mini App: Special One-Time Offer | Creator Hustle AI</title>
-<meta name="description" content="Your next digital product could be a mini app. Interactive Mini App shows you how to build it, in 4 short lessons, at a one-time price.">
+<title>Interactive Mini Apps: Special One-Time Offer | Creator Hustle AI</title>
+<meta name="description" content="Your next digital product could be a mini web app. Interactive Mini Apps shows you how to build it, in 4 short lessons, at a one-time price.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -239,6 +239,16 @@ details .a{padding:0 22px 20px;color:var(--muted)}
   .price .now{font-size:52px}
 }
 
+/* TOP PILLS (one-time offer badges) */
+.top-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:16px}
+.pill{display:inline-block;font-weight:700;font-size:15px;padding:9px 20px;border-radius:999px;line-height:1.2}
+.pill-done{background:var(--turq-tint);color:var(--turq-btn-dark)}
+.pill-dark{background:var(--charcoal);color:var(--white)}
+.pill-wait{display:inline-block;background:#FFF1B8;color:var(--charcoal);font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:10px 22px;border-radius:999px;margin-bottom:22px}
+.confirm .meanwhile{display:block;font-weight:500;font-size:16px;color:rgba(255,255,255,.8);margin-top:8px}
+.buyer input{width:100%;font:inherit;font-size:15px;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;background:var(--white);color:var(--text);margin-bottom:14px}
+.buyer input:focus{outline:2px solid var(--turq);outline-offset:1px;border-color:var(--turq)}
+
 /* FUNNEL STEPS */
 .steps{background:var(--white);border-bottom:1px solid var(--border);padding:14px 20px;font-size:13px;font-weight:600;color:var(--muted)}
 .steps ol{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px}
@@ -256,7 +266,9 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 .checkout.bump-on .bump{border-style:solid;background:var(--pink-tint)}
 .bump input{width:24px;height:24px;margin-top:2px;accent-color:var(--pink-deep);cursor:pointer;grid-row:span 2}
 .bump-head{font-weight:800;color:var(--charcoal);font-size:17px;line-height:1.35}
-.bump-head .arrow{color:var(--pink-deep)}
+.bump-head .arrow{color:var(--turq-btn);display:inline-block;animation:arrowflash 1s ease-in-out infinite}
+@keyframes arrowflash{0%,100%{opacity:1;transform:translateX(0)}50%{opacity:.25;transform:translateX(4px)}}
+@media(prefers-reduced-motion:reduce){.bump-head .arrow{animation:none}}
 .bump-head s{color:var(--muted);font-weight:600;margin-right:4px}
 .bump-body{font-size:14px;color:var(--muted);line-height:1.55}
 .pay-label{display:block;font-size:13px;font-weight:700;color:var(--charcoal);margin-bottom:8px}
@@ -293,12 +305,13 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 </ol></nav>
 
 <!-- 0. CONFIRMATION BAR -->
-<div class="confirm"><span>✓</span><b style="font-weight:inherit" data-first-name="You're in, {name}! Your free skill is on its way to your inbox.">You're in! Your free skill is on its way to your inbox.</b></div>
+<div class="confirm"><span>✓</span><b style="font-weight:inherit" data-first-name="You're in, {name}! Your free skill is on its way to your inbox.">You're in! Your free skill is on its way to your inbox.</b><small class="meanwhile">Meanwhile, check out this offer 👇</small></div>
 
 <!-- 1. HERO (one-time offer) -->
 <section class="hero">
   <div class="wrap hero-stack">
-      <span class="eyebrow">One-time offer · only on this page</span>
+      <div class="top-pills"><span class="pill pill-done">✓ Free skill</span><span class="pill pill-dark">One-time offer</span></div>
+      <div class="pill pill-wait">Wait! 61% off, only on this page</div>
       <h1>Your Next Digital Product Could Be a <em>Mini App</em></h1>
       <div class="hero-media">
       <div class="ba" style="--pos:50%">
@@ -337,14 +350,14 @@ details .a{padding:0 22px 20px;color:var(--muted)}
       <p class="ba-hint">Drag the slider: from PDFs nobody opens to a mini app people use</p>
     
       </div>
-      <p class="lead">Quizzes, calculators, planners, generators… The <strong>Interactive Mini App course</strong> shows you how to build yours in 4 short lessons, with no code and no tech skills, ready to grow your list or sell for <strong>$9–$47</strong>.</p>
+      <p class="lead">Quizzes, calculators, planners, generators… The <strong>Interactive Mini Apps course</strong> shows you how to build your own mini web app (a link people open in their browser, not an iOS or Android app) in 4 short lessons, with no code and no tech skills, ready to grow your list or sell for <strong>$9–$47</strong>.</p>
       <ul class="ticks">
         <li>No coding. Not even a little bit.</li>
         <li>No developer, no $500 custom build.</li>
         <li>4 short lessons, not a 12-week course.</li>
       </ul>
-      <a class="btn btn-pink" href="#checkout">Yes! Add Interactive Mini App →</a>
-      <p class="micro"><s>$59</s> <strong>$19 today only</strong> · Instant access · Lifetime updates</p>
+      <a class="btn btn-pink" href="#checkout">Yes! Add Interactive Mini Apps →</a>
+      <p class="micro"><s>$49</s> <strong>$19 today only</strong> · Instant access · Lifetime updates</p>
     
   </div>
 </section>
@@ -353,7 +366,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 <section class="problem center">
   <div class="wrap">
     <h2>An idea is great. A finished app is better.</h2>
-    <p class="intro">Most ideas stay in a notebook. Not because they're bad, but because "build an app" sounds like a job for someone with a developer and a budget.</p>
+    <p class="intro">Most ideas stay in a notebook. Not because they're bad, but because <em>"build an app"</em> sounds like a job for someone with a developer and a budget.</p>
     <div class="formats">
       <div class="fmt"><b>A PDF</b>gets saved</div>
       <div class="fmt"><b>A course</b>gets started</div>
@@ -365,15 +378,15 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 
 <!-- 3. EMPATHY BRIDGE -->
 <section class="empathy">
-  <div class="wrap"><p>If the word "app" makes you want to close the laptop and walk away… you're exactly who I made this for.</p></div>
+  <div class="wrap"><p>If the word <em>"app"</em> makes you want to close the laptop and walk away… you're exactly who I made this for.</p></div>
 </section>
 
 <!-- 4. INTRODUCING -->
 <section class="intro-sec center">
   <div class="wrap">
     <span class="eyebrow">Introducing…</span>
-    <div class="name">Interactive <em>Mini App</em></div>
-    <p class="sub">Turn your idea into a working mini app, with no code.</p>
+    <div class="name">Interactive <em>Mini Apps</em></div>
+    <p class="sub">Turn your idea into a working mini web app, with no code.<br><span style="font-size:16px">(A mini web app opens from a link in any browser. It's not an iOS or Android app.)</span></p>
     <div class="intro-slider"><div class="ba" style="--pos:50%">
         <div class="ba-stage">
           <!-- BEFORE: static PDF worksheets -->
@@ -408,16 +421,16 @@ details .a{padding:0 22px 20px;color:var(--muted)}
         <div class="ba-focus"></div>
       </div>
       <p class="ba-hint">Drag the slider: from PDFs nobody opens to a mini app people use</p></div>
-    <p class="desc"><strong>Interactive Mini App</strong> is a short, beginner-friendly course that takes you from "I have an idea" to "I have a working app with a link." You'll pick the right builder, watch me build one step by step on screen, and learn how to use it to <strong>grow your email list</strong> or <strong>sell it as a product</strong>.</p>
-    <p class="price-line"><s>$59</s> <b>$19</b></p>
-    <a class="btn btn-turq" href="#checkout">Grab Interactive Mini App →</a>
+    <p class="desc"><strong>Interactive Mini Apps</strong> is a short, beginner-friendly course that takes you from <em>"I have an idea"</em> to <em>"I have a working app with a link."</em> You'll pick the right builder, watch me build one step by step on screen, and learn how to use it to <strong>grow your email list</strong> or <strong>sell it as a product</strong>.</p>
+    <p class="price-line"><s>$49</s> <b>$19</b></p>
+    <a class="btn btn-turq" href="#checkout">Grab Interactive Mini Apps →</a>
   </div>
 </section>
 
 <!-- 5. WHAT'S INSIDE: 4 LESSONS -->
 <section class="inside center">
   <div class="wrap">
-    <h2>What's inside Interactive Mini App ✨</h2>
+    <h2>What's inside Interactive Mini Apps ✨</h2>
     <p class="lead">Four short lessons. A real, working app at the end.</p>
     <div class="grid2">
       <div class="step">
@@ -469,19 +482,25 @@ details .a{padding:0 22px 20px;color:var(--muted)}
   <div class="wrap">
     <div class="card checkout" id="checkout-card">
       <div class="head">
-        <span class="urgency">This price is only on this page</span>
-        <div class="pname">Interactive Mini App</div>
-        <div class="was">$59</div>
+        <span class="urgency">61% off · only on this page</span>
+        <div class="pname">Interactive Mini Apps</div>
+        <div class="was">$49</div>
         <div class="now">$19</div>
         <p class="note">One-time payment. Lifetime access. All future updates included.</p>
       </div>
       <form data-checkout data-next="canva-ai-prompt-library-offer.html" id="checkout-form" novalidate>
         <label class="bump" for="bump">
           <input type="checkbox" id="bump" name="bump">
-          <span class="bump-head"><span class="arrow">➜</span> Yes! Add 7 Claude Skills for just $7</span>
+          <span class="bump-head"><span class="arrow" aria-hidden="true">➜</span> Yes! Add 7 Claude Skills for just $7</span>
           <span class="bump-body">Seven ready-made Claude Skills for your emails, product descriptions, captions, weekly content plan, newsletter, blog posts and launch copy. Use them in your own business, or rebrand and resell them with the PLR rights. This price is only here, at checkout.</span>
         </label>
 
+        <div class="buyer">
+          <label class="pay-label" for="buyer-name">Name on card</label>
+          <input id="buyer-name" name="name" type="text" autocomplete="cc-name" placeholder="Your full name" required>
+          <label class="pay-label" for="buyer-email">Email for your login</label>
+          <input id="buyer-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        </div>
         <span class="pay-label">Card details</span>
         <div class="pay-box" id="payment-element">
           <div class="pay-row">
@@ -493,7 +512,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
         </div>
 
         <div class="summary" aria-live="polite">
-          <div><span>Interactive Mini App</span><span>$19</span></div>
+          <div><span>Interactive Mini Apps</span><span>$19</span></div>
           <div data-bump-row hidden><span>7 Claude Skills (PLR Ready)</span><span>$7</span></div>
           <div class="tot"><span>Total today</span><span data-total>$19</span></div>
         </div>
@@ -512,7 +531,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
   <div class="wrap narrow">
     <h2 class="center">Questions? I've got you.</h2>
     <details><summary>Do I need to know how to code?</summary><div class="a"><p>Nope. You describe what you want in plain English and the builder writes the code. You never have to look at it (unless you're curious).</p></div></details>
-    <details><summary>Which tools will I use?</summary><div class="a"><p>Lesson 2 walks you through your options, like Canva AI, Claude Artifacts and Lovable, and helps you pick the one that fits you. Some have free plans, but a paid plan can make building quicker.</p></div></details>
+    <details><summary>Which tools will I use?</summary><div class="a"><p>Lesson 2 walks you through your options, like Canva AI, Claude Artifacts and Lovable, and helps you pick the one that fits you. These have free plans, but a paid plan can make building quicker.</p></div></details>
     <details><summary>Can I sell the app I make?</summary><div class="a"><p>Yes! It's yours. Use it as a free lead magnet, put it on your sales page, add it as a bonus, or sell it as its own little product.</p></div></details>
     <details><summary>Where does my app live?</summary><div class="a"><p>You get a link you can share anywhere: your shop, your bio, your emails or Pinterest. Lesson 4 shows you exactly how.</p></div></details>
     <details><summary>Can I get a refund?</summary><div class="a"><p>Because it's a digital product with instant access, there are no refunds. But if something isn't working for you, email me at <a href="mailto:liya@creatorhustle.ai">liya@creatorhustle.ai</a> and we'll sort it out together.</p></div></details>
@@ -533,7 +552,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
       <li>Bonus #2: Idea Finder App Template Kit</li>
       <li>Bonus #3: Promote Your Mini App Guide</li>
     </ul>
-    <p class="price-line"><s>$59</s> <b>$19</b></p>
+    <p class="price-line"><s>$49</s> <b>$19</b></p>
     <a class="btn btn-turq" href="#checkout">Build My Mini App →</a>
     <p class="micro">Instant access · One-time payment · No tech skills needed</p>
     <p class="signoff">Can't wait to see what you build ✨ Liya</p>

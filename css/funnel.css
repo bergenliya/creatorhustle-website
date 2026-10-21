@@ -46,6 +46,13 @@ strong{font-weight:600;color:var(--charcoal)}
 .steps li.now{color:var(--charcoal)}
 .steps li.now span{background:var(--pink);border-color:var(--pink);color:var(--white)}
 
+/* One-time offer badges at the top of each offer */
+.top-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:16px}
+.pill{display:inline-block;font-weight:700;font-size:15px;padding:9px 20px;border-radius:999px;line-height:1.2}
+.pill-done{background:var(--turq-tint);color:var(--turq-btn-dark)}
+.pill-dark{background:var(--charcoal);color:var(--white)}
+.pill-wait{display:inline-block;background:#FFF1B8;color:var(--charcoal);font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:10px 22px;border-radius:999px;margin-bottom:22px}
+
 /* Confirmation bar */
 .confirm{background:var(--charcoal);padding-block:30px;text-align:center;font-weight:600;color:var(--white);font-size:clamp(17px,2.2vw,21px);line-height:1.5}
 .confirm .tick{display:inline-flex;width:32px;height:32px;border-radius:50%;background:var(--turq);color:var(--charcoal);align-items:center;justify-content:center;font-size:16px;font-weight:800;margin-right:12px;vertical-align:-6px}
@@ -109,7 +116,7 @@ strong{font-weight:600;color:var(--charcoal)}
 .urgency{display:inline-block;background:var(--charcoal);color:var(--white);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:18px}
 .pname{font-size:clamp(28px,5vw,40px);font-weight:800;color:var(--charcoal);margin-bottom:6px;line-height:1.15}
 .was{font-size:20px;color:var(--muted);text-decoration:line-through}
-.now{font-size:64px;font-weight:800;color:var(--charcoal);line-height:1.1;margin:4px 0 6px;font-variant-numeric:tabular-nums}
+.card .now{font-size:64px;font-weight:800;color:var(--charcoal);line-height:1.1;margin:4px 0 6px;font-variant-numeric:tabular-nums}
 .card .note{margin-bottom:24px;color:var(--muted)}
 .card-on-file{display:flex;align-items:center;justify-content:center;gap:10px;font-size:14px;color:var(--muted);margin-top:14px}
 .card-on-file b{color:var(--charcoal)}
@@ -158,8 +165,14 @@ details .a{padding:0 22px 20px;color:var(--muted)}
   .tiles{grid-template-columns:repeat(2,1fr)}
   .card{padding:34px 22px}
   .btn{padding:16px 26px;font-size:16px}
-  .now{font-size:52px}
+  .card .now{font-size:52px}
   .badge{right:0}
   .steps ol{gap:6px 14px}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* Real product mockup + square bio photo */
+.hero-mockup{display:block;max-width:640px;margin:30px auto 6px}
+.hero-mockup img{width:100%;height:auto}
+.origin img.bio-square{aspect-ratio:1/1;max-width:420px;margin-left:auto}
+@media(max-width:860px){.origin img.bio-square{max-width:320px;margin:0 auto}}
