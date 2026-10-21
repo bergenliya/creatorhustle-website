@@ -1,4 +1,4 @@
-/* Creator Hustle AI funnel: shared behaviour for the funnel pages and sales-page checkouts.
+/* Creator Hustle AI funnel (v2): shared behaviour for the funnel pages and sales-page checkouts.
    Two modes:
    - PREVIEW (FUNNEL.api is null): no payments, buttons just move to the next page so the flow can be reviewed.
    - LIVE (FUNNEL.api + FUNNEL.publishableKey set): Stripe Payment Element card form, one-click upsells
