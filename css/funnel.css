@@ -1,5 +1,6 @@
 /* Creator Hustle AI funnel pages: shared styles (matches interactive-mini-app-offer.html) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap');
+[hidden]{display:none!important}
 :root{
   --pink:#FF66C4; --pink-light:#FFA3DB; --pink-deep:#E94AAC; --pink-tint:#FFE0F3;
   --turq:#00C2CB; --turq-btn:#00868C; --turq-btn-light:#0A9EA5; --turq-btn-dark:#00767C; --turq-tint:#D9F6F7;
@@ -189,3 +190,45 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 .foryou-box li:last-child{border-bottom:1px solid rgba(233,74,172,.28)}
 .foryou-box li:before{content:"✓";position:absolute;left:0;top:16px;color:var(--turq-btn);font-weight:800}
 @media(max-width:860px){.foryou-grid{grid-template-columns:1fr}.foryou-grid img{max-width:320px}.foryou-box{padding:30px 22px}}
+
+/* CHECKOUT (card form + order bump) */
+.checkout{text-align:left}
+.checkout .head{text-align:center}
+.bump{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;align-items:start;margin:4px 0 22px;padding:18px;border:2.5px dashed var(--pink);border-radius:16px;background:#FFF7FC;cursor:pointer;transition:background .15s ease,border-color .15s ease}
+.bump:hover{background:var(--pink-tint)}
+.checkout.bump-on .bump{border-style:solid;background:var(--pink-tint)}
+.bump input{width:24px;height:24px;margin-top:2px;accent-color:var(--pink-deep);cursor:pointer;grid-row:span 2}
+.bump-head{font-weight:800;color:var(--charcoal);font-size:17px;line-height:1.35}
+.bump-head .arrow{color:var(--turq-btn);display:inline-block;animation:arrowflash 1s ease-in-out infinite}
+@keyframes arrowflash{0%,100%{opacity:1;transform:translateX(0)}50%{opacity:.25;transform:translateX(4px)}}
+@media(prefers-reduced-motion:reduce){.bump-head .arrow{animation:none}}
+.bump-head s{color:var(--muted);font-weight:600;margin-right:4px}
+.bump-body{font-size:14px;color:var(--muted);line-height:1.55}
+.pay-label{display:block;font-size:13px;font-weight:700;color:var(--charcoal);margin-bottom:8px}
+.pay-box{border:1.5px solid var(--border);border-radius:14px;padding:14px;background:var(--surface);margin-bottom:6px}
+.pay-row{display:grid;grid-template-columns:1fr 110px 90px;gap:10px}
+.pay-box input{width:100%;font:inherit;font-size:15px;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;background:var(--white);color:var(--text)}
+.pay-box input:disabled{color:#8A95A3}
+.pay-hint{font-size:12px;color:#7A5B00;background:#FFF3C4;border-radius:8px;padding:6px 10px;margin-top:10px}
+.summary{margin:20px 0 18px;border-top:1px solid var(--border);padding-top:14px;font-size:15px}
+.summary div{display:flex;justify-content:space-between;gap:12px;padding:4px 0;font-variant-numeric:tabular-nums}
+.summary .tot{font-weight:800;font-size:18px;color:var(--charcoal);border-top:1px solid var(--border);margin-top:8px;padding-top:10px}
+.checkout .btn{width:100%;text-align:center}
+.consent{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.5;text-align:center}
+.secure{font-size:13px;font-weight:600;color:var(--charcoal);margin-top:8px;text-align:center}
+.checkout .nothanks{display:block;text-align:center}
+@media(max-width:520px){.pay-row{grid-template-columns:1fr 1fr}.pay-row input:first-child{grid-column:1/-1}}
+
+.buyer input{width:100%;font:inherit;font-size:15px;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;background:var(--white);color:var(--text);margin-bottom:14px}
+.buyer input:focus{outline:2px solid var(--turq);outline-offset:1px;border-color:var(--turq)}
+.checkout .pname{margin-bottom:6px}
+
+/* Imagine if (charcoal block with white card) */
+.imagine{background:var(--charcoal)}
+.imagine-card{background:var(--white);border-radius:24px;padding:44px 40px;max-width:760px;margin:0 auto;text-align:center}
+.imagine-card h2{font-family:'Caveat',cursive;font-size:clamp(40px,6vw,54px);color:var(--pink-deep);font-weight:700;letter-spacing:0;margin-bottom:22px}
+.imagine-list{display:grid;gap:14px;text-align:left;margin-bottom:28px}
+.imagine-list div{background:var(--pink-tint);border-radius:16px;padding:16px 20px}
+.imagine-list b{display:block;color:var(--charcoal);font-size:18px}
+.imagine-list span{color:var(--muted);font-size:16px}
+@media(max-width:640px){.imagine-card{padding:32px 20px}}

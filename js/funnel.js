@@ -70,7 +70,8 @@
     var totalEls = document.querySelectorAll("[data-total]");
     var bumpRow = co.querySelector("[data-bump-row]");
     function total() {
-      var t = FUNNEL.products.tripwire.price + (bump && bump.checked ? FUNNEL.products.bump.price : 0);
+      var base = +co.getAttribute("data-price") || FUNNEL.products.tripwire.price; // sales page sells at full price, funnel at the one-time price
+      var t = base + (bump && bump.checked ? FUNNEL.products.bump.price : 0);
       totalEls.forEach(function (el) { el.textContent = "$" + t; });
       if (bumpRow) bumpRow.hidden = !(bump && bump.checked);
       co.classList.toggle("bump-on", !!(bump && bump.checked));

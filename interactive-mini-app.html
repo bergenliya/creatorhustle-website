@@ -34,7 +34,7 @@ strong{font-weight:600;color:var(--charcoal)}
 .btn-pink{background:linear-gradient(180deg,var(--pink) 0%,var(--pink-deep) 100%);color:var(--white);text-shadow:0 1px 2px rgba(150,20,95,.45);box-shadow:0 10px 24px -10px rgba(233,74,172,.8)}
 .btn-turq{background:linear-gradient(180deg,var(--turq-btn-light) 0%,var(--turq-btn) 55%,var(--turq-btn-dark) 100%);color:var(--white);text-shadow:0 1px 1px rgba(0,60,64,.35);box-shadow:0 10px 24px -10px rgba(0,118,124,.7)}
 .micro{font-size:14px;color:var(--muted);margin-top:12px}
-.nothanks{display:inline-block;margin-top:18px;font-size:15px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.nothanks{display:inline-block;margin-top:18px;font-size:15px;font-weight:700;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 .nothanks:hover{color:var(--charcoal)}
 .ph{background:#FFF3C4;padding:0 4px;border-radius:3px}
 
@@ -168,7 +168,6 @@ strong{font-weight:600;color:var(--charcoal)}
 .bonus-title{margin:56px 0 24px;font-size:26px}
 .bonuses{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:left}
 .bonus{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:22px;border-top:6px solid var(--pink)}
-.bonus:nth-child(2){border-top-color:var(--turq)}
 .bonus .tag{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--pink-deep);text-transform:uppercase}
 .bonus h3{font-size:18px;margin:6px 0 8px}
 .bonus p{font-size:15px;color:var(--muted)}
@@ -275,6 +274,38 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 .hero-stack .hero-media{max-width:600px;margin:32px auto 6px}
 .hero-stack .lead{max-width:680px;margin:22px auto 22px}
 .hero-stack .ticks{display:table;text-align:left;margin:0 auto 28px}
+/* CHECKOUT (card form + order bump) */
+.checkout{text-align:left}
+.checkout .head{text-align:center}
+.bump{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;align-items:start;margin:4px 0 22px;padding:18px;border:2.5px dashed var(--pink);border-radius:16px;background:#FFF7FC;cursor:pointer;transition:background .15s ease,border-color .15s ease}
+.bump:hover{background:var(--pink-tint)}
+.checkout.bump-on .bump{border-style:solid;background:var(--pink-tint)}
+.bump input{width:24px;height:24px;margin-top:2px;accent-color:var(--pink-deep);cursor:pointer;grid-row:span 2}
+.bump-head{font-weight:800;color:var(--charcoal);font-size:17px;line-height:1.35}
+.bump-head .arrow{color:var(--turq-btn);display:inline-block;animation:arrowflash 1s ease-in-out infinite}
+@keyframes arrowflash{0%,100%{opacity:1;transform:translateX(0)}50%{opacity:.25;transform:translateX(4px)}}
+@media(prefers-reduced-motion:reduce){.bump-head .arrow{animation:none}}
+.bump-head s{color:var(--muted);font-weight:600;margin-right:4px}
+.bump-body{font-size:14px;color:var(--muted);line-height:1.55}
+.pay-label{display:block;font-size:13px;font-weight:700;color:var(--charcoal);margin-bottom:8px}
+.pay-box{border:1.5px solid var(--border);border-radius:14px;padding:14px;background:var(--surface);margin-bottom:6px}
+.pay-row{display:grid;grid-template-columns:1fr 110px 90px;gap:10px}
+.pay-box input{width:100%;font:inherit;font-size:15px;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;background:var(--white);color:var(--text)}
+.pay-box input:disabled{color:#8A95A3}
+.pay-hint{font-size:12px;color:#7A5B00;background:#FFF3C4;border-radius:8px;padding:6px 10px;margin-top:10px}
+.summary{margin:20px 0 18px;border-top:1px solid var(--border);padding-top:14px;font-size:15px}
+.summary div{display:flex;justify-content:space-between;gap:12px;padding:4px 0;font-variant-numeric:tabular-nums}
+.summary .tot{font-weight:800;font-size:18px;color:var(--charcoal);border-top:1px solid var(--border);margin-top:8px;padding-top:10px}
+.checkout .btn{width:100%;text-align:center}
+.consent{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.5;text-align:center}
+.secure{font-size:13px;font-weight:600;color:var(--charcoal);margin-top:8px;text-align:center}
+.checkout .nothanks{display:block;text-align:center}
+@media(max-width:520px){.pay-row{grid-template-columns:1fr 1fr}.pay-row input:first-child{grid-column:1/-1}}
+
+.buyer input{width:100%;font:inherit;font-size:15px;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;background:var(--white);color:var(--text);margin-bottom:14px}
+.buyer input:focus{outline:2px solid var(--turq);outline-offset:1px;border-color:var(--turq)}
+.getlist li.b:before{content:"★";background:var(--pink-deep)}
+[hidden]{display:none!important}
 </style>
 </head>
 <body>
@@ -321,13 +352,13 @@ details .a{padding:0 22px 20px;color:var(--muted)}
       <p class="ba-hint">Drag the slider: from PDFs nobody opens to a mini app people use</p>
     
       </div>
-      <p class="lead">Quizzes, calculators, planners, generators… built by chatting with an AI builder, branded to you, and ready to grow your list or sell for <strong>$9–$47</strong>.</p>
+      <p class="lead">Quizzes, calculators, planners, generators… built by chatting with an AI builder, branded to you, as a mini web app <em>(a link people open in their browser, not an iOS or Android app)</em>, and ready to grow your list or sell for <strong>$9–$47</strong>.</p>
       <ul class="ticks">
         <li>No coding. Not even a little bit.</li>
         <li>No developer, no $500 custom build.</li>
         <li>4 short lessons, not a 12-week course.</li>
       </ul>
-      <a class="btn btn-pink" href="[CHECKOUT LINK]">Yes! Build My Mini App →</a>
+      <a class="btn btn-pink" href="#checkout">Yes! Build My Mini App →</a>
       <p class="micro">$49 · Instant access · Lifetime updates</p>
     
   </div>
@@ -351,8 +382,8 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 <section class="body">
   <div class="wrap narrow">
     <h2 class="center">Why nobody finishes your freebie (it's not you, promise)</h2>
-    <p>I know… you've heard "just make a better lead magnet" a hundred times. Me too :)</p>
-    <p>So you made a prettier PDF. Then a checklist. Then a 5-day challenge. And your list still looks at it the way I look at my laundry basket: <strong>"later."</strong></p>
+    <p>I know… you've heard <em>"just make a better lead magnet"</em> a hundred times. Me too :)</p>
+    <p>So you made a prettier PDF. Then a checklist. Then a 5-day challenge. And your list still looks at it the way I look at my laundry basket: <strong><em>"later."</em></strong></p>
     <p>Here's what changed. People don't want more things to read anymore. AI does the reading for them now. What will they happily spend 10 minutes on? Something that <strong>asks about their situation and gives them their own answer.</strong></p>
     <div class="formats">
       <div class="fmt"><b>A PDF</b>gets saved</div>
@@ -372,7 +403,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
       <div class="imagine-item"><div class="num">1</div><div><h3>Your freebie actually got finished</h3><p>Someone answers 5 questions, gets their own result, and remembers <strong>you</strong> made it.</p></div></div>
       <div class="imagine-item"><div class="num">2</div><div><h3>You had a new product without making a new course</h3><p>Your old worksheet becomes a $19 calculator people use again and again.</p></div></div>
       <div class="imagine-item"><div class="num">3</div><div><h3>You built it yourself, this week</h3><p>No developer. No waiting six weeks. Just you, an AI builder, and a cup of tea going cold.</p></div></div>
-      <div class="center" style="margin-top:12px"><a class="btn btn-pink" href="[CHECKOUT LINK]">I Want This →</a></div>
+      <div class="center" style="margin-top:12px"><a class="btn btn-pink" href="#checkout">I Want This →</a></div>
     </div>
   </div>
 </section>
@@ -386,8 +417,8 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 <section class="intro-sec center">
   <div class="wrap">
     <span class="eyebrow">Introducing…</span>
-    <div class="name">Interactive <em>Mini App</em></div>
-    <p class="sub">Turn what you already know into an interactive mini app, with no code.</p>
+    <div class="name">Interactive <em>Mini Apps</em></div>
+    <p class="sub">Turn what you already know into an interactive mini web app, with no code.<br><em style="font-size:16px">(A mini web app opens from a link in any browser. It's not an iOS or Android app.)</em></p>
     <div class="intro-slider"><div class="ba" style="--pos:50%">
         <div class="ba-stage">
           <!-- BEFORE: static PDF worksheets -->
@@ -422,9 +453,9 @@ details .a{padding:0 22px 20px;color:var(--muted)}
         <div class="ba-focus"></div>
       </div>
       <p class="ba-hint">Drag the slider: from PDFs nobody opens to a mini app people use</p></div>
-    <p class="desc"><strong>Interactive Mini Apps</strong> is a short, beginner-friendly course that takes you from "I have a freebie" to "I have a working app with a link." You'll find what to build, pick the right builder, watch me build one step by step on screen, and learn how to use it to <strong>grow your email list</strong> or <strong>sell it as a product</strong>.</p>
+    <p class="desc"><strong>Interactive Mini Apps</strong> is a short, beginner-friendly course that takes you from <em>"I have a freebie"</em> to <em>"I have a working app with a link."</em> You'll find what to build, pick the right builder, watch me build one step by step on screen, and learn how to use it to <strong>grow your email list</strong> or <strong>sell it as a product</strong>.</p>
     <p class="price-line"><b>$49</b></p>
-    <a class="btn btn-turq" href="[CHECKOUT LINK]">Grab Interactive Mini Apps →</a>
+    <a class="btn btn-turq" href="#checkout">Grab Interactive Mini Apps →</a>
   </div>
 </section>
 
@@ -500,7 +531,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
       <div class="fit-box yes"><h3>Yes, if you…</h3><ul>
         <li>Have a freebie or PDF nobody really uses</li>
         <li>Want a product that feels worth more than an ebook</li>
-        <li>Are a coach, creator or shop owner who's "not techy"</li>
+        <li>Are a coach, creator or shop owner who's <em>"not techy"</em></li>
         <li>Want something simple you'll actually finish</li>
         <li>Are happy to try a beginner-friendly AI builder</li>
       </ul></div>
@@ -513,22 +544,55 @@ details .a{padding:0 22px 20px;color:var(--muted)}
   </div>
 </section>
 
-<!-- 9. PRICE + URGENCY -->
-<section class="price">
+<!-- 9. CHECKOUT -->
+<section class="price" id="checkout">
   <div class="wrap">
-    <div class="card">
-      <span class="urgency">Launch price</span>
-      <div class="pname">Interactive Mini Apps</div>
-            <div class="now">$49</div>
-      <p class="note">One-time payment. Lifetime access. All future updates included.</p>
-      <a class="btn btn-turq" href="[CHECKOUT LINK]">Yes! I Need This →</a>
-      <p class="micro">If you miss the launch price, don't worry. I run flash sales almost every month 😉</p>
+    <div class="card checkout" id="checkout-card">
+      <div class="head">
+        <span class="urgency">One-time payment · lifetime access</span>
+        <div class="pname">Interactive Mini Apps</div>
+        <div class="now">$49</div>
+        <p class="note">One-time payment. Lifetime access. All future updates included.</p>
+      </div>
+      <form data-checkout data-product="mini-apps" data-price="49" data-next="canva-ai-prompt-library-offer.html" id="checkout-form" novalidate>
+        <label class="bump" for="bump">
+          <input type="checkbox" id="bump" name="bump">
+          <span class="bump-head"><span class="arrow" aria-hidden="true">➜</span> Yes! Add 7 Claude Skills for just $7</span>
+          <span class="bump-body">Seven ready-made Claude Skills for your emails, product descriptions, captions, weekly content plan, newsletter, blog posts and launch copy. Use them in your own business, or rebrand and resell them with the PLR rights. This price is only here, at checkout.</span>
+        </label>
+
+        <div class="buyer">
+          <label class="pay-label" for="buyer-name">Name on card</label>
+          <input id="buyer-name" name="name" type="text" autocomplete="cc-name" placeholder="Your full name" required>
+          <label class="pay-label" for="buyer-email">Email for your login</label>
+          <input id="buyer-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        </div>
+        <span class="pay-label">Card details</span>
+        <div class="pay-box" id="payment-element">
+          <div class="pay-row">
+            <input id="pay-card" type="text" placeholder="1234 1234 1234 1234" aria-label="Card number" disabled>
+            <input id="pay-exp" type="text" placeholder="MM / YY" aria-label="Expiry date" disabled>
+            <input id="pay-cvc" type="text" placeholder="CVC" aria-label="Security code" disabled>
+          </div>
+          <p class="pay-hint">Preview: Stripe's secure card form appears here once payments are connected.</p>
+        </div>
+
+        <div class="summary" aria-live="polite">
+          <div><span>Interactive Mini Apps</span><span>$49</span></div>
+          <div data-bump-row hidden><span>7 Claude Skills (PLR Ready)</span><span>$7</span></div>
+          <div class="tot"><span>Total today</span><span data-total>$49</span></div>
+        </div>
+
+        <button class="btn btn-pink" type="submit">Complete My Order · <span data-total>$49</span></button>
+        <p class="secure">🔒 Secure Stripe checkout. Your card is saved only so you can add extras in one click.</p>
+      </form>
     </div>
   </div>
 </section>
 
-<!-- 10. SOCIAL PROOF (PLACEHOLDERS: replace with real quotes only) -->
-<!-- Testimonials hidden until real ones are in
+<!-- 10. SOCIAL PROOF: hidden until there are real quotes
+ 10. SOCIAL PROOF (PLACEHOLDERS: replace with real quotes only) 
+ Testimonials hidden until real ones are in
 <section class="proof center">
   <div class="wrap">
     <h2>What people are saying</h2>
@@ -560,17 +624,17 @@ details .a{padding:0 22px 20px;color:var(--muted)}
     <h2>Your first mini app could be live this week.</h2>
     <p class="recap">Stop making things people only read. Make one small thing people can <strong>use</strong>.</p>
     <ul class="getlist">
-      <li>Lesson 1: What Could You Turn Into a Mini App?</li>
-      <li>Lesson 2: Which Builder Should You Use?</li>
-      <li>Lesson 3: Step by Step Screen Recording Walkthrough</li>
-      <li>Lesson 4: Share and Use Your Mini App</li>
-      <li>Bonus #1: Mini App Idea Finder App</li>
-      <li>Bonus #2: Idea Finder App Template Kit</li>
-      <li>Bonus #3: Promote Your Mini App Guide</li>
+      <li><strong>Lesson 1:</strong> What Could You Turn Into a Mini App?</li>
+      <li><strong>Lesson 2:</strong> Which Builder Should You Use?</li>
+      <li><strong>Lesson 3:</strong> Step by Step Screen Recording Walkthrough</li>
+      <li><strong>Lesson 4:</strong> Share and Use Your Mini App</li>
+      <li class="b"><strong>Bonus #1:</strong> Mini App Idea Finder App</li>
+      <li class="b"><strong>Bonus #2:</strong> Idea Finder App Template Kit</li>
+      <li class="b"><strong>Bonus #3:</strong> Promote Your Mini App Guide</li>
     </ul>
     <p class="price-line"><b>$49</b></p>
     <!-- FORM SLOT: paste your checkout embed (ThriveCart / Shopify buy button / payment link) here, or keep the button below -->
-    <a class="btn btn-turq" href="[CHECKOUT LINK]">Build My Mini App →</a>
+    <a class="btn btn-turq" href="#checkout">Build My Mini App →</a>
     <p class="micro">Instant access · One-time payment · No tech skills needed</p>
     <p class="signoff">Can't wait to see what you build ✨ Liya</p>
   </div>
@@ -597,8 +661,9 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 })();
 </script>
 
-  <footer style="background:#17191F;color:rgba(255,255,255,.7);text-align:center;padding:28px 20px;font:14px/1.6 Inter,system-ui,sans-serif">
-    <p style="margin:0">&copy; 2026 Creator Hustle AI &middot; <a href="privacy-policy.html" style="color:#fff">Privacy Policy</a> &middot; <a href="terms-of-use.html" style="color:#fff">Terms of Use</a> &middot; <a href="disclaimer.html" style="color:#fff">Disclaimer</a> &middot; <a href="contact.html" style="color:#fff">Contact</a> &middot; <a href="support.html" style="display:inline-block;margin-left:4px;padding:4px 12px;border-radius:999px;background:linear-gradient(180deg,#FF66C4,#E94AAC);color:#fff;font-weight:600;text-decoration:none">Customer Support</a></p>
+  <footer style="background:#fff;border-top:1px solid #EEF1F5;text-align:center;padding:18px 20px;font:12px/1.6 Inter,system-ui,sans-serif;color:#9AA4B2">
+    <p style="margin:0">&copy; 2026 Creator Hustle AI &middot; <a href="privacy-policy.html" style="color:#9AA4B2">Privacy</a> &middot; <a href="terms-of-use.html" style="color:#9AA4B2">Terms</a> &middot; <a href="disclaimer.html" style="color:#9AA4B2">Disclaimer</a> &middot; <a href="contact.html" style="color:#9AA4B2">Contact</a> &middot; <a href="support.html" style="color:#9AA4B2">Support</a></p>
   </footer>
+<script src="js/funnel.js"></script>
 </body>
 </html>
