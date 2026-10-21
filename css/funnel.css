@@ -119,7 +119,7 @@ strong{font-weight:600;color:var(--charcoal)}
 .was{font-size:20px;color:var(--muted);text-decoration:line-through}
 .card .now{font-size:64px;font-weight:800;color:var(--charcoal);line-height:1.1;margin:4px 0 6px;font-variant-numeric:tabular-nums}
 .card .note{margin-bottom:24px;color:var(--muted)}
-.card-on-file{display:flex;align-items:center;justify-content:center;gap:10px;font-size:14px;color:var(--muted);margin-top:14px}
+.card-on-file{display:flex;align-items:center;justify-content:center;gap:10px;font-size:13px;color:#9AA4B2;margin-top:14px}
 .card-on-file b{color:var(--charcoal)}
 .oneclick-msg{margin-top:14px;font-size:14px;color:var(--turq-btn-dark);font-weight:600}
 
@@ -215,7 +215,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 .summary .tot{font-weight:800;font-size:18px;color:var(--charcoal);border-top:1px solid var(--border);margin-top:8px;padding-top:10px}
 .checkout .btn{width:100%;text-align:center}
 .consent{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.5;text-align:center}
-.secure{font-size:13px;font-weight:600;color:var(--charcoal);margin-top:8px;text-align:center}
+.secure{font-size:13px;font-weight:400;color:#9AA4B2;margin-top:8px;text-align:center}
 .checkout .nothanks{display:block;text-align:center}
 @media(max-width:520px){.pay-row{grid-template-columns:1fr 1fr}.pay-row input:first-child{grid-column:1/-1}}
 
