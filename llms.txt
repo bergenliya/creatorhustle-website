@@ -16,6 +16,7 @@ Contact: liya@creatorhustle.ai · Instagram: https://www.instagram.com/creatorhu
 - [Skills Shop](https://creatorhustle.ai/skills-shop): ready-made Claude Skills that walk you step by step through building real systems in your business.
 - [AI Support Ticket Hub](https://creatorhustle.ai/ai-support-ticket-hub): Claude Skill for building an AI support ticket hub with drafted replies, phone alerts and one-click answers.
 - [AI Collab Request Hub](https://creatorhustle.ai/ai-collab-request-hub): Claude Skill for building a collab request hub with AI-drafted replies that check fit.
+- [Own Your Sales Funnel](https://creatorhustle.ai/own-your-sales-funnel): Claude Skill ($49) that guides you through building your own sales funnel on your website, with opt-in, tripwire with order bump, one-click upsell, downsell and thank-you pages connected to your own Stripe.
 - [Build Your Own Website with AI](https://creatorhustle.ai/build-your-own-website-with-ai): Claude Skill that guides you through building a business website and publishing it free on your own domain.
 - [All Access Pass](https://creatorhustle.ai/all-access-pass): every Creator Hustle AI course and shop product, plus everything new for 12 months, for one yearly price.
 - [Creator Hustle shop](https://creatorhustle.shop): low-cost AI tools, Claude Skills, Canva prompt libraries and done-for-you kits.

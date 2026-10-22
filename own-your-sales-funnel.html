@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A Claude Skill that walks you step by step through building your own sales funnel on your website: opt-in, tripwire with order bump, one-click upsell, downsell and thank-you pages, connected to your own Stripe. No monthly funnel software.">
+  <meta name="theme-color" content="#17191f">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Apply the saved theme before first paint to avoid a light flash
+       for dark-mode users. Kept inline on purpose. -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("site-theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+        else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+          document.documentElement.setAttribute("data-theme", "dark");
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- The hero photo is the largest contentful paint; fetch it early -->
+  
+  <title>Own Your Sales Funnel | Creator Hustle AI</title>
+
+  <!-- Fonts: Inter (all sans-serif). Swap the family in css/style.css → --font-base -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <!-- SEO: canonical, social and structured data -->
+  <link rel="canonical" href="https://creatorhustle.ai/own-your-sales-funnel">
+  <meta property="og:site_name" content="Creator Hustle AI">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Own Your Sales Funnel | Creator Hustle AI">
+  <meta property="og:description" content="A Claude Skill that walks you step by step through building your own sales funnel on your website: opt-in, tripwire with order bump, one-click upsell, downsell and thank-you pages, connected to your own Stripe. No monthly funnel software.">
+  <meta property="og:url" content="https://creatorhustle.ai/own-your-sales-funnel">
+  <meta property="og:image" content="https://creatorhustle.ai/assets/skills/own-your-sales-funnel.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://creatorhustle.ai/own-your-sales-funnel#page",
+   "url": "https://creatorhustle.ai/own-your-sales-funnel",
+   "name": "Own Your Sales Funnel | Creator Hustle AI",
+   "description": "A Claude Skill that walks you step by step through building your own sales funnel on your website: opt-in, tripwire with order bump, one-click upsell, downsell and thank-you pages, connected to your own Stripe. No monthly funnel software.",
+   "isPartOf": {
+    "@id": "https://creatorhustle.ai/#site"
+   },
+   "publisher": {
+    "@id": "https://creatorhustle.ai/#org"
+   },
+   "inLanguage": "en"
+  },
+  {
+   "@type": "Product",
+   "@id": "https://creatorhustle.ai/own-your-sales-funnel#product",
+   "name": "Own Your Sales Funnel",
+   "description": "A Claude Skill that walks you step by step through building your own sales funnel on your website: opt-in, tripwire with order bump, one-click upsell, downsell and thank-you pages, connected to your own Stripe. No monthly funnel software.",
+   "image": "https://creatorhustle.ai/assets/skills/own-your-sales-funnel.jpg",
+   "brand": {
+    "@id": "https://creatorhustle.ai/#org"
+   },
+   "offers": {
+    "@type": "Offer",
+    "price": "49",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://creatorhustle.ai/own-your-sales-funnel"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://creatorhustle.ai/own-your-sales-funnel#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Do I need to know how to code?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Claude writes all the copy and code with you. You review it, click where it tells you, and paste. Every step comes with numbered instructions, and you can send a screenshot whenever you're unsure."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What do I need?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A paid Claude plan (custom skills aren't on the free plan), a Stripe account, a free Cloudflare account, an email platform like Kit, MailerLite or Flodesk, and your offers: a freebie, a low-priced offer and an upsell. An order bump and a downsell are optional."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "My website is on Squarespace, Wix or WordPress. Will it work?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. If you can't add your own pages, Claude puts your funnel on a free subdomain like offers.yourbrand.com with Cloudflare, and you link to it from your main site."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do one-click upsells work?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Buyers enter their card once on your tripwire page. Stripe saves it securely for that order, so on the upsell and downsell pages they just click yes. A double click never charges twice, and the one-click window closes after 2 hours."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Are there monthly fees?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No funnel software fees. You pay Stripe's normal fees on each sale, and Cloudflare's free plan covers the payment helper for most small businesses."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is my Stripe account safe?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Your secret Stripe key never goes in the chat. Claude shows you exactly where to paste it in Cloudflare, so it never reaches the page or the browser. Prices are set in your payment helper, so buyers can't change what they pay."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What doesn't it do?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It doesn't include affiliates, payment plans, subscriptions, coupons, automatic sales tax or cart-abandonment emails. If you need those right now, a dedicated checkout tool may suit you better."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How long does it take?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Usually 3 to 4 sessions of about 2 hours, depending on how quickly you review the copy. Every path gets tested in Stripe test mode before you go live."
+     }
+    }
+   ]
+  }
+ ]
+}
+  </script>
+  <style>
+    .co{text-align:left;max-width:460px;margin:26px auto 0;background:#fff;border-radius:18px;padding:22px;box-shadow:0 18px 40px -24px rgba(23,25,31,.35);color:#1E2733}
+    .co-label{display:block;font-size:13px;font-weight:700;color:#17191F;margin:0 0 8px}
+    .co-input{width:100%;font:inherit;font-size:15px;padding:12px 14px;border:1.5px solid #E2E8F0;border-radius:10px;background:#fff;color:#1E2733;margin-bottom:14px}
+    .co-input:focus{outline:2px solid #00C2CB;outline-offset:1px;border-color:#00C2CB}
+    .co-pay{border:1.5px solid #E2E8F0;border-radius:14px;padding:14px;background:#F5F7FA;margin-bottom:6px;min-height:60px}
+    .co-hint{font-size:13px;color:#5A6B7F}
+    .co-sum{margin:18px 0 16px;border-top:1px solid #E2E8F0;padding-top:12px;font-size:15px}
+    .co-sum div{display:flex;justify-content:space-between;gap:12px;padding:4px 0}
+    .co-tot{font-weight:800;font-size:18px;color:#17191F;border-top:1px solid #E2E8F0;margin-top:8px;padding-top:10px}
+    .co-btn{width:100%;justify-content:center;background:linear-gradient(180deg,#0A9EA5 0%,#00868C 55%,#00767C 100%);color:#fff;border:0;box-shadow:0 10px 24px -10px rgba(0,118,124,.7)}
+    .co-btn:hover{color:#fff;filter:brightness(1.05)}
+    .co-secure{font-size:13px;color:#9AA4B2;margin-top:10px;text-align:center}
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+       Sticky header. Gets .scrolled class via JS after 50px scroll.
+  ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo" aria-label="Creator Hustle AI, home">
+        <img class="logo-svg" src="assets/logo.png" alt="Creator Hustle AI" width="463" height="243">
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#offers" class="nav-link">Courses</a></li>
+          <li><a href="skills-shop.html" class="nav-link active" aria-current="page">AI Skills</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="work-with-me.html" class="nav-link">Work with me</a></li>
+          <li><a href="support.html" class="nav-link">Support</a></li>
+        </ul>
+        <a href="pdf-to-interactive-workbook.html" class="btn btn-primary btn-sm nav-cta">Get the free skill</a>
+        <a href="https://creatorhustle.shop" class="btn btn-dark btn-sm nav-shop" target="_blank" rel="noopener">Shop</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <!-- Sun icon (shown in dark mode) -->
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <section class="hero hero--page" id="hero">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <p class="hero-eyebrow animate-on-load" style="--delay: 0">Part of the Skills Shop</p>
+        <h1 class="hero-title animate-on-load" style="--delay: 1">Your own sales funnel, <span class="hero-title-accent">on your own website</span></h1>
+        <p class="hero-subtitle animate-on-load" style="--delay: 2">A Claude Skill that builds your opt-in, tripwire, upsell, downsell and thank-you pages with you, and connects them to your own Stripe, <span class="hl-sub">with no monthly funnel software.</span></p>
+        <div class="hero-actions animate-on-load" style="--delay: 3">
+          <a href="#buy" class="btn btn-primary btn-lg">Get the skill &middot; $49 <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section problem-section" id="problem">
+      <div class="container narrow-wrap">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">Sound familiar?</span>
+          <h2 class="section-title">Paying every month just to sell your offers?</h2>
+        </div>
+        <ul class="problem-list animate-on-scroll">
+          <li>Your funnel tool costs you every month, even in months with no sales</li>
+          <li>You'd love upsells and order bumps, but setting them up feels too technical</li>
+          <li>Your offers live on someone else's platform instead of your own website</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section collab" id="introducing">
+      <div class="container">
+        <div class="intro-grid">
+          <div class="animate-on-scroll">
+            <span class="section-eyebrow">Introducing</span>
+            <h2 class="section-title align-left">Own Your Sales Funnel</h2>
+            <p class="intro-text">This Claude Skill is the system I used to build my own funnel on creatorhustle.ai. Claude maps your funnel with you, writes the copy for every page in your voice, builds the pages in your brand, and connects them to your own Stripe so the money lands straight in your account.</p>
+            <p class="intro-text">Buyers enter their card once, then add your upsell or downsell with one click. The thank-you page delivers everything they bought, and every path gets tested in Stripe test mode before you go live.</p>
+          </div>
+          <div class="intro-media animate-on-scroll"><img src="assets/skills/own-your-sales-funnel.jpg" alt="Own Your Sales Funnel Claude Skill mockup with a funnel map from opt-in to thank-you page and a one-click upsell" loading="lazy" decoding="async" width="900" height="1125" class="prod-mock"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">How it works</span>
+          <h2 class="section-title">Four simple steps</h2>
+        </div>
+        <div class="hiw-grid"><div class="hiw-box animate-on-scroll"><span class="hiw-no">1</span><div><h3>Map your funnel</h3><p>Share your freebie and offers. Claude draws your funnel map with you: what people see next when they say yes, and when they say no.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">2</span><div><h3>Copy and pages</h3><p>Claude writes every page in your voice, one at a time for your approval, then builds them in your brand colours and fonts.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">3</span><div><h3>Connect Stripe</h3><p>Click-by-click steps to set up a small, free payment helper on Cloudflare and connect your pages, your email platform and your website.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">4</span><div><h3>Test and go live</h3><p>Test every path with Stripe's test cards, switch to live, make one real purchase and refund it, and you're open for sales.</p></div></div></div>
+      </div>
+    </section>
+
+    <section class="section collab" id="extras">
+      <div class="container narrow-wrap">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">What you'll build</span>
+          <h2 class="section-title">Every page of your funnel</h2>
+        </div>
+        <ul class="problem-list animate-on-scroll">
+          <li><strong>Opt-in page:</strong> your freebie, connected to your email platform</li>
+          <li><strong>Tripwire page:</strong> a small, easy yes with checkout and an order bump</li>
+          <li><strong>Upsell page:</strong> a one-click upgrade, no need to re-enter the card</li>
+          <li><strong>Downsell page:</strong> a lighter yes for people who skip the upsell</li>
+          <li><strong>Thank-you pages:</strong> download links for everything they bought, plus a page for freebie-only visitors</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="faq-q">
+      <div class="container narrow-wrap">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">FAQ</span>
+          <h2 class="section-title">Questions, answered</h2>
+        </div>
+        <div class="faq-cards animate-on-scroll">
+          <details class="faq-card"><summary>Do I need to know how to code?</summary><p>No. Claude writes all the copy and code with you. You review it, click where it tells you, and paste. Every step comes with numbered instructions, and you can send a screenshot whenever you're unsure.</p></details>
+          <details class="faq-card"><summary>What do I need?</summary><p>A paid Claude plan (custom skills aren't on the free plan), a Stripe account, a free Cloudflare account, an email platform like Kit, MailerLite or Flodesk, and your offers: a freebie, a low-priced offer and an upsell. An order bump and a downsell are optional.</p></details>
+          <details class="faq-card"><summary>My website is on Squarespace, Wix or WordPress. Will it work?</summary><p>Yes. If you can't add your own pages, Claude puts your funnel on a free subdomain like offers.yourbrand.com with Cloudflare, and you link to it from your main site.</p></details>
+          <details class="faq-card"><summary>How do one-click upsells work?</summary><p>Buyers enter their card once on your tripwire page. Stripe saves it securely for that order, so on the upsell and downsell pages they just click yes. A double click never charges twice, and the one-click window closes after 2 hours.</p></details>
+          <details class="faq-card"><summary>Are there monthly fees?</summary><p>No funnel software fees. You pay Stripe's normal fees on each sale, and Cloudflare's free plan covers the payment helper for most small businesses.</p></details>
+          <details class="faq-card"><summary>Is my Stripe account safe?</summary><p>Your secret Stripe key never goes in the chat. Claude shows you exactly where to paste it in Cloudflare, so it never reaches the page or the browser. Prices are set in your payment helper, so buyers can't change what they pay.</p></details>
+          <details class="faq-card"><summary>What doesn't it do?</summary><p>It doesn't include affiliates, payment plans, subscriptions, coupons, automatic sales tax or cart-abandonment emails. If you need those right now, a dedicated checkout tool may suit you better.</p></details>
+          <details class="faq-card"><summary>How long does it take?</summary><p>Usually 3 to 4 sessions of about 2 hours, depending on how quickly you review the copy. Every path gets tested in Stripe test mode before you go live.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section price-pink" id="buy">
+      <div class="container">
+        <div class="price-card animate-on-scroll">
+          <span class="section-eyebrow">Claude Skill</span>
+          <h2 class="section-title">Own Your Sales Funnel</h2>
+          <p class="price-big">$49</p>
+          <ul class="svc-list"><li>The Own Your Sales Funnel Claude Skill</li><li>Your Start Here guide (PDF) with install steps</li><li>Opt-in, tripwire, upsell, downsell and thank-you page blueprints</li><li>Copy for every page, written in your voice</li><li>A ready-made Stripe checkout with order bump and one-click upsells</li><li>Click-by-click Stripe and Cloudflare setup</li><li>Help adding the funnel to your website, or a free subdomain</li><li>A full test plan before you go live</li><li>Email support if you get stuck</li></ul>
+          <form class="co" data-checkout data-funnel="own-your-sales-funnel-sales" data-product="own-your-sales-funnel" data-price="49" data-next="welcome.html" id="checkout-form" novalidate>
+            <label class="co-label" for="buyer-name">Name on card</label>
+            <input class="co-input" id="buyer-name" name="name" type="text" autocomplete="cc-name" placeholder="Your full name" required>
+            <label class="co-label" for="buyer-email">Email for your login</label>
+            <input class="co-input" id="buyer-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+            <span class="co-label">Card details</span>
+            <div class="co-pay" id="payment-element"><p class="co-hint">Stripe's secure card form loads here.</p></div>
+            <div class="co-sum" aria-live="polite">
+              <div><span>Own Your Sales Funnel</span><span>$49</span></div>
+              <div class="co-tot"><span>Total today</span><span data-total>$49</span></div>
+            </div>
+            <button class="btn btn-lg co-btn" type="submit">Get instant access &middot; <span data-total>$49</span></button>
+            <p class="co-secure">🔒 Secure Stripe checkout. You'll get your login and download straight away.</p>
+          </form>
+          <p class="price-note">Instant download. Needs a paid Claude plan, a Stripe account and a free Cloudflare account.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bio-strip" id="bio">
+      <div class="container bio-strip-inner animate-on-scroll">
+        <img src="assets/liya-bio-pink.jpg" alt="Liya Bergen smiling in a pink jumper" loading="lazy" decoding="async" width="560" height="560" style="object-position:50% 50%">
+        <p><strong>Hi, I'm Liya, founder of Creator Hustle AI.</strong> I've been building online courses and digital products since 2014. I built my own funnel this way, with one-click upsells straight into my own Stripe, and I put everything I learned into this skill so you can build yours.</p>
+      </div>
+    </section>
+
+    <section class="section closing-section" id="closing">
+      <div class="container narrow-wrap animate-on-scroll" style="text-align:center">
+        <h2 class="section-title">Own your funnel, keep your fees</h2>
+        <p class="section-subtitle">Your offers, your website and your Stripe, with a funnel that works for you every day.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER — dark closer with giant wordmark
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <img class="logo-svg" src="assets/logo.png" alt="Creator Hustle AI" width="463" height="243" loading="lazy">
+        <p class="footer-tagline">
+          Simple AI tools and courses for coaches and creators who want to
+          work less and still grow.
+        </p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/creatorhustle.ai/" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37a4 4 0 1 1-7.91 1.17 4 4 0 0 1 7.91-1.17z"/><path d="M17.5 6.5h.01"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-col" aria-label="Footer navigation">
+        <h3 class="footer-heading">Navigate</h3>
+        <ul class="footer-links">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#offers">Courses</a></li>
+          <li><a href="skills-shop.html">AI Skills</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Waitlists</a></li>
+          <li><a href="work-with-me.html">Work with me</a></li>
+          <li><a href="collaborate.html">Collaborate</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-use.html">Terms of Use</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Contact</h3>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="support.html" class="footer-link-highlight">Customer Support</a></li>
+          <li><a href="https://go.coursehustle.com/l/" target="_blank" rel="noopener">Course login</a></li>
+          <li><a href="mailto:liya@creatorhustle.ai">liya@creatorhustle.ai</a></li>
+          <li><a href="https://www.instagram.com/creatorhustle.ai/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://creatorhustle.shop" target="_blank" rel="noopener">Shop</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Creator Hustle AI. All rights reserved.</p>
+      <a href="#main" class="footer-top-btn" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </a>
+    </div>
+
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/funnel.js"></script>
+  <!-- Fillout embed loader (contact form) -->
+  <script src="https://server.fillout.com/embed/v1/" async></script>
+</body>
+</html>
