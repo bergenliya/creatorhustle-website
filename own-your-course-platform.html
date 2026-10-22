@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A Claude Skill that walks you step by step through building your own branded course platform with Lovable and Stripe: student logins, a course library, payments and a welcome email. No monthly platform fees.">
+  <meta name="theme-color" content="#17191f">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Apply the saved theme before first paint to avoid a light flash
+       for dark-mode users. Kept inline on purpose. -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("site-theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+        else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+          document.documentElement.setAttribute("data-theme", "dark");
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- The hero photo is the largest contentful paint; fetch it early -->
+  
+  <title>Own Your Course Platform | Creator Hustle AI</title>
+
+  <!-- Fonts: Inter (all sans-serif). Swap the family in css/style.css → --font-base -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <!-- SEO: canonical, social and structured data -->
+  <link rel="canonical" href="https://creatorhustle.ai/own-your-course-platform">
+  <meta property="og:site_name" content="Creator Hustle AI">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Own Your Course Platform | Creator Hustle AI">
+  <meta property="og:description" content="A Claude Skill that walks you step by step through building your own branded course platform with Lovable and Stripe: student logins, a course library, payments and a welcome email. No monthly platform fees.">
+  <meta property="og:url" content="https://creatorhustle.ai/own-your-course-platform">
+  <meta property="og:image" content="https://creatorhustle.ai/assets/skills/own-your-course-platform.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://creatorhustle.ai/own-your-course-platform#page",
+   "url": "https://creatorhustle.ai/own-your-course-platform",
+   "name": "Own Your Course Platform | Creator Hustle AI",
+   "description": "A Claude Skill that walks you step by step through building your own branded course platform with Lovable and Stripe: student logins, a course library, payments and a welcome email. No monthly platform fees.",
+   "isPartOf": {
+    "@id": "https://creatorhustle.ai/#site"
+   },
+   "publisher": {
+    "@id": "https://creatorhustle.ai/#org"
+   },
+   "inLanguage": "en"
+  },
+  {
+   "@type": "Product",
+   "@id": "https://creatorhustle.ai/own-your-course-platform#product",
+   "name": "Own Your Course Platform",
+   "description": "A Claude Skill that walks you step by step through building your own branded course platform with Lovable and Stripe: student logins, a course library, payments and a welcome email. No monthly platform fees.",
+   "image": "https://creatorhustle.ai/assets/skills/own-your-course-platform.jpg",
+   "brand": {
+    "@id": "https://creatorhustle.ai/#org"
+   },
+   "offers": {
+    "@type": "Offer",
+    "price": "49",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://creatorhustle.ai/own-your-course-platform"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://creatorhustle.ai/own-your-course-platform#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Do I need to know how to code?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not at all. Claude writes every prompt for Lovable, the AI app builder, and walks you through every click in Stripe and your domain settings in plain English. You make the decisions."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What do I need?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A paid Claude plan (custom skills aren't on the free plan), a paid Lovable plan, a Stripe account, your own domain and a free Resend account for the welcome email. Plus your course content: names, prices, covers, videos and files."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How much does it cost to run?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "There are no course platform fees. You pay for your Lovable plan, Stripe's usual card fees on each sale and your domain once a year, and Resend is free to start. Building and changing your platform uses Lovable credits, and my rough estimate is 40 to 80 credits for the core build. Those plans and prices are set by each company and can change."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How long does it take?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Most people need 3 to 5 sessions of about 2 hours for the core platform, plus testing. That's an estimate, and every stage is a natural place to stop and pick up later."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is it safe to take payments this way?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Payments run through Stripe, logins and data through Lovable Cloud, and emails through Resend. The skill has you test every buying path in Stripe's test mode first, then do one real purchase with your own card before you go live. And Claude never asks for your secret keys in the chat."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What doesn't it include?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Out of the box, there are no affiliates, certificates, community area or mobile app, and taxes and legal pages stay your responsibility, like with any online shop. You can add extras later with more Lovable prompts."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Would you rather I built it with you?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "I'm opening a done-with-you version soon, where we build it together inside your own accounts. Email me at liya@creatorhustle.ai to hear first."
+     }
+    }
+   ]
+  }
+ ]
+}
+  </script>
+  <style>
+    .co{text-align:left;max-width:460px;margin:26px auto 0;background:#fff;border-radius:18px;padding:22px;box-shadow:0 18px 40px -24px rgba(23,25,31,.35);color:#1E2733}
+    .co-label{display:block;font-size:13px;font-weight:700;color:#17191F;margin:0 0 8px}
+    .co-input{width:100%;font:inherit;font-size:15px;padding:12px 14px;border:1.5px solid #E2E8F0;border-radius:10px;background:#fff;color:#1E2733;margin-bottom:14px}
+    .co-input:focus{outline:2px solid #00C2CB;outline-offset:1px;border-color:#00C2CB}
+    .co-pay{border:1.5px solid #E2E8F0;border-radius:14px;padding:14px;background:#F5F7FA;margin-bottom:6px;min-height:60px}
+    .co-hint{font-size:13px;color:#5A6B7F}
+    .co-sum{margin:18px 0 16px;border-top:1px solid #E2E8F0;padding-top:12px;font-size:15px}
+    .co-sum div{display:flex;justify-content:space-between;gap:12px;padding:4px 0}
+    .co-tot{font-weight:800;font-size:18px;color:#17191F;border-top:1px solid #E2E8F0;margin-top:8px;padding-top:10px}
+    .co-btn{width:100%;justify-content:center;background:linear-gradient(180deg,#0A9EA5 0%,#00868C 55%,#00767C 100%);color:#fff;border:0;box-shadow:0 10px 24px -10px rgba(0,118,124,.7)}
+    .co-btn:hover{color:#fff;filter:brightness(1.05)}
+    .co-secure{font-size:13px;color:#9AA4B2;margin-top:10px;text-align:center}
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+       Sticky header. Gets .scrolled class via JS after 50px scroll.
+  ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo" aria-label="Creator Hustle AI, home">
+        <img class="logo-svg" src="assets/logo.png" alt="Creator Hustle AI" width="463" height="243">
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#offers" class="nav-link">Courses</a></li>
+          <li><a href="skills-shop.html" class="nav-link active" aria-current="page">AI Skills</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="work-with-me.html" class="nav-link">Work with me</a></li>
+          <li><a href="support.html" class="nav-link">Support</a></li>
+        </ul>
+        <a href="pdf-to-interactive-workbook.html" class="btn btn-primary btn-sm nav-cta">Get the free skill</a>
+        <a href="https://creatorhustle.shop" class="btn btn-dark btn-sm nav-shop" target="_blank" rel="noopener">Shop</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <!-- Sun icon (shown in dark mode) -->
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <section class="hero hero--page" id="hero">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <p class="hero-eyebrow animate-on-load" style="--delay: 0">Part of the Skills Shop</p>
+        <h1 class="hero-title animate-on-load" style="--delay: 1">Your own course platform, <span class="hero-title-accent">built with AI</span></h1>
+        <p class="hero-subtitle animate-on-load" style="--delay: 2">A Claude Skill that walks you step by step through building a branded course library with logins, Stripe payments and a welcome email, <span class="hl-sub">with no monthly platform fees.</span></p>
+        <div class="hero-actions animate-on-load" style="--delay: 3">
+          <a href="#buy" class="btn btn-primary btn-lg">Get the skill &middot; $49 <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section problem-section" id="problem">
+      <div class="container narrow-wrap">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">Sound familiar?</span>
+          <h2 class="section-title">Tired of renting your course platform?</h2>
+        </div>
+        <ul class="problem-list animate-on-scroll">
+          <li>You pay Kajabi, Teachable or Thinkific every single month, even in quiet months</li>
+          <li>Your courses look like everyone else's, not like your brand</li>
+          <li>Moving platforms feels so technical that you keep putting it off</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section collab" id="introducing">
+      <div class="container">
+        <div class="intro-grid">
+          <div class="animate-on-scroll">
+            <span class="section-eyebrow">Introducing</span>
+            <h2 class="section-title align-left">Own Your Course Platform</h2>
+            <p class="intro-text">This Claude Skill is the exact process I used to build my own course platform, learn.creatorhustle.ai, in October 2026. Claude asks about your brand and courses, then writes every prompt for Lovable, the AI app builder, so your platform gets built one stage at a time.</p>
+            <p class="intro-text">Then it walks you through Stripe payments, a welcome email from your own address, testing every buying path and going live on your own domain. Every mistake I made along the way is built in, so you don't have to make them too.</p>
+          </div>
+          <div class="intro-media animate-on-scroll"><img src="assets/skills/own-your-course-platform.jpg" alt="Own Your Course Platform Claude Skill mockup with a branded course library, a Stripe payment and a welcome email" loading="lazy" decoding="async" width="900" height="1125" class="prod-mock"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">How it works</span>
+          <h2 class="section-title">Four simple steps</h2>
+        </div>
+        <div class="hiw-grid"><div class="hiw-box animate-on-scroll"><span class="hiw-no">1</span><div><h3>Plan your platform</h3><p>Claude asks about your brand, courses and prices, then turns your answers into a simple build plan before anything gets built.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">2</span><div><h3>Build it stage by stage</h3><p>Claude writes each Lovable prompt for you: logins, your course library, lesson pages, search and your account page. You paste, check and move on.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">3</span><div><h3>Add payments and email</h3><p>Stripe checkout with instant access, a "create your password" step, and a welcome email sent from your own domain.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">4</span><div><h3>Test and go live</h3><p>Test every buying path in Stripe's test mode, connect your domain, then do one real purchase before you announce it.</p></div></div></div>
+      </div>
+    </section>
+
+    <section class="section collab" id="extras">
+      <div class="container narrow-wrap">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">Optional extras</span>
+          <h2 class="section-title">Add them when you're ready</h2>
+        </div>
+        <ul class="problem-list animate-on-scroll">
+          <li><strong>Order bump:</strong> a tick box at checkout to add a small extra</li>
+          <li><strong>One-click upsell:</strong> a special offer right after checkout, charged to the saved card</li>
+          <li><strong>Freebie opt-in:</strong> a free gift page connected to your email platform</li>
+          <li><strong>Review gift:</strong> a little gift box that thanks students for an honest review</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="faq-q">
+      <div class="container narrow-wrap">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">FAQ</span>
+          <h2 class="section-title">Questions, answered</h2>
+        </div>
+        <div class="faq-cards animate-on-scroll">
+          <details class="faq-card"><summary>Do I need to know how to code?</summary><p>Not at all. Claude writes every prompt for Lovable, the AI app builder, and walks you through every click in Stripe and your domain settings in plain English. You make the decisions.</p></details>
+          <details class="faq-card"><summary>What do I need?</summary><p>A paid Claude plan (custom skills aren't on the free plan), a paid Lovable plan, a Stripe account, your own domain and a free Resend account for the welcome email. Plus your course content: names, prices, covers, videos and files.</p></details>
+          <details class="faq-card"><summary>How much does it cost to run?</summary><p>There are no course platform fees. You pay for your Lovable plan, Stripe's usual card fees on each sale and your domain once a year, and Resend is free to start. Building and changing your platform uses Lovable credits, and my rough estimate is 40 to 80 credits for the core build. Those plans and prices are set by each company and can change.</p></details>
+          <details class="faq-card"><summary>How long does it take?</summary><p>Most people need 3 to 5 sessions of about 2 hours for the core platform, plus testing. That's an estimate, and every stage is a natural place to stop and pick up later.</p></details>
+          <details class="faq-card"><summary>Is it safe to take payments this way?</summary><p>Payments run through Stripe, logins and data through Lovable Cloud, and emails through Resend. The skill has you test every buying path in Stripe's test mode first, then do one real purchase with your own card before you go live. And Claude never asks for your secret keys in the chat.</p></details>
+          <details class="faq-card"><summary>What doesn't it include?</summary><p>Out of the box, there are no affiliates, certificates, community area or mobile app, and taxes and legal pages stay your responsibility, like with any online shop. You can add extras later with more Lovable prompts.</p></details>
+          <details class="faq-card"><summary>Would you rather I built it with you?</summary><p>I'm opening a done-with-you version soon, where we build it together inside your own accounts. Email me at <a href="mailto:liya@creatorhustle.ai">liya@creatorhustle.ai</a> to hear first.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section price-pink" id="buy">
+      <div class="container">
+        <div class="price-card animate-on-scroll">
+          <span class="section-eyebrow">Claude Skill</span>
+          <h2 class="section-title">Own Your Course Platform</h2>
+          <p class="price-big">$49</p>
+          <ul class="svc-list"><li>The Own Your Course Platform Claude Skill</li><li>Your Start Here guide (PDF) with install steps</li><li>9 ready-made Lovable prompts, filled in with your brand and products</li><li>Click-by-click Stripe and welcome email setup</li><li>A testing and launch checklist</li><li>A troubleshooting guide built from real mistakes</li><li>Optional extras: order bump, one-click upsell, freebie opt-in and review gift</li><li>Email support if you get stuck</li></ul>
+
+          <form class="co" data-checkout data-funnel="own-your-course-platform-sales" data-product="own-your-course-platform" data-price="49" data-next="welcome.html" id="checkout-form" novalidate>
+            <label class="co-label" for="buyer-name">Name on card</label>
+            <input class="co-input" id="buyer-name" name="name" type="text" autocomplete="cc-name" placeholder="Your full name" required>
+            <label class="co-label" for="buyer-email">Email for your login</label>
+            <input class="co-input" id="buyer-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+            <span class="co-label">Card details</span>
+            <div class="co-pay" id="payment-element"><p class="co-hint">Stripe's secure card form loads here.</p></div>
+            <div class="co-sum" aria-live="polite">
+              <div><span>Own Your Course Platform</span><span>$49</span></div>
+              <div class="co-tot"><span>Total today</span><span data-total>$49</span></div>
+            </div>
+            <button class="btn btn-lg co-btn" type="submit">Get instant access &middot; <span data-total>$49</span></button>
+            <p class="co-secure">🔒 Secure Stripe checkout. You'll get your login and download straight away.</p>
+          </form>
+          <p class="price-note">Instant download. Needs a paid Claude plan and a paid Lovable plan.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bio-strip" id="bio">
+      <div class="container bio-strip-inner animate-on-scroll">
+        <img src="assets/liya-bio-pink.jpg" alt="Liya Bergen smiling in a pink jumper" loading="lazy" decoding="async" width="560" height="560" style="object-position:50% 50%">
+        <p><strong>Hi, I'm Liya, founder of Creator Hustle AI.</strong> I've been building online courses and digital products since 2014. In October 2026, I moved my courses onto my own platform, built with Lovable and Claude, with Stripe payments, one-click upsells and a welcome email from my own domain. This skill shows you how to build yours.</p>
+      </div>
+    </section>
+
+    <section class="section closing-section" id="closing">
+      <div class="container narrow-wrap animate-on-scroll" style="text-align:center">
+        <h2 class="section-title">A course platform that's yours</h2>
+        <p class="section-subtitle">Your brand, your students and your payments, all in your own accounts. Build it in your own time, and change it whenever your business grows.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER — dark closer with giant wordmark
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <img class="logo-svg" src="assets/logo.png" alt="Creator Hustle AI" width="463" height="243" loading="lazy">
+        <p class="footer-tagline">
+          Simple AI tools and courses for coaches and creators who want to
+          work less and still grow.
+        </p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/creatorhustle.ai/" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37a4 4 0 1 1-7.91 1.17 4 4 0 0 1 7.91-1.17z"/><path d="M17.5 6.5h.01"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-col" aria-label="Footer navigation">
+        <h3 class="footer-heading">Navigate</h3>
+        <ul class="footer-links">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#offers">Courses</a></li>
+          <li><a href="skills-shop.html">AI Skills</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Waitlists</a></li>
+          <li><a href="work-with-me.html">Work with me</a></li>
+          <li><a href="collaborate.html">Collaborate</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-use.html">Terms of Use</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Contact</h3>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="support.html" class="footer-link-highlight">Customer Support</a></li>
+          <li><a href="https://go.coursehustle.com/l/" target="_blank" rel="noopener">Course login</a></li>
+          <li><a href="mailto:liya@creatorhustle.ai">liya@creatorhustle.ai</a></li>
+          <li><a href="https://www.instagram.com/creatorhustle.ai/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://creatorhustle.shop" target="_blank" rel="noopener">Shop</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Creator Hustle AI. All rights reserved.</p>
+      <a href="#main" class="footer-top-btn" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </a>
+    </div>
+
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/funnel.js"></script>
+  <!-- Fillout embed loader (contact form) -->
+  <script src="https://server.fillout.com/embed/v1/" async></script>
+</body>
+</html>
