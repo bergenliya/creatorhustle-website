@@ -393,6 +393,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 </script>
 </head>
 <body>
+<div class="wk" style="background:#17191F;color:#fff;text-align:center;padding:10px 16px;font:600 14px/1.4 Inter,system-ui,sans-serif">Weekend only: <s style="opacity:.6">$49</s> <span style="color:#FF66C4">$19</span> until Sunday night</div>
 
 <!-- 1. HERO -->
 <section class="hero">
@@ -443,7 +444,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
         <li>4 short lessons, not a 12-week course.</li>
       </ul>
       <a class="btn btn-pink" href="#checkout">Yes! Build My Mini App →</a>
-      <p class="micro">$49 · Instant access · Lifetime updates</p>
+      <p class="micro"><span class="wk"><s>$49</s> <strong>$19 this weekend only</strong></span><span class="reg" hidden>$49</span> · Instant access · Lifetime updates</p>
     
   </div>
 </section>
@@ -538,7 +539,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
       </div>
       <p class="ba-hint">Drag the slider: from PDFs nobody opens to a mini app people use</p></div>
     <p class="desc"><strong>Interactive Mini Apps</strong> is a short, beginner-friendly course that takes you from <em>"I have a freebie"</em> to <em>"I have a working app with a link."</em> You'll find what to build, pick the right builder, watch me build one step by step on screen, and learn how to use it to <strong>grow your email list</strong> or <strong>sell it as a product</strong>.</p>
-    <p class="price-line"><b>$49</b></p>
+    <p class="price-line"><span class="wk"><s>$49</s> <b>$19</b></span><span class="reg" hidden><b>$49</b></span></p>
     <a class="btn btn-turq" href="#checkout">Grab Interactive Mini Apps →</a>
   </div>
 </section>
@@ -635,10 +636,11 @@ details .a{padding:0 22px 20px;color:var(--muted)}
       <div class="head">
         <span class="urgency">One-time payment · lifetime access</span>
         <div class="pname">Interactive Mini Apps</div>
-        <div class="now">$49</div>
+        <div class="was wk">$49</div>
+        <div class="now"><span class="wk">$19</span><span class="reg" hidden>$49</span></div>
         <p class="note">One-time payment. Lifetime access. All future updates included.</p>
       </div>
-      <form data-checkout data-funnel="mini-apps-sales" data-product="mini-apps" data-price="49" data-next="canva-ai-prompt-library-offer.html" id="checkout-form" novalidate>
+      <form data-checkout data-funnel="mini-app-funnel" data-product="mini-apps" data-price="19" data-next="canva-ai-prompt-library-offer.html" id="checkout-form" novalidate>
         <label class="bump" for="bump">
           <input type="checkbox" id="bump" name="bump">
           <span class="bump-head"><span class="arrow" aria-hidden="true">➜</span> Yes! Add 7 Claude Skills for just $7</span>
@@ -662,12 +664,12 @@ details .a{padding:0 22px 20px;color:var(--muted)}
         </div>
 
         <div class="summary" aria-live="polite">
-          <div><span>Interactive Mini Apps</span><span>$49</span></div>
+          <div><span>Interactive Mini Apps</span><span><span class="wk">$19</span><span class="reg" hidden>$49</span></span></div>
           <div data-bump-row hidden><span>7 Claude Skills (PLR Ready)</span><span>$7</span></div>
-          <div class="tot"><span>Total today</span><span data-total>$49</span></div>
+          <div class="tot"><span>Total today</span><span data-total>$19</span></div>
         </div>
 
-        <button class="btn btn-turq" type="submit">Complete My Order · <span data-total>$49</span></button>
+        <button class="btn btn-turq" type="submit">Complete My Order · <span data-total>$19</span></button>
         <p class="secure">🔒 Secure Stripe checkout. Your card is saved only so you can add extras in one click.</p>
       </form>
     </div>
@@ -716,7 +718,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
       <li class="b"><strong>Bonus #2:</strong> Idea Finder App Template Kit</li>
       <li class="b"><strong>Bonus #3:</strong> Promote Your Mini App Guide</li>
     </ul>
-    <p class="price-line"><b>$49</b></p>
+    <p class="price-line"><span class="wk"><s>$49</s> <b>$19</b></span><span class="reg" hidden><b>$49</b></span></p>
     <!-- FORM SLOT: paste your checkout embed (ThriveCart / Shopify buy button / payment link) here, or keep the button below -->
     <a class="btn btn-turq" href="#checkout">Build My Mini App →</a>
     <p class="micro">Instant access · One-time payment · No tech skills needed</p>
@@ -748,6 +750,12 @@ details .a{padding:0 22px 20px;color:var(--muted)}
   <footer style="background:#fff;border-top:1px solid #EEF1F5;text-align:center;padding:18px 20px;font:12px/1.6 Inter,system-ui,sans-serif;color:#9AA4B2">
     <p style="margin:0">&copy; 2026 Creator Hustle AI &middot; <a href="privacy-policy.html" style="color:#9AA4B2">Privacy</a> &middot; <a href="terms-of-use.html" style="color:#9AA4B2">Terms</a> &middot; <a href="disclaimer.html" style="color:#9AA4B2">Disclaimer</a> &middot; <a href="contact.html" style="color:#9AA4B2">Contact</a> &middot; <a href="support.html" style="color:#9AA4B2">Support</a></p>
   </footer>
+<script>/* WEEKEND PRICE: $19 until Sun 25 Oct 2026 23:59 Istanbul, then back to $49 automatically */
+(function(){if(Date.now()<Date.parse("2026-10-25T21:00:00Z"))return;
+document.querySelectorAll(".wk").forEach(function(e){e.hidden=true;});
+document.querySelectorAll(".reg").forEach(function(e){e.hidden=false;});
+var f=document.getElementById("checkout-form");if(f){f.setAttribute("data-funnel","mini-apps-sales");f.setAttribute("data-price","49");}
+document.querySelectorAll("[data-total]").forEach(function(e){e.textContent="$49";});})();</script>
 <script src="js/funnel.js"></script>
 </body>
 </html>
