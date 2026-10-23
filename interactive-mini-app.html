@@ -393,7 +393,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 </script>
 </head>
 <body>
-<div class="wk" style="background:#17191F;color:#fff;text-align:center;padding:10px 16px;font:600 14px/1.4 Inter,system-ui,sans-serif">Weekend only: <s style="opacity:.6">$49</s> <span style="color:#FF66C4">$19</span> until Sunday night</div>
+<div class="wk" style="background:#17191F;color:#fff;text-align:center;padding:10px 16px;font:600 14px/1.4 Inter,system-ui,sans-serif">Weekend only: <s style="opacity:.6">$49</s> <span style="color:#FF66C4">$19</span> until Sunday midnight (New York time)</div>
 
 <!-- 1. HERO -->
 <section class="hero">
@@ -750,8 +750,8 @@ details .a{padding:0 22px 20px;color:var(--muted)}
   <footer style="background:#fff;border-top:1px solid #EEF1F5;text-align:center;padding:18px 20px;font:12px/1.6 Inter,system-ui,sans-serif;color:#9AA4B2">
     <p style="margin:0">&copy; 2026 Creator Hustle AI &middot; <a href="privacy-policy.html" style="color:#9AA4B2">Privacy</a> &middot; <a href="terms-of-use.html" style="color:#9AA4B2">Terms</a> &middot; <a href="disclaimer.html" style="color:#9AA4B2">Disclaimer</a> &middot; <a href="contact.html" style="color:#9AA4B2">Contact</a> &middot; <a href="support.html" style="color:#9AA4B2">Support</a></p>
   </footer>
-<script>/* WEEKEND PRICE: $19 until Sun 25 Oct 2026 23:59 Istanbul, then back to $49 automatically */
-(function(){if(Date.now()<Date.parse("2026-10-25T21:00:00Z"))return;
+<script>/* WEEKEND PRICE: $19 until Sun 25 Oct 2026 23:59 New York (EDT), then back to $49 automatically */
+(function(){if(Date.now()<Date.parse("2026-10-26T04:00:00Z"))return;
 document.querySelectorAll(".wk").forEach(function(e){e.hidden=true;});
 document.querySelectorAll(".reg").forEach(function(e){e.hidden=false;});
 var f=document.getElementById("checkout-form");if(f){f.setAttribute("data-funnel","mini-apps-sales");f.setAttribute("data-price","49");}
