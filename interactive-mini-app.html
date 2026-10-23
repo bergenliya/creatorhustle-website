@@ -393,7 +393,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 </script>
 </head>
 <body>
-<div class="wk" style="background:#17191F;color:#fff;text-align:center;padding:10px 16px;font:600 14px/1.4 Inter,system-ui,sans-serif">Weekend only: <s style="opacity:.6">$49</s> <span style="color:#FF66C4">$19</span> until Sunday midnight (New York time)</div>
+<div class="wk" style="background:#17191F;color:#fff;text-align:center;padding:10px 16px;font:600 14px/1.4 Inter,system-ui,sans-serif">Weekend only: <s style="opacity:.6">$49</s> <span style="color:#FF66C4">$19</span> until Sunday midnight (New York time) · <span style="white-space:nowrap">ends in <span data-countdown style="color:#FF66C4;font-variant-numeric:tabular-nums">…</span></span></div>
 
 <!-- 1. HERO -->
 <section class="hero">
@@ -638,6 +638,7 @@ details .a{padding:0 22px 20px;color:var(--muted)}
         <div class="pname">Interactive Mini Apps</div>
         <div class="was wk">$49</div>
         <div class="now"><span class="wk">$19</span><span class="reg" hidden>$49</span></div>
+        <p class="wk" style="margin:4px 0 14px;font-weight:700;color:#17191F">Back to $49 in <span data-countdown style="font-variant-numeric:tabular-nums">…</span></p>
         <p class="note">One-time payment. Lifetime access. All future updates included.</p>
       </div>
       <form data-checkout data-funnel="mini-app-funnel" data-product="mini-apps" data-price="19" data-next="canva-ai-prompt-library-offer.html" id="checkout-form" novalidate>
@@ -756,6 +757,13 @@ document.querySelectorAll(".wk").forEach(function(e){e.hidden=true;});
 document.querySelectorAll(".reg").forEach(function(e){e.hidden=false;});
 var f=document.getElementById("checkout-form");if(f){f.setAttribute("data-funnel","mini-apps-sales");f.setAttribute("data-price","49");}
 document.querySelectorAll("[data-total]").forEach(function(e){e.textContent="$49";});})();</script>
+<script>/* Live countdown to the weekend deadline (Sun 25 Oct 2026 23:59 New York) */
+(function(){var end=Date.parse("2026-10-26T04:00:00Z"),els=document.querySelectorAll("[data-countdown]");if(Date.now()>=end)return;
+function p(n){return n<10?"0"+n:n;}
+function tick(){var s=Math.max(0,Math.floor((end-Date.now())/1000)),d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),x=s%60;
+var txt=(d?d+"d ":"")+p(h)+"h "+p(m)+"m "+p(x)+"s";els.forEach(function(e){e.textContent=txt;});
+if(s<=0){clearInterval(iv);location.reload();}}
+var iv=setInterval(tick,1000);tick();})();</script>
 <script src="js/funnel.js"></script>
 </body>
 </html>
