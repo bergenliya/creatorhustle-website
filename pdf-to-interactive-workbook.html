@@ -100,6 +100,20 @@
     .final p { color: rgba(255,255,255,.75); font-size: 1.1rem; }
     .final .form-card .fine { color: var(--muted); font-size: .78rem; }
 
+    .hero-sub { max-width: 640px; margin: 18px auto 0; color: var(--text); }
+    .final p { margin-bottom: 26px; }
+    .final-cta { width: auto; padding: 1.05rem 2.2rem; }
+    html { scroll-behavior: smooth; }
+
+    /* How it works */
+    .how { background: var(--surface); padding: 72px 0; }
+    .how h2 { margin-bottom: 28px; }
+    .steps { list-style: none; counter-reset: step; display: grid; gap: 14px; }
+    .steps li { counter-increment: step; position: relative; background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px 18px 64px; }
+    .steps li::before { content: counter(step); position: absolute; left: 18px; top: 16px; width: 32px; height: 32px; border-radius: 50%; background: var(--pink); color: var(--white); font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .steps strong { color: var(--charcoal); }
+    .need { margin-top: 22px; border-left: 4px solid var(--turq); padding-left: 16px; color: var(--text); }
+
     @media (max-width: 880px) {
       .hero-grid, .script-grid, .final-grid { grid-template-columns: 1fr; gap: 36px; }
       .cards { grid-template-columns: 1fr; }
@@ -169,21 +183,37 @@
   <section class="hero">
     <div class="wrap">
       <div class="hero-head">
-        <span class="tag">Free AI skill for course creators</span>
+        <span class="tag">Free Claude skill for coaches &amp; course creators</span>
         <h1>Turn Your PDF Into an <span class="hl">Interactive Workbook</span></h1>
+        <p class="lead hero-sub">Your clients fill it in on screen, save their answers and come back to it. Same questions you already wrote, now in your brand colours. No coding.</p>
       </div>
       <div class="hero-grid">
-        <div>
-          <p class="lead">This <strong>FREE PDF to Interactive Workbook Claude Skill</strong> helps you transform your existing PDF workbooks, worksheets, and planners into interactive digital experiences your audience can complete right on their screen.</p>
-          <p>Turn your static PDF into an interactive workbook with fillable fields, progress tracking, saved answers, and a design that matches your brand, no coding required.</p>
-        </div>
+        <form class="form-card" id="optin" data-optin data-kit-form="10050106" data-next="interactive-mini-app-offer.html" method="post">
+          <h3>Get the free skill by email</h3>
+          <label class="field"><span>First name</span><input type="text" id="optin-first-name" name="first_name" autocomplete="given-name" placeholder="Your first name" required></label>
+          <label class="field"><span>Email address</span><input type="email" id="optin-email" name="email" autocomplete="email" placeholder="you@example.com" required></label>
+          <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <p class="email-hint" role="alert" hidden style="margin:-4px 0 12px;font-size:14px;color:#7A5B00;background:#FFF3C4;border-radius:10px;padding:8px 12px"></p>
+          <button type="submit" class="btn btn-turq">Send Me the Free Skill</button>
+          <p class="fine">You'll get the skill file and simple setup steps straight to your inbox. You'll also receive emails from Creator Hustle AI with AI tips, resources and offers. Unsubscribe anytime.</p>
+        </form>
         <div class="hero-mockup">
-          <picture><source srcset="assets/workbook-skill-mockup.webp" type="image/webp"><img class="mockup-img" src="assets/workbook-skill-mockup.png" alt="Course PDF to Interactive Workbook skill box next to an interactive course workbook with reflection questions and next steps" width="1400" height="933" fetchpriority="high"></picture>
+          <picture><source srcset="assets/workbook-skill-mockup.webp" type="image/webp"><img class="mockup-img" src="assets/workbook-skill-mockup.png" alt="PDF to Interactive Workbook skill box next to an interactive workbook with reflection questions and next steps" width="1400" height="933" fetchpriority="high"></picture>
         </div>
       </div>
-      <div class="hero-cta-wrap">
-        <a href="#final-optin" class="btn btn-pink-white hero-cta">Get My Free Workbook Skill</a>
-      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS + WHAT YOU NEED -->
+  <section class="how">
+    <div class="wrap narrow">
+      <h2 class="center">Three steps, one old PDF</h2>
+      <ol class="steps">
+        <li><strong>Add the skill to Claude.</strong> The email walks you through it.</li>
+        <li><strong>Upload your PDF.</strong> A workbook, worksheet or planner you already made.</li>
+        <li><strong>Type “Turn this into an interactive workbook.”</strong> Claude builds it in your brand style.</li>
+      </ol>
+      <p class="need"><strong>What you'll need:</strong> a Claude account with Skills turned on, and a PDF you'd like to bring back to life. Stuck on setup? Reply to the email and I'll help you myself.</p>
     </div>
   </section>
 
@@ -201,20 +231,11 @@
 
   <!-- 4. FINAL OPT-IN -->
   <section class="final" id="final-optin">
-    <div class="wrap final-grid">
-      <div>
-        <span class="kicker">Get the free skill</span>
-        <h2>Have a course PDF workbook ready? Give it a new purpose.</h2>
-        <p>Enter your email below to get the <strong style="color:#fff">FREE PDF to Interactive Workbook Claude Skill</strong> and start turning your existing PDF into an interactive experience your audience can complete right on their screen.</p>
-      </div>
-          <form class="form-card" data-optin data-kit-form="10050106" data-next="interactive-mini-app-offer.html" method="post">
-        <label class="field"><span>First name</span><input type="text" id="optin-first-name" name="first_name" autocomplete="given-name" placeholder="Your first name" required></label>
-        <label class="field"><span>Email address</span><input type="email" id="optin-email" name="email" autocomplete="email" placeholder="you@example.com" required></label>
-        <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-        <p class="email-hint" role="alert" hidden style="margin:-4px 0 12px;font-size:14px;color:#7A5B00;background:#FFF3C4;border-radius:10px;padding:8px 12px"></p>
-        <button type="submit" class="btn btn-turq">Send Me the Free Skill</button>
-        <p class="fine">You'll also receive emails from Creator Hustle AI with AI tips, resources and offers. Unsubscribe anytime.</p>
-      </form>
+    <div class="wrap narrow center">
+      <span class="kicker">Get the free skill</span>
+      <h2>Got a workbook, worksheet or planner sitting in Google Drive? Give it a second life.</h2>
+      <p>You've already put the care into it. Let's make it something people actually work through.</p>
+      <a href="#optin" class="btn btn-pink-white final-cta">Send Me the Free Skill</a>
     </div>
   </section>
 
