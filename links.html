@@ -120,13 +120,11 @@
     .lk-body { --lk-yellow: #fff0d4; --lk-yellow-ink: #8a5a00; }
     [data-theme="dark"] .lk-body { --lk-yellow: #3a3221; --lk-yellow-ink: #ffd98a; }
     .lk-chip { background: var(--lk-yellow); border-color: color-mix(in srgb, var(--lk-yellow-ink) 22%, transparent); }
-    .lk-body { --lk-pink: #ffe3f3; --lk-pink-ink: #c2368c; }
-    [data-theme="dark"] .lk-body { --lk-pink: #3a2232; --lk-pink-ink: #ffa3db; }
-    .lk-section--pink { background: var(--lk-pink); padding-bottom: 48px; margin-top: 48px; }
-    .lk-section--pink .lk-eyebrow { color: var(--lk-pink-ink); }
-    .lk-section--pink .lk-svc a { border-color: color-mix(in srgb, var(--lk-pink-ink) 22%, transparent); }
-    .lk-section--pink .lk-svc a:hover { border-color: var(--lk-pink-ink); }
-    .lk-section--pink .lk-svc-all a { text-decoration-color: var(--lk-pink-ink); }
+    .lk-section--yellow { background: var(--lk-yellow); padding-bottom: 48px; margin-top: 48px; }
+    .lk-section--yellow .lk-eyebrow { color: var(--lk-yellow-ink); }
+    .lk-section--yellow .lk-svc a { border-color: color-mix(in srgb, var(--lk-yellow-ink) 18%, transparent); }
+    .lk-chip--pink { background: #ffe3f3; border-color: #ff66c4; color: #c2368c; }
+    [data-theme="dark"] .lk-chip--pink { background: #3a2232; color: #ffa3db; }
     .lk-cookie-link { background: none; border: 0; padding: 0; font: inherit; color: var(--on-dark-90); font-weight: 600; cursor: pointer; }
     .lk-cookie-link:hover { color: var(--color-accent-light); }
 
@@ -165,7 +163,7 @@
             <a class="lk-chip" href="#free">Free skill</a>
             <a class="lk-chip" href="#courses">Courses</a>
             <a class="lk-chip" href="#tools">AI tools</a>
-            <a class="lk-chip" href="#work">Work with me</a>
+            <a class="lk-chip lk-chip--pink" href="#work">Work with me</a>
           </div>
         </div>
       </div>
@@ -251,7 +249,7 @@
     </section>
 
     <!-- Work with me -->
-    <section class="lk-section lk-section--pink" id="work">
+    <section class="lk-section lk-section--yellow" id="work">
       <div class="lk-wrap">
         <div class="lk-head">
           <span class="lk-eyebrow">Work with me</span>
