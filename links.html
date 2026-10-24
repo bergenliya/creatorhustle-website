@@ -120,9 +120,19 @@
     .lk-body { --lk-yellow: #fff0d4; --lk-yellow-ink: #8a5a00; }
     [data-theme="dark"] .lk-body { --lk-yellow: #3a3221; --lk-yellow-ink: #ffd98a; }
     .lk-chip { background: var(--lk-yellow); border-color: color-mix(in srgb, var(--lk-yellow-ink) 22%, transparent); }
-    .lk-section--yellow { background: var(--lk-yellow); padding-bottom: 48px; margin-top: 48px; }
-    .lk-section--yellow .lk-eyebrow { color: var(--lk-yellow-ink); }
-    .lk-section--yellow .lk-svc a { border-color: color-mix(in srgb, var(--lk-yellow-ink) 18%, transparent); }
+    .lk-body { --lk-pink: #ffe3f3; --lk-pink-ink: #c2368c; }
+    [data-theme="dark"] .lk-body { --lk-pink: #3a2232; --lk-pink-ink: #ffa3db; }
+    .lk-section--pink { background: var(--lk-pink); padding-bottom: 48px; margin-top: 48px; }
+    .lk-section--pink .lk-eyebrow { color: var(--lk-pink-ink); }
+    .lk-section--pink .lk-svc a { border-color: color-mix(in srgb, var(--lk-pink-ink) 22%, transparent); }
+    .lk-section--pink .lk-svc a:hover { border-color: var(--lk-pink-ink); }
+    .lk-section--pink .lk-svc-all a { text-decoration-color: var(--lk-pink-ink); }
+    .lk-cookie-link { background: none; border: 0; padding: 0; font: inherit; color: var(--on-dark-90); font-weight: 600; cursor: pointer; }
+    .lk-cookie-link:hover { color: var(--color-accent-light); }
+
+    @media (max-width: 720px) {
+      #ch-cookie-settings { display: none !important; }
+    }
     .lk-tag--yellow { background: var(--lk-yellow); color: var(--lk-yellow-ink); }
     [data-theme="dark"] .lk-tag--yellow { color: var(--lk-yellow-ink); }
     .lk-featured .lk-pill { background: var(--lk-yellow); color: #8a5a00; }
@@ -168,7 +178,7 @@
         <div class="lk-featured-body">
           <span class="lk-pill">Start here · Free</span>
           <h2>PDF to Interactive Workbook Skill</h2>
-          <p>Got a PDF workbook or planner that people download and never open? This free Claude Skill turns it into an interactive workbook they can fill in right on their screen, with saved answers, progress tracking and your brand colours. No coding needed.</p>
+          <p>Turn the PDF workbook nobody opens into one people fill in on screen, in your brand colours. No coding needed.</p>
           <p class="lk-price">Free</p>
           <a class="lk-btn-pink" href="pdf-to-interactive-workbook.html">Get the free skill <svg class="lk-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
@@ -189,7 +199,7 @@
             <div class="lk-card-body">
               <span class="lk-tag">Course</span>
               <h3>Interactive Mini Apps</h3>
-              <p>Turn the PDF nobody opens into a mini app people actually use, like a quiz, calculator or planner. I'll show you when to use Canva AI, Claude Artifacts or Lovable, then how to share it to grow your list or sell it. Four short lessons, no code.</p>
+              <p>Turn your PDF into a quiz, calculator or planner people actually use, then share it or sell it. Four short lessons, no code.</p>
               <p class="lk-price">$49</p>
               <a class="lk-btn" href="interactive-mini-app.html">See the course <svg class="lk-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             </div>
@@ -199,7 +209,7 @@
             <div class="lk-card-body">
               <span class="lk-tag">Course</span>
               <h3>Mini Courses with AI Clone</h3>
-              <p>Plan, build and publish a mini course with AI, and let your AI clone present the lessons for you. It's a simple five-step system from idea to published course, and you don't need to get on camera or know anything about tech.</p>
+              <p>Build and publish a mini course with AI while your AI clone presents the lessons. No camera or tech skills needed.</p>
               <p class="lk-price">$39</p>
               <a class="lk-btn" href="mini-courses-with-ai-clone.html">See the course <svg class="lk-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             </div>
@@ -222,7 +232,7 @@
             <div class="lk-card-body">
               <span class="lk-tag lk-tag--turq">Claude Skills</span>
               <h3>Skills Shop</h3>
-              <p>Ready-made Claude Skills that walk you through building real systems in your business step by step, like a support ticket hub, a collab request hub or your own website, so you're never stuck on a blank page.</p>
+              <p>Ready-made Claude Skills that walk you through building real systems in your business, step by step.</p>
               <a class="lk-btn" href="skills-shop.html">Browse the skills <svg class="lk-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             </div>
           </article>
@@ -231,7 +241,7 @@
             <div class="lk-card-body">
               <span class="lk-tag lk-tag--turq">Shop</span>
               <h3>Creator Hustle Shop</h3>
-              <p>Interactive apps, Claude Skills and AI assistant kits for content, launches and running your business. Everything's an instant download, so you can start today.</p>
+              <p>Interactive apps, Claude Skills and AI kits for content and launches. Instant download, so you can start today.</p>
               <p class="lk-price">Under $40</p>
               <a class="lk-btn" href="https://creatorhustle.shop" target="_blank" rel="noopener">Visit the shop <svg class="lk-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             </div>
@@ -241,7 +251,7 @@
     </section>
 
     <!-- Work with me -->
-    <section class="lk-section lk-section--yellow" id="work">
+    <section class="lk-section lk-section--pink" id="work">
       <div class="lk-wrap">
         <div class="lk-head">
           <span class="lk-eyebrow">Work with me</span>
@@ -274,7 +284,7 @@
         <a href="support.html">Support</a>
         <a href="mailto:liya@creatorhustle.ai">Email me</a>
       </nav>
-      <p>&copy; 2026 Creator Hustle AI · <a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a></p>
+      <p>&copy; 2026 Creator Hustle AI · <a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · <button type="button" class="lk-cookie-link" onclick="var b=document.getElementById('ch-cookie-settings');if(b)b.click();">Cookie settings</button></p>
     </div>
   </footer>
 
