@@ -116,6 +116,17 @@
 
     .lk-arrow { width: 16px; height: 16px; flex-shrink: 0; }
 
+    /* Soft yellow accent (#fff0d4) */
+    .lk-body { --lk-yellow: #fff0d4; --lk-yellow-ink: #8a5a00; }
+    [data-theme="dark"] .lk-body { --lk-yellow: #3a3221; --lk-yellow-ink: #ffd98a; }
+    .lk-chip { background: var(--lk-yellow); border-color: color-mix(in srgb, var(--lk-yellow-ink) 22%, transparent); }
+    .lk-section--yellow { background: var(--lk-yellow); padding-bottom: 48px; margin-top: 48px; }
+    .lk-section--yellow .lk-eyebrow { color: var(--lk-yellow-ink); }
+    .lk-section--yellow .lk-svc a { border-color: color-mix(in srgb, var(--lk-yellow-ink) 18%, transparent); }
+    .lk-tag--yellow { background: var(--lk-yellow); color: var(--lk-yellow-ink); }
+    [data-theme="dark"] .lk-tag--yellow { color: var(--lk-yellow-ink); }
+    .lk-featured .lk-pill { background: var(--lk-yellow); color: #8a5a00; }
+
     @media (max-width: 720px) {
       .lk-top { padding: 24px 0 56px; }
       .lk-card-head { padding: 32px 18px 26px; }
@@ -231,7 +242,7 @@
     </section>
 
     <!-- Work with me -->
-    <section class="lk-section" id="work">
+    <section class="lk-section lk-section--yellow" id="work">
       <div class="lk-wrap">
         <div class="lk-head">
           <span class="lk-eyebrow">Work with me</span>
@@ -263,7 +274,7 @@
         <div class="lk-grid">
           <article class="lk-card">
             <div class="lk-card-body">
-              <span class="lk-tag">Skool membership</span>
+              <span class="lk-tag lk-tag--yellow">Skool membership</span>
               <h3>AI-Powered Creators Club</h3>
               <p>A community for coaches and creators who want to use AI in their business, with simple how-tos, support from me and other creators building alongside you.</p>
               <a class="lk-btn" href="creators-club-waitlist.html">Join the waitlist <svg class="lk-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -271,7 +282,7 @@
           </article>
           <article class="lk-card">
             <div class="lk-card-body">
-              <span class="lk-tag lk-tag--turq">Course</span>
+              <span class="lk-tag lk-tag--yellow">Course</span>
               <h3>Mini Shop Method</h3>
               <p>Build your own small skill shop, filled with AI skills and tools your audience actually wants, without spending months on product creation.</p>
               <a class="lk-btn" href="mini-shop-method-waitlist.html">Join the waitlist <svg class="lk-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
