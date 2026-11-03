@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Creator Hustle AI blog</title>
+    <link>https://creatorhustle.ai/blog/</link>
+    <description>Simple, practical guides to making, selling and automating digital products with AI.</description>
+    <language>en</language>
+    <item>
+      <title>How to Turn Your PDF Freebie Into an Interactive Workbook (No Code)</title>
+      <link>https://creatorhustle.ai/blog/turn-pdf-into-interactive-workbook</link>
+      <guid isPermaLink="true">https://creatorhustle.ai/blog/turn-pdf-into-interactive-workbook</guid>
+      <pubDate>Tue, 03 Nov 2026 08:00:00 GMT</pubDate>
+      <description>Turn your old PDF freebie into an interactive workbook clients fill in on screen, using Claude and one free skill. No coding, about 20 minutes.</description>
+      <enclosure url="https://creatorhustle.ai/assets/blog/turn-pdf-into-interactive-workbook.jpg" type="image/jpeg" length="0"/>
+    </item>
+  </channel>
+</rss>

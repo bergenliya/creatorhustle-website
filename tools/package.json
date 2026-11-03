@@ -1,0 +1,15 @@
+{
+  "name": "creatorhustle-blog-tools",
+  "private": true,
+  "type": "module",
+  "description": "Builds the creatorhustle.ai blog from markdown in blog-src/posts. Not deployed.",
+  "scripts": {
+    "build": "node build-blog.mjs",
+    "thumbs": "node make-thumbnails.mjs"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^14.1.4",
+    "@fontsource/inter": "^5.1.0"
+  }
+}

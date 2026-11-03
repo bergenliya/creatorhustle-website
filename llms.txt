@@ -31,6 +31,13 @@ Contact: liya@creatorhustle.ai · Instagram: https://www.instagram.com/creatorhu
 - [1:1 AI Mentorship](https://creatorhustle.ai/mentorship): three months of 1:1 mentorship with two private calls a month and DM support.
 - [Collaborate](https://creatorhustle.ai/collaborate): invite Liya onto a podcast, summit or bundle.
 
+<!-- blog:start -->
+## Blog
+
+- [Creator Hustle AI blog](https://creatorhustle.ai/blog/): practical guides to making, selling and automating digital products with AI.
+- [How to Turn Your PDF Freebie Into an Interactive Workbook (No Code)](https://creatorhustle.ai/blog/turn-pdf-into-interactive-workbook): Turn your old PDF freebie into an interactive workbook clients fill in on screen, using Claude and one free skill. No coding, about 20 minutes.
+
+<!-- blog:end -->
 ## Help
 
 - [Support](https://creatorhustle.ai/support): help with course or shop purchases.
