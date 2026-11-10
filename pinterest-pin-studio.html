@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A Claude Skill that plans a week or a month of Pinterest pins for any link, writes every title, description and alt text, and tracks it all in Notion or Google Sheets.">
+  <meta name="theme-color" content="#17191f">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Apply the saved theme before first paint to avoid a light flash
+       for dark-mode users. Kept inline on purpose. -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("site-theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+        else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+          document.documentElement.setAttribute("data-theme", "dark");
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- The hero photo is the largest contentful paint; fetch it early -->
+  
+  <title>Pinterest Pin Studio | Creator Hustle AI</title>
+
+  <!-- Fonts: Inter (all sans-serif). Swap the family in css/style.css → --font-base -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <!-- SEO: canonical, social and structured data -->
+  <link rel="canonical" href="https://creatorhustle.ai/pinterest-pin-studio">
+  <meta property="og:site_name" content="Creator Hustle AI">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pinterest Pin Studio | Creator Hustle AI">
+  <meta property="og:description" content="A Claude Skill that plans a week or a month of Pinterest pins for any link, writes every title, description and alt text, and tracks it all in Notion or Google Sheets.">
+  <meta property="og:url" content="https://creatorhustle.ai/pinterest-pin-studio">
+  <meta property="og:image" content="https://creatorhustle.ai/assets/liya-bio.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://creatorhustle.ai/pinterest-pin-studio#page",
+   "url": "https://creatorhustle.ai/pinterest-pin-studio",
+   "name": "Pinterest Pin Studio | Creator Hustle AI",
+   "description": "A Claude Skill that plans a week or a month of Pinterest pins for any link, writes every title, description and alt text, and tracks it all in Notion or Google Sheets.",
+   "isPartOf": {
+    "@id": "https://creatorhustle.ai/#site"
+   },
+   "publisher": {
+    "@id": "https://creatorhustle.ai/#org"
+   },
+   "inLanguage": "en"
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://creatorhustle.ai/pinterest-pin-studio#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Do I need to be techy?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not at all. The setup guide walks you through every step with copy buttons, and Claude asks you one simple question at a time."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What do I need?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A paid Claude plan (Pro, Max, Team or Enterprise), because custom skills aren't available on the free plan. Plus a free Notion or Google account for your pin planner. Canva is optional."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do I need a Shopify store?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Pin anything with a link: products from any shop, blog posts, freebies, courses, services or podcast episodes."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does it post to Pinterest for me?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It plans and writes your pins and keeps your planner up to date. You schedule them with Pinterest's own free scheduler or the scheduling tool you already use."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What's the Quick Pin Design bonus?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A second Claude Skill that designs finished pin images for you. Paste a link and it makes 5 pins in your brand colours and fonts, no Canva needed."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How long does setup take?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Around 30 minutes, once. After that, a week of pins takes a few minutes."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+  <script src="/site-analytics.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+       Sticky header. Gets .scrolled class via JS after 50px scroll.
+  ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo" aria-label="Creator Hustle AI, home">
+        <img class="logo-svg" src="assets/logo.png" alt="Creator Hustle AI" width="463" height="243">
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#offers" class="nav-link">Courses</a></li>
+          <li><a href="skills-shop.html" class="nav-link active" aria-current="page">AI Skills</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="work-with-me.html" class="nav-link">Work with me</a></li>
+          <li><a href="support.html" class="nav-link">Support</a></li>
+        </ul>
+        <a href="pdf-to-interactive-workbook.html" class="btn btn-primary btn-sm nav-cta">Get the free skill</a>
+        <a href="https://creatorhustle.shop" class="btn btn-dark btn-sm nav-shop" target="_blank" rel="noopener">Shop</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <!-- Sun icon (shown in dark mode) -->
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <section class="hero hero--page" id="hero">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <p class="hero-eyebrow animate-on-load" style="--delay: 0">Part of the Skills Shop</p>
+        <h1 class="hero-title animate-on-load" style="--delay: 1">A month of Pinterest pins, <span class="hero-title-accent">planned in minutes</span></h1>
+        <p class="hero-subtitle animate-on-load" style="--delay: 2">A Claude Skill that plans your pins, writes every title, description and alt text, and keeps track of it all, <span class="hl-sub">so Pinterest stops eating your week.</span></p>
+        <div class="hero-actions animate-on-load" style="--delay: 3">
+          <a href="#buy" class="btn btn-primary btn-lg">Get the skill &middot; $49 <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section problem-section" id="problem">
+      <div class="container narrow-wrap">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">Sound familiar?</span>
+          <h2 class="section-title">Pinterest feels like another job?</h2>
+        </div>
+        <ul class="problem-list animate-on-scroll">
+          <li>You know Pinterest brings traffic, but writing pin after pin takes hours</li>
+          <li>You never know which product, post or freebie to pin next</li>
+          <li>Your pins live in five different places, so nothing gets tracked</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section collab" id="introducing">
+      <div class="container">
+        <div class="intro-grid">
+          <div class="animate-on-scroll">
+            <span class="section-eyebrow">Introducing</span>
+            <h2 class="section-title align-left">Pinterest Pin Studio</h2>
+            <p class="intro-text">This Claude Skill is built on the pin system I use for my own shop. Tell it what you want to pin, from products and blog posts to freebies, and it plans a week or a month of pins, rotates your designs so they stay fresh, and writes the words for every single one.</p>
+            <p class="intro-text">Everything lands in your pin planner in Notion or Google Sheets, so you always know what's planned, scheduled and live. And with the Quick Pin Design bonus, Claude designs the pin images too, no Canva needed.</p>
+          </div>
+          <div class="intro-media animate-on-scroll"><img src="assets/skills/pinterest-pin-studio.jpg" alt="Pinterest Pin Studio Claude Skill mockup with a pin planner, a week of written pins and a finished pin design" loading="lazy" decoding="async" width="900" height="1125" class="prod-mock"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">How it works</span>
+          <h2 class="section-title">Four simple steps</h2>
+        </div>
+        <div class="hiw-grid"><div class="hiw-box animate-on-scroll"><span class="hiw-no">1</span><div><h3>Set up your Pin Studio</h3><p>Follow the setup guide to add the skill to Claude and pick your pin planner: Notion or Google Sheets.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">2</span><div><h3>Tell Claude what you pin</h3><p>Claude asks a few quick questions about your links, your pin designs and how many pins a day you want.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">3</span><div><h3>Get your week of pins</h3><p>Say “Make my pins for this week” and get every headline, title, description and alt text, matched to the right link.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">4</span><div><h3>Design, schedule, track</h3><p>Design them in Canva or with Quick Pin Design, schedule them, and watch them move from Planned to Published.</p></div></div></div>
+      </div>
+    </section>
+
+    <section class="section collab" id="faq-q">
+      <div class="container narrow-wrap">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">FAQ</span>
+          <h2 class="section-title">Questions, answered</h2>
+        </div>
+        <div class="faq-cards animate-on-scroll">
+          <details class="faq-card"><summary>Do I need to be techy?</summary><p>Not at all. The setup guide walks you through every step with copy buttons, and Claude asks you one simple question at a time.</p></details>
+          <details class="faq-card"><summary>What do I need?</summary><p>A paid Claude plan (Pro, Max, Team or Enterprise), because custom skills aren't available on the free plan. Plus a free Notion or Google account for your pin planner. Canva is optional.</p></details>
+          <details class="faq-card"><summary>Do I need a Shopify store?</summary><p>No. Pin anything with a link: products from any shop, blog posts, freebies, courses, services or podcast episodes.</p></details>
+          <details class="faq-card"><summary>Does it post to Pinterest for me?</summary><p>It plans and writes your pins and keeps your planner up to date. You schedule them with Pinterest's own free scheduler or the scheduling tool you already use.</p></details>
+          <details class="faq-card"><summary>What's the Quick Pin Design bonus?</summary><p>A second Claude Skill that designs finished pin images for you. Paste a link and it makes 5 pins in your brand colours and fonts, no Canva needed.</p></details>
+          <details class="faq-card"><summary>How long does setup take?</summary><p>Around 30 minutes, once. After that, a week of pins takes a few minutes.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section price-pink" id="buy">
+      <div class="container">
+        <div class="price-card animate-on-scroll">
+          <span class="section-eyebrow">Claude Skill</span>
+          <h2 class="section-title">Pinterest Pin Studio</h2>
+          <p class="price-big">$49</p>
+          <ul class="svc-list"><li>The Pinterest Pin Studio Claude Skill</li><li>A step-by-step setup guide with copy buttons</li><li>Your pin planner for Notion or Google Sheets</li><li>A week or a month of pins planned in one go</li><li>Pin titles, descriptions and alt text written for you</li><li>Bonus: Quick Pin Design, 5 finished pin images from any link</li><li>Help from support if you get stuck</li></ul>
+          <a href="pinterest-pin-studio-checkout.html" class="btn btn-black btn-lg">Get instant access <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <p class="price-note">Instant access in your course library. Needs a paid Claude plan.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bio-strip" id="bio">
+      <div class="container bio-strip-inner animate-on-scroll">
+        <img src="assets/liya-bio-pink.jpg" alt="Liya Bergen smiling in a pink jumper" loading="lazy" decoding="async" width="560" height="560" style="object-position:50% 50%">
+        <p><strong>Hi, I'm Liya, founder of Creator Hustle AI.</strong> I've been building online courses and digital products since 2014. I plan pins for every product in my own shop, and I built this system so I'd never sit staring at a blank pin again. This skill hands you the same setup, step by step.</p>
+      </div>
+    </section>
+
+    <section class="section closing-section" id="closing">
+      <div class="container narrow-wrap animate-on-scroll" style="text-align:center">
+        <h2 class="section-title">Let Pinterest work while you rest</h2>
+        <p class="section-subtitle">Plan once, pin all month. Your products, posts and freebies keep getting found long after you've closed the laptop.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER — dark closer with giant wordmark
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <img class="logo-svg" src="assets/logo.png" alt="Creator Hustle AI" width="463" height="243" loading="lazy">
+        <p class="footer-tagline">
+          Simple AI tools and courses for coaches and creators who want to
+          work less and still grow.
+        </p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/creatorhustle.ai/" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37a4 4 0 1 1-7.91 1.17 4 4 0 0 1 7.91-1.17z"/><path d="M17.5 6.5h.01"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-col" aria-label="Footer navigation">
+        <h3 class="footer-heading">Navigate</h3>
+        <ul class="footer-links">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#offers">Courses</a></li>
+          <li><a href="skills-shop.html">AI Skills</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Waitlists</a></li>
+          <li><a href="work-with-me.html">Work with me</a></li>
+          <li><a href="collaborate.html">Collaborate</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-use.html">Terms of Use</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Contact</h3>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="support.html" class="footer-link-highlight">Customer Support</a></li>
+          <li><a href="https://go.coursehustle.com/l/" target="_blank" rel="noopener">Course login</a></li>
+          <li><a href="mailto:liya@creatorhustle.ai">liya@creatorhustle.ai</a></li>
+          <li><a href="https://www.instagram.com/creatorhustle.ai/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://creatorhustle.shop" target="_blank" rel="noopener">Shop</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Creator Hustle AI. All rights reserved.</p>
+      <a href="#main" class="footer-top-btn" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </a>
+    </div>
+
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Fillout embed loader (contact form) -->
+  <script src="https://server.fillout.com/embed/v1/" async></script>
+</body>
+</html>
