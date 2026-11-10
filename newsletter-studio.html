@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A Claude Skill that writes your weekly newsletter in your own voice, on a rhythm you can keep, with honest selling built in. Works with any email platform.">
+  <meta name="theme-color" content="#17191f">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Apply the saved theme before first paint to avoid a light flash
+       for dark-mode users. Kept inline on purpose. -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("site-theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+        else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+          document.documentElement.setAttribute("data-theme", "dark");
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- The hero photo is the largest contentful paint; fetch it early -->
+  
+  <title>Newsletter Studio | Creator Hustle AI</title>
+
+  <!-- Fonts: Inter (all sans-serif). Swap the family in css/style.css → --font-base -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <!-- SEO: canonical, social and structured data -->
+  <link rel="canonical" href="https://creatorhustle.ai/newsletter-studio">
+  <meta property="og:site_name" content="Creator Hustle AI">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Newsletter Studio | Creator Hustle AI">
+  <meta property="og:description" content="A Claude Skill that writes your weekly newsletter in your own voice, on a rhythm you can keep, with honest selling built in. Works with any email platform.">
+  <meta property="og:url" content="https://creatorhustle.ai/newsletter-studio">
+  <meta property="og:image" content="https://creatorhustle.ai/assets/liya-bio.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://creatorhustle.ai/newsletter-studio#page",
+   "url": "https://creatorhustle.ai/newsletter-studio",
+   "name": "Newsletter Studio | Creator Hustle AI",
+   "description": "A Claude Skill that writes your weekly newsletter in your own voice, on a rhythm you can keep, with honest selling built in. Works with any email platform.",
+   "isPartOf": {
+    "@id": "https://creatorhustle.ai/#site"
+   },
+   "publisher": {
+    "@id": "https://creatorhustle.ai/#org"
+   },
+   "inLanguage": "en"
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://creatorhustle.ai/newsletter-studio#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Will it really sound like me?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "That's the whole point of the one-time setup. Claude learns your voice from emails or posts you've written (or from you describing your week as if texting a friend), and if a draft ever sounds off, you tell it what rang false and it updates your voice profile, not just that email."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What do I need?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A paid Claude plan (Pro, Max, Team or Enterprise), because custom skills aren't available on the free plan, and the email platform you already use. There's nothing to connect: you paste the finished email in."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Which email platforms does it work with?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Any of them: Kit, MailerLite, Flodesk, Mailchimp, Substack, beehiiv, ActiveCampaign and others. You can have plain text, copy with layout notes, or HTML if your platform accepts it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Will it make my emails pushy?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. It rotates seven honest ways to mention your offer, from a story that lands on it to the occasional direct ask, and you choose how much selling feels right. Some weeks it'll suggest no pitch at all."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does it make things up?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It's built not to. Anything Claude doesn't know, like a number, a client story or a link, goes in [brackets] for you to fill in, and it checks every draft for details you didn't give it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How long does each newsletter take?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The voice setup takes about 20 minutes, once. After that, most people take a few minutes per send, plus however long they like to spend tweaking."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+  <script src="/site-analytics.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+       Sticky header. Gets .scrolled class via JS after 50px scroll.
+  ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo" aria-label="Creator Hustle AI, home">
+        <img class="logo-svg" src="assets/logo.png" alt="Creator Hustle AI" width="463" height="243">
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#offers" class="nav-link">Courses</a></li>
+          <li><a href="skills-shop.html" class="nav-link active" aria-current="page">AI Skills</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="work-with-me.html" class="nav-link">Work with me</a></li>
+          <li><a href="support.html" class="nav-link">Support</a></li>
+        </ul>
+        <a href="pdf-to-interactive-workbook.html" class="btn btn-primary btn-sm nav-cta">Get the free skill</a>
+        <a href="https://creatorhustle.shop" class="btn btn-dark btn-sm nav-shop" target="_blank" rel="noopener">Shop</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <!-- Sun icon (shown in dark mode) -->
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <section class="hero hero--page" id="hero">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <p class="hero-eyebrow animate-on-load" style="--delay: 0">Part of the Skills Shop</p>
+        <h1 class="hero-title animate-on-load" style="--delay: 1">Your weekly newsletter, <span class="hero-title-accent">in your own voice</span></h1>
+        <p class="hero-subtitle animate-on-load" style="--delay: 2">A Claude Skill that writes your newsletter every week, on a rhythm you can keep, <span class="hl-sub">and mentions your offers without being pushy.</span></p>
+        <div class="hero-actions animate-on-load" style="--delay: 3">
+          <a href="#buy" class="btn btn-primary btn-lg">Get the skill &middot; $49 <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section problem-section" id="problem">
+      <div class="container narrow-wrap">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">Sound familiar?</span>
+          <h2 class="section-title">Owe your list an email you haven't started?</h2>
+        </div>
+        <ul class="problem-list animate-on-scroll">
+          <li>Your newsletter happens in bursts, then goes quiet for weeks</li>
+          <li>AI drafts sound like a robot, not like you</li>
+          <li>Your emails only sell during launches, and it feels awkward when they do</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section collab" id="introducing">
+      <div class="container">
+        <div class="intro-grid">
+          <div class="animate-on-scroll">
+            <span class="section-eyebrow">Introducing</span>
+            <h2 class="section-title align-left">Newsletter Studio</h2>
+            <p class="intro-text">Newsletter Studio learns your voice once, in a 20-minute setup. Then each week Claude asks one question about your week, finds the story in your answer and writes the whole email: subject lines, preview text, the email itself and your sign-off.</p>
+            <p class="intro-text">And it sells, gently. Your offers show up in the emails you were sending anyway, using seven honest angles that rotate so it never feels samey. It works with whichever email platform you already use.</p>
+          </div>
+          <div class="intro-media animate-on-scroll"><img src="assets/skills/newsletter-studio.jpg" alt="Newsletter Studio Claude Skill mockup with a drafted newsletter" loading="lazy" decoding="async" width="900" height="1125" class="prod-mock"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">How it works</span>
+          <h2 class="section-title">Four simple steps</h2>
+        </div>
+        <div class="hiw-grid"><div class="hiw-box animate-on-scroll"><span class="hiw-no">1</span><div><h3>Set up your voice, once</h3><p>Claude asks about your voice, your readers, your offers and your rhythm, then builds a voice profile and a simple shape for your newsletter.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">2</span><div><h3>Answer one question</h3><p>Each week, Claude asks what's happened since your last email. A messy, voice-note style answer is perfect.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">3</span><div><h3>Get the full draft</h3><p>Subject line with two alternatives, preview text, the email and your sign-off, with this week's selling angle woven in honestly.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">4</span><div><h3>Tidy, paste and send</h3><p>Ask for one round of changes, then paste it into your email platform as plain text, with layout notes, or as HTML.</p></div></div></div>
+      </div>
+    </section>
+
+    <section class="section collab" id="faq-q">
+      <div class="container narrow-wrap">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">FAQ</span>
+          <h2 class="section-title">Questions, answered</h2>
+        </div>
+        <div class="faq-cards animate-on-scroll">
+          <details class="faq-card"><summary>Will it really sound like me?</summary><p>That's the whole point of the one-time setup. Claude learns your voice from emails or posts you've written (or from you describing your week as if texting a friend), and if a draft ever sounds off, you tell it what rang false and it updates your voice profile, not just that email.</p></details>
+          <details class="faq-card"><summary>What do I need?</summary><p>A paid Claude plan (Pro, Max, Team or Enterprise), because custom skills aren't available on the free plan, and the email platform you already use. There's nothing to connect: you paste the finished email in.</p></details>
+          <details class="faq-card"><summary>Which email platforms does it work with?</summary><p>Any of them: Kit, MailerLite, Flodesk, Mailchimp, Substack, beehiiv, ActiveCampaign and others. You can have plain text, copy with layout notes, or HTML if your platform accepts it.</p></details>
+          <details class="faq-card"><summary>Will it make my emails pushy?</summary><p>No. It rotates seven honest ways to mention your offer, from a story that lands on it to the occasional direct ask, and you choose how much selling feels right. Some weeks it'll suggest no pitch at all.</p></details>
+          <details class="faq-card"><summary>Does it make things up?</summary><p>It's built not to. Anything Claude doesn't know, like a number, a client story or a link, goes in [brackets] for you to fill in, and it checks every draft for details you didn't give it.</p></details>
+          <details class="faq-card"><summary>How long does each newsletter take?</summary><p>The voice setup takes about 20 minutes, once. After that, most people take a few minutes per send, plus however long they like to spend tweaking.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section price-pink" id="buy">
+      <div class="container">
+        <div class="price-card animate-on-scroll">
+          <span class="section-eyebrow">Claude Skill</span>
+          <h2 class="section-title">Newsletter Studio</h2>
+          <p class="price-big">$49</p>
+          <ul class="svc-list"><li>The Newsletter Studio Claude Skill</li><li>A step-by-step Setup Guide with copy buttons</li><li>A one-time voice setup and your own voice profile</li><li>A newsletter shape you choose and can change any time</li><li>Seven honest selling angles that rotate each week</li><li>Subject lines, preview text and a ready-to-paste email every send</li><li>Plain text, layout notes or HTML for any email platform</li><li>Help from support if you get stuck</li></ul>
+          <a href="newsletter-studio-checkout.html" class="btn btn-black btn-lg">Get instant access <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <p class="price-note">Instant access in your course library. Needs a paid Claude plan.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bio-strip" id="bio">
+      <div class="container bio-strip-inner animate-on-scroll">
+        <img src="assets/liya-bio-pink.jpg" alt="Liya Bergen smiling in a pink jumper" loading="lazy" decoding="async" width="560" height="560" style="object-position:50% 50%">
+        <p><strong>Hi, I'm Liya, founder of Creator Hustle AI.</strong> I've been building online courses and digital products since 2014. I email my own list of around 6,000 subscribers on Kit, and I know how easy it is to let the newsletter slide when life gets busy. Newsletter Studio is the system that keeps it going, even in nap-time-sized chunks.</p>
+      </div>
+    </section>
+
+    <section class="section closing-section" id="closing">
+      <div class="container narrow-wrap animate-on-scroll" style="text-align:center">
+        <h2 class="section-title">A newsletter you actually look forward to sending</h2>
+        <p class="section-subtitle">Your voice, your rhythm, your offers. Set it up once, and let each week's email take minutes instead of an evening.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER — dark closer with giant wordmark
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <img class="logo-svg" src="assets/logo.png" alt="Creator Hustle AI" width="463" height="243" loading="lazy">
+        <p class="footer-tagline">
+          Simple AI tools and courses for coaches and creators who want to
+          work less and still grow.
+        </p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/creatorhustle.ai/" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37a4 4 0 1 1-7.91 1.17 4 4 0 0 1 7.91-1.17z"/><path d="M17.5 6.5h.01"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-col" aria-label="Footer navigation">
+        <h3 class="footer-heading">Navigate</h3>
+        <ul class="footer-links">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#offers">Courses</a></li>
+          <li><a href="skills-shop.html">AI Skills</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Waitlists</a></li>
+          <li><a href="work-with-me.html">Work with me</a></li>
+          <li><a href="collaborate.html">Collaborate</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-use.html">Terms of Use</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Contact</h3>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="support.html" class="footer-link-highlight">Customer Support</a></li>
+          <li><a href="https://go.coursehustle.com/l/" target="_blank" rel="noopener">Course login</a></li>
+          <li><a href="mailto:liya@creatorhustle.ai">liya@creatorhustle.ai</a></li>
+          <li><a href="https://www.instagram.com/creatorhustle.ai/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://creatorhustle.shop" target="_blank" rel="noopener">Shop</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Creator Hustle AI. All rights reserved.</p>
+      <a href="#main" class="footer-top-btn" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </a>
+    </div>
+
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Fillout embed loader (contact form) -->
+  <script src="https://server.fillout.com/embed/v1/" async></script>
+</body>
+</html>
