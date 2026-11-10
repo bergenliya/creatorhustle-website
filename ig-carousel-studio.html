@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A Claude Skill that writes and designs your Instagram carousels in your colours with your photos, with caption, thumbnail, a Google Sheets or Notion planner and Metricool scheduling.">
+  <meta name="theme-color" content="#17191f">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Apply the saved theme before first paint to avoid a light flash
+       for dark-mode users. Kept inline on purpose. -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("site-theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+        else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+          document.documentElement.setAttribute("data-theme", "dark");
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- The hero photo is the largest contentful paint; fetch it early -->
+  
+  <title>IG Carousel Studio | Creator Hustle AI</title>
+
+  <!-- Fonts: Inter (all sans-serif). Swap the family in css/style.css → --font-base -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <!-- SEO: canonical, social and structured data -->
+  <link rel="canonical" href="https://creatorhustle.ai/ig-carousel-studio">
+  <meta property="og:site_name" content="Creator Hustle AI">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="IG Carousel Studio | Creator Hustle AI">
+  <meta property="og:description" content="A Claude Skill that writes and designs your Instagram carousels in your colours with your photos, with caption, thumbnail, a Google Sheets or Notion planner and Metricool scheduling.">
+  <meta property="og:url" content="https://creatorhustle.ai/ig-carousel-studio">
+  <meta property="og:image" content="https://creatorhustle.ai/assets/liya-bio.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://creatorhustle.ai/ig-carousel-studio#page",
+   "url": "https://creatorhustle.ai/ig-carousel-studio",
+   "name": "IG Carousel Studio | Creator Hustle AI",
+   "description": "A Claude Skill that writes and designs your Instagram carousels in your colours with your photos, with caption, thumbnail, a Google Sheets or Notion planner and Metricool scheduling.",
+   "isPartOf": {
+    "@id": "https://creatorhustle.ai/#site"
+   },
+   "publisher": {
+    "@id": "https://creatorhustle.ai/#org"
+   },
+   "inLanguage": "en"
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://creatorhustle.ai/ig-carousel-studio#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Do I need to be techy?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not at all. The setup guide walks you through every step with copy buttons, and Claude asks you one simple question at a time."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What do I need?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A paid Claude plan (Pro, Max, Team or Enterprise) with code execution and file creation switched on, because custom skills and design files aren't available on the free plan. Plus a few photos of yourself, and a free Google or Notion account if you want the planner."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Will the carousels look like everyone else's?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. They use your brand colours, your fonts and your real photos. Pick the scrapbook look, with taped photos and torn paper notes, or a clean plain look, then rotate 9 cover styles from bold to editorial so your grid never looks samey."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does it write the words too?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Give Claude one real moment from your week, or paste a carousel you love, and it writes every slide with a scroll-stopping hook, plus the caption, hashtags and 3 extra hooks to test."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does it post to Instagram for me?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "If you use Metricool and connect it to Claude, Claude schedules each carousel for you after you say yes. Otherwise you get the slides and caption ready to upload in Metricool or Instagram."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What's the Quick Carousel Design bonus?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A simple design page for the days you just want the slides. Type your words, pick your colours, add your photos and download the finished carousel, caption and thumbnail to schedule yourself. No setup needed."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How long does setup take?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Around 30 minutes, once. After that, a carousel takes about 10 minutes from idea to scheduled."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+  <script src="/site-analytics.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+       Sticky header. Gets .scrolled class via JS after 50px scroll.
+  ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo" aria-label="Creator Hustle AI, home">
+        <img class="logo-svg" src="assets/logo.png" alt="Creator Hustle AI" width="463" height="243">
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#offers" class="nav-link">Courses</a></li>
+          <li><a href="skills-shop.html" class="nav-link active" aria-current="page">AI Skills</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="work-with-me.html" class="nav-link">Work with me</a></li>
+          <li><a href="support.html" class="nav-link">Support</a></li>
+        </ul>
+        <a href="pdf-to-interactive-workbook.html" class="btn btn-primary btn-sm nav-cta">Get the free skill</a>
+        <a href="https://creatorhustle.shop" class="btn btn-dark btn-sm nav-shop" target="_blank" rel="noopener">Shop</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <!-- Sun icon (shown in dark mode) -->
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <section class="hero hero--page" id="hero">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <p class="hero-eyebrow animate-on-load" style="--delay: 0">Part of the Skills Shop</p>
+        <h1 class="hero-title animate-on-load" style="--delay: 1">Instagram carousels that look like you, <span class="hero-title-accent">made in minutes</span></h1>
+        <p class="hero-subtitle animate-on-load" style="--delay: 2">A Claude Skill that writes your carousel, designs every slide with your photos and colours, and hands you the caption and thumbnail, <span class="hl-sub">so posting stops taking your whole afternoon.</span></p>
+        <div class="hero-actions animate-on-load" style="--delay: 3">
+          <a href="#buy" class="btn btn-primary btn-lg">Get the skill &middot; $49 <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section problem-section" id="problem">
+      <div class="container narrow-wrap">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">Sound familiar?</span>
+          <h2 class="section-title">Carousels feel like a second job?</h2>
+        </div>
+        <ul class="problem-list animate-on-scroll">
+          <li>You know carousels get saved and shared, but one takes you hours in Canva</li>
+          <li>You stare at a blank first slide, unsure what hook will stop the scroll</li>
+          <li>Your posts look like everyone else's templates, not like you</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section collab" id="introducing">
+      <div class="container">
+        <div class="intro-grid">
+          <div class="animate-on-scroll">
+            <span class="section-eyebrow">Introducing</span>
+            <h2 class="section-title align-left">IG Carousel Studio</h2>
+            <p class="intro-text">This Claude Skill is built on the scrapbook carousel style I use for my own Instagram. Give Claude one real moment from your week and it writes the whole carousel: a hook that stops the scroll, a flip on slide two, your story, the steps and a "comment the word" ending. Then it designs every slide in your brand colours with your own photos, in my scrapbook style or a clean plain look, whichever suits you.</p>
+            <p class="intro-text">Every carousel comes with its caption, hashtags and thumbnail. It lands in your Google Sheets or Notion planner, and if you use Metricool, Claude schedules it for you. On busy days, the Quick Carousel Design bonus lets you type your slides and download them in minutes.</p>
+          </div>
+          <div class="intro-media animate-on-scroll"><img src="assets/skills/ig-carousel-studio.jpg" alt="IG Carousel Studio mockup with three finished scrapbook-style carousel slides and a written caption" loading="lazy" decoding="async" width="900" height="1125" class="prod-mock"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">How it works</span>
+          <h2 class="section-title">Four simple steps</h2>
+        </div>
+        <div class="hiw-grid"><div class="hiw-box animate-on-scroll"><span class="hiw-no">1</span><div><h3>Set up your Carousel Studio</h3><p>Follow the setup guide to add the skill to Claude, pick your planner and share your brand colours, fonts and offers.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">2</span><div><h3>Share one real moment</h3><p>Say "Make a carousel about" your topic and give Claude one line from your week. It writes every slide for you to check.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">3</span><div><h3>Add your photos</h3><p>Attach a few photos and Claude designs the slides in your style, with the caption, hashtags and thumbnail ready to go.</p></div></div><div class="hiw-box animate-on-scroll"><span class="hiw-no">4</span><div><h3>Schedule and track</h3><p>Claude schedules it in Metricool (or you upload it yourself), and your planner shows which posts get the most saves and follows.</p></div></div></div>
+      </div>
+    </section>
+
+    <section class="section collab" id="faq-q">
+      <div class="container narrow-wrap">
+        <div class="offers-header animate-on-scroll">
+          <span class="section-eyebrow">FAQ</span>
+          <h2 class="section-title">Questions, answered</h2>
+        </div>
+        <div class="faq-cards animate-on-scroll">
+          <details class="faq-card"><summary>Do I need to be techy?</summary><p>Not at all. The setup guide walks you through every step with copy buttons, and Claude asks you one simple question at a time.</p></details>
+          <details class="faq-card"><summary>What do I need?</summary><p>A paid Claude plan (Pro, Max, Team or Enterprise) with code execution and file creation switched on, because custom skills and design files aren't available on the free plan. Plus a few photos of yourself, and a free Google or Notion account if you want the planner.</p></details>
+          <details class="faq-card"><summary>Will the carousels look like everyone else's?</summary><p>No. They use your brand colours, your fonts and your real photos. Pick the scrapbook look, with taped photos and torn paper notes, or a clean plain look, then rotate 9 cover styles from bold to editorial so your grid never looks samey.</p></details>
+          <details class="faq-card"><summary>Does it write the words too?</summary><p>Yes. Give Claude one real moment from your week, or paste a carousel you love, and it writes every slide with a scroll-stopping hook, plus the caption, hashtags and 3 extra hooks to test.</p></details>
+          <details class="faq-card"><summary>Does it post to Instagram for me?</summary><p>If you use Metricool and connect it to Claude, Claude schedules each carousel for you after you say yes. Otherwise you get the slides and caption ready to upload in Metricool or Instagram.</p></details>
+          <details class="faq-card"><summary>What's the Quick Carousel Design bonus?</summary><p>A simple design page for the days you just want the slides. Type your words, pick your colours, add your photos and download the finished carousel, caption and thumbnail to schedule yourself. No setup needed.</p></details>
+          <details class="faq-card"><summary>How long does setup take?</summary><p>Around 30 minutes, once. After that, a carousel takes about 10 minutes from idea to scheduled.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section price-pink" id="buy">
+      <div class="container">
+        <div class="price-card animate-on-scroll">
+          <span class="section-eyebrow">Claude Skill</span>
+          <h2 class="section-title">IG Carousel Studio</h2>
+          <p class="price-big">$49</p>
+          <ul class="svc-list"><li>The IG Carousel Studio Claude Skill</li><li>A step-by-step setup guide with copy buttons</li><li>Carousels written and designed in your colours, with your photos</li><li>Scrapbook or plain look, with 9 cover styles to rotate</li><li>Caption, hashtags and thumbnail with every carousel</li><li>Your Carousel Planner for Google Sheets or Notion</li><li>Metricool scheduling, done by Claude</li><li>Bonus: Quick Carousel Design, type your slides and download</li><li>Help from support if you get stuck</li></ul>
+          <a href="ig-carousel-studio-checkout.html" class="btn btn-black btn-lg">Get instant access <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <p class="price-note">Instant access in your course library. Needs a paid Claude plan.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bio-strip" id="bio">
+      <div class="container bio-strip-inner animate-on-scroll">
+        <img src="assets/liya-bio-pink.jpg" alt="Liya Bergen smiling in a pink jumper" loading="lazy" decoding="async" width="560" height="560" style="object-position:50% 50%">
+        <p><strong>Hi, I'm Liya, founder of Creator Hustle AI.</strong> I've been building online courses and digital products since 2014. My carousels used to take me an evening each in Canva, so I taught Claude my style, my hooks and my photos. This skill hands you the same setup, step by step.</p>
+      </div>
+    </section>
+
+    <section class="section closing-section" id="closing">
+      <div class="container narrow-wrap animate-on-scroll" style="text-align:center">
+        <h2 class="section-title">Post the story only you can tell</h2>
+        <p class="section-subtitle">Your real moments, your face, your colours. Claude does the slides, so you can get back to the work and the life your posts are about.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER — dark closer with giant wordmark
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <img class="logo-svg" src="assets/logo.png" alt="Creator Hustle AI" width="463" height="243" loading="lazy">
+        <p class="footer-tagline">
+          Simple AI tools and courses for coaches and creators who want to
+          work less and still grow.
+        </p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/creatorhustle.ai/" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37a4 4 0 1 1-7.91 1.17 4 4 0 0 1 7.91-1.17z"/><path d="M17.5 6.5h.01"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-col" aria-label="Footer navigation">
+        <h3 class="footer-heading">Navigate</h3>
+        <ul class="footer-links">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#offers">Courses</a></li>
+          <li><a href="skills-shop.html">AI Skills</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Waitlists</a></li>
+          <li><a href="work-with-me.html">Work with me</a></li>
+          <li><a href="collaborate.html">Collaborate</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-use.html">Terms of Use</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Contact</h3>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="support.html" class="footer-link-highlight">Customer Support</a></li>
+          <li><a href="https://go.coursehustle.com/l/" target="_blank" rel="noopener">Course login</a></li>
+          <li><a href="mailto:liya@creatorhustle.ai">liya@creatorhustle.ai</a></li>
+          <li><a href="https://www.instagram.com/creatorhustle.ai/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://creatorhustle.shop" target="_blank" rel="noopener">Shop</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Creator Hustle AI. All rights reserved.</p>
+      <a href="#main" class="footer-top-btn" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </a>
+    </div>
+
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Fillout embed loader (contact form) -->
+  <script src="https://server.fillout.com/embed/v1/" async></script>
+</body>
+</html>
