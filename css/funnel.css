@@ -250,3 +250,5 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 .library .note-box{margin-top:28px;text-align:left}
 @media(max-width:860px){.lib-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.lib-grid{grid-template-columns:1fr}}
+.faq .a a{color:#E94AAC;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.faq .a a:hover{color:#17191F}

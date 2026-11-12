@@ -2631,3 +2631,5 @@ img.logo-svg {
 [data-theme="dark"] .section.bio-strip { background: var(--color-surface); }
 [data-theme="dark"] .price-card, [data-theme="dark"] .feat-card { background: var(--color-surface); }
 [data-theme="dark"] .price-big { color: var(--color-text); }
+.faq-card p a { color: #E94AAC; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.faq-card p a:hover { color: #17191F; }
