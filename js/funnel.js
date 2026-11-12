@@ -228,11 +228,15 @@
 
   // One-click offers (upsell / downsell), charged to the card saved at checkout
   document.querySelectorAll("[data-oneclick]").forEach(function (btn) {
+    if (btn.getAttribute("data-checkout-page") && btn.getAttribute("data-nocard-label") && !(LIVE ? store("ch_order") : store("ch_card"))) btn.innerHTML = btn.getAttribute("data-nocard-label");
     btn.addEventListener("click", function () {
       var role = btn.getAttribute("data-oneclick");
       var next = btn.getAttribute("data-next");
       var label = btn.innerHTML;
       var card = btn.closest(".card") || btn.parentNode;
+      // Visitors who skipped the first offer have no saved card yet: send them to this offer's own checkout page
+      var fallback = btn.getAttribute("data-checkout-page");
+      if (fallback && !store("ch_order")) return go(fallback);
       btn.disabled = true; btn.textContent = "Adding to your order…";
       showError(card, "");
       if (!LIVE) { addBought([role]); return setTimeout(function () { go(next); }, 700); }
