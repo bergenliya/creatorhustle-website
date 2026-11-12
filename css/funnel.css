@@ -232,3 +232,9 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 .imagine-list b{display:block;color:var(--charcoal);font-size:18px}
 .imagine-list span{color:var(--muted);font-size:16px}
 @media(max-width:640px){.imagine-card{padding:32px 20px}}
+
+/* Bump box: scannable lines */
+.bump-body strong{color:var(--charcoal)}
+.bump-body .line{display:block;margin-top:6px}
+.bump-body .line:first-child{margin-top:0}
+.bump-body s{color:var(--muted)}
