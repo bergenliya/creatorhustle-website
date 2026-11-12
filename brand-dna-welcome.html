@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>You're In! Welcome to Creator Hustle AI</title>
+<meta name="description" content="Your order is complete. Create your password to enter your course library.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<!-- TRACKING SLOT: paste Meta pixel / Google Analytics / Pinterest tag here (purchase event) -->
+<link rel="stylesheet" href="css/funnel.css">
+<style>
+  .welcome{background:var(--surface);padding-block:64px 80px}
+  .welcome .logo{height:56px;width:auto;margin:0 auto 26px}
+  .welcome h1{margin-bottom:14px}
+  .welcome .lead{font-size:19px;color:var(--muted);max-width:600px;margin:0 auto 32px}
+  .access{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;max-width:900px;margin:0 auto;text-align:left}
+  .panel{background:var(--white);border:1px solid var(--border);border-radius:22px;padding:28px}
+  .panel h2{font-size:22px;margin-bottom:14px}
+  .inbox{border:2px solid var(--turq);background:var(--turq-tint)}
+  .inbox .env{font-size:34px;margin-bottom:6px}
+  .howto{list-style:none;counter-reset:s;margin:16px 0 22px}
+  .howto li{counter-increment:s;position:relative;padding-left:40px;margin-bottom:12px}
+  .howto li:before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--turq-btn);color:var(--white);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+  .bought{list-style:none}
+  .bought li{padding:10px 0 10px 32px;position:relative;border-bottom:1px solid var(--border);font-weight:600;color:var(--charcoal)}
+  .bought li:last-child{border-bottom:0}
+  .bought li:before{content:"✓";position:absolute;left:0;top:10px;width:22px;height:22px;border-radius:50%;background:var(--pink);color:var(--white);font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:800}
+  .help{font-size:15px;color:var(--muted);margin-top:18px}
+  .help .addr{font-weight:700;color:var(--charcoal);user-select:all}
+  .more{background:var(--white);padding-block:64px 72px}
+  .more h2{margin-bottom:8px}
+  .more .sub{color:var(--muted);max-width:560px;margin:0 auto 30px}
+  .svc{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:900px;margin:0 auto;text-align:left}
+  .svc a.box{display:flex;flex-direction:column;background:var(--pink-tint);border:1px solid var(--pink);border-radius:22px;padding:28px;text-decoration:none;color:var(--text);transition:transform .15s ease,box-shadow .15s ease}
+  .svc a.box:hover{transform:translateY(-3px);box-shadow:0 16px 30px -18px rgba(23,25,31,.35)}
+  .svc .kind{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pink-deep)}
+  .svc h3{margin:6px 0 8px}
+  .svc p{color:var(--muted);font-size:16px;flex:1}
+  .svc .go{margin-top:16px;font-weight:700;color:var(--turq-btn)}
+  .svc .pr{font-weight:800;color:var(--charcoal)}
+  .freebie-only{max-width:560px;margin:0 auto;text-align:left}
+  @media(max-width:760px){.access,.svc{grid-template-columns:1fr}}
+</style>
+  <!-- SEO: canonical, social and structured data -->
+  <link rel="canonical" href="https://creatorhustle.ai/brand-dna-welcome">
+  <meta property="og:site_name" content="Creator Hustle AI">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="You&#x27;re In! Welcome to Creator Hustle AI">
+  <meta property="og:description" content="Your order is complete. Create your password to enter your course library.">
+  <meta property="og:url" content="https://creatorhustle.ai/brand-dna-welcome">
+  <meta property="og:image" content="https://creatorhustle.ai/assets/liya-bio.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script src="/site-analytics.js" defer></script>
+</head>
+<body data-funnel-products='{"tripwire":{"name":"Brand DNA OS","price":19},"bump":{"name":"Interactive Mini Apps","price":11},"upsell":{"name":"Super Claude: 37 Personalized Business Skills","price":27},"downsell":{"name":"Mini Courses with AI Clone","price":19}}'>
+
+<section class="welcome center">
+  <div class="wrap">
+    <img class="logo" src="assets/logo.png" alt="Creator Hustle AI" width="463" height="243">
+    <h1 data-first-name="You're in, {name}! 🎉">You're in! 🎉</h1>
+    <p class="lead" data-buyer>Everything is waiting for you in your Creator Hustle AI course library. One login, all your courses and downloads in one place.</p>
+
+    <div class="access" data-buyer>
+      <div class="panel inbox">
+        <div class="env" aria-hidden="true">🔑</div>
+        <h2>Create your password</h2>
+        <p class="muted">One quick step and you're in. You'll use your email and this password every time you log in.</p>
+        <ol class="howto">
+          <li>Click the button below and choose a password (at least 8 characters).</li>
+          <li>You'll go straight into your course library.</li>
+          <li>Next time, log in at your library with your email and password.</li>
+        </ol>
+        <a class="btn btn-turq btn-block" id="setup-link" href="https://learn.creatorhustle.ai/login">Create My Password →</a>
+        <p class="micro">Closed this page by accident? Go to the <a href="https://learn.creatorhustle.ai/forgot-password">course library</a>, click "Forgot your password?" and enter the email you used to buy. You'll get a link to set your password.</p>
+      </div>
+
+      <div class="panel">
+        <h2>What's in your library</h2>
+        <ul class="bought" data-bought-list data-no-freebie>
+          <li>Brand DNA OS</li>
+        </ul>
+        <p class="help">Need a hand? Email me at <span class="addr">liya@creatorhustle.ai</span> or visit <a href="support.html">Customer Support</a>.</p>
+      </div>
+    </div>
+
+    <p class="signoff">Can't wait to see what you build ✨ Liya</p>
+  </div>
+</section>
+
+<section class="more center">
+  <div class="wrap">
+    <h2>Want my help with the next step?</h2>
+    <p class="sub">When you're ready to go further, these are the two ways I work with you directly.</p>
+    <div class="svc">
+      <a class="box" href="ai-clarity-call.html">
+        <span class="kind">Done with you</span>
+        <h3>AI Clarity Call</h3>
+        <p>One private call to work out where AI fits in your business and which automations to set up first.</p>
+        <span class="go">See the AI Clarity Call →</span>
+      </a>
+      <a class="box" href="ai-clone-setup.html">
+        <span class="kind">Done with you</span>
+        <h3>AI Clone Setup</h3>
+        <p>We set up your AI clone together, build your YouTube funnel and create your first AI clone mini course or podcast.</p>
+        <span class="go">See AI Clone Setup →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#fff;border-top:1px solid #EEF1F5;text-align:center;padding:18px 20px;font:12px/1.6 Inter,system-ui,sans-serif;color:#9AA4B2">
+    <p style="margin:0">&copy; 2026 Creator Hustle AI &middot; <a href="privacy-policy.html" style="color:#9AA4B2">Privacy</a> &middot; <a href="terms-of-use.html" style="color:#9AA4B2">Terms</a> &middot; <a href="disclaimer.html" style="color:#9AA4B2">Disclaimer</a> &middot; <a href="contact.html" style="color:#9AA4B2">Contact</a> &middot; <a href="support.html" style="color:#9AA4B2">Support</a></p>
+  </footer>
+<script src="js/funnel.js"></script>
+</body>
+</html>

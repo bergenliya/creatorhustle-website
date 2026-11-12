@@ -17,6 +17,12 @@
       downsell: { name: "Mini Courses with AI Clone", price: 19 }
     }
   };
+  // A page can show different display names and prices for its own funnel (for example the Brand DNA funnel)
+  // with data-funnel-products='{"tripwire":{"name":"…","price":19},"bump":{…}}' on <body>. Real prices still come from the server.
+  try {
+    var po = document.body && document.body.getAttribute("data-funnel-products");
+    if (po) { var over = JSON.parse(po); Object.keys(over).forEach(function (k) { FUNNEL.products[k] = over[k]; }); }
+  } catch (e) {}
   window.FUNNEL = FUNNEL;
   var LIVE = !!(FUNNEL.api && FUNNEL.publishableKey);
 
@@ -257,8 +263,9 @@
     namesArr.forEach(function (n) { var li = document.createElement("li"); li.textContent = n; list.appendChild(li); });
   }
   if (list) {
-    var b = bought(); if (b.indexOf("freebie") < 0) b.unshift("freebie");
-    var names = { freebie: "PDF to Interactive Workbook Claude Skill (free)" };
+    var noFreebie = list.hasAttribute("data-no-freebie");
+    var b = bought(); if (!noFreebie && b.indexOf("freebie") < 0) b.unshift("freebie");
+    var names = noFreebie ? {} : { freebie: "PDF to Interactive Workbook Claude Skill (free)" };
     Object.keys(FUNNEL.products).forEach(function (k) { names[k] = FUNNEL.products[k].name; });
     renderList(b.filter(function (k) { return names[k]; }).map(function (k) { return names[k]; }));
   }
@@ -272,7 +279,10 @@
   if (setupLink && LIVE && store("ch_order")) {
     api("/finish", { orderToken: store("ch_order") }).then(function (res) {
       if (res.firstName && !name) { name = res.firstName; personalise(); }
-      if (res.purchased && res.purchased.length) renderList(["PDF to Interactive Workbook Claude Skill (free)"].concat(res.purchased.filter(function (n) { return !/PDF to Interactive Workbook/i.test(n); })));
+      if (res.purchased && res.purchased.length) {
+        if (list && list.hasAttribute("data-no-freebie")) renderList(res.purchased);
+        else renderList(["PDF to Interactive Workbook Claude Skill (free)"].concat(res.purchased.filter(function (n) { return !/PDF to Interactive Workbook/i.test(n); })));
+      }
       if (res.passwordUrl) setupLink.href = res.passwordUrl;
       else if (res.loginUrl) { setupLink.href = res.loginUrl; setupLink.textContent = "Go to My Course Library →"; }
     }).catch(function () {});
