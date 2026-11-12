@@ -238,3 +238,15 @@ details .a{padding:0 22px 20px;color:var(--muted)}
 .bump-body .line{display:block;margin-top:6px}
 .bump-body .line:first-child{margin-top:0}
 .bump-body s{color:var(--muted)}
+.library{background:var(--white)}
+.library .lead{margin:12px auto 36px;color:var(--muted);max-width:620px}
+.lib-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left}
+.lib-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:22px}
+.lib-card h3{font-size:16px;margin:0 0 12px;display:flex;align-items:center;gap:8px}
+.lib-card ul{list-style:none;margin:0;padding:0}
+.lib-card li{font-size:14px;padding:7px 0 7px 28px;position:relative;border-top:1px solid var(--border)}
+.lib-card li:first-child{border-top:0}
+.lib-card li:before{content:"✓";position:absolute;left:0;top:8px;width:18px;height:18px;border-radius:50%;background:#00868C;color:#fff;font-size:11px;line-height:18px;text-align:center}
+.library .note-box{margin-top:28px;text-align:left}
+@media(max-width:860px){.lib-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.lib-grid{grid-template-columns:1fr}}
